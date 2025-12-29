@@ -216,6 +216,7 @@
 "use client";
 
 import styles from "./choose-us.module.css";  
+import Link from "next/link";
 
 export default function ChooseUs({id}) {
   return (
@@ -252,9 +253,16 @@ export default function ChooseUs({id}) {
             policies and there are no surprise bills at Brands Chamber.
           </p>
 
-          <button className={styles.chooseUsGetStarted}>
-            Lets Get Started
-          </button>
+          <div className={styles.choose_btn_div}>
+
+            <Link href="#pricing">
+              <button className={styles.chooseUsGetStarted}>
+                Lets Get Started
+              </button>
+            
+            </Link>
+
+          </div>
         </div>
 
         {/* Right column: image */}

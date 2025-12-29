@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./main-banner.module.css";
+import Link from "next/link";
 
 export default function MainBanner() {
   const sectionRef = useRef(null);
@@ -40,10 +41,12 @@ export default function MainBanner() {
             businesses build and revamp their brand identity through thoughtful
             design and reliable digital solutions.
           </p>
-
-          <button className={styles.homeMainBannerButton} type="button">
-            Chat With Us
-          </button>
+          <Link href="#contact">
+            <button className={styles.homeMainBannerButton} type="button">
+              Chat With Us
+            </button>
+          
+          </Link>
         </div>
 
         {/* Right: stacked images */}
