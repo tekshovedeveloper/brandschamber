@@ -60,7 +60,7 @@ export default function Footer() {
 
               <a href="#" className={styles.iconLink}>
                 <img
-                  src="/assets/home/Instagram.svg"
+                  src="/assets/home/instagram.svg"
                   className={styles.icon}
                   alt="instagram"
                 />
@@ -73,7 +73,7 @@ export default function Footer() {
 
               <a href="#" className={styles.iconLink}>
                 <img
-                  src="/assets/home/Twitter.svg"
+                  src="/assets/home/twitter.svg"
                   className={styles.icon}
                   alt="twitter"
                 />
