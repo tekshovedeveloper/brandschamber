@@ -202,9 +202,12 @@ export default function MainNavbar() {
 
           {/* Right-side CTA */}
           <div>
+            <Link href="#contact">
             <button className={styles.numberButton} type="button">
               Let&apos;s Talk
             </button>
+            
+            </Link>
           </div>
 
           {/* Mobile menu icon */}
@@ -248,19 +251,19 @@ export default function MainNavbar() {
             <Link className={styles.drawerLink} href="/" onClick={close}>
               Home
             </Link>
-            <Link className={styles.drawerLink} href="/websitedesign" onClick={close}>
+            <Link className={styles.drawerLink} href="#services" onClick={close}>
               Services
             </Link>
-            <Link className={styles.drawerLink} href="/" onClick={close}>
+            <Link className={styles.drawerLink} href="#portfolio" onClick={close}>
               Clients Testimonials
             </Link>
-            <Link className={styles.drawerLink} href="/" onClick={close}>
+            <Link className={styles.drawerLink} href="#about" onClick={close}>
               About
             </Link>
-            <Link className={styles.drawerLink} href="/#pricing" onClick={close}>
+            <Link className={styles.drawerLink} href="#pricing" onClick={close}>
               Pricing
             </Link>
-            <Link className={styles.drawerLink} href="/contactus" onClick={close}>
+            <Link className={styles.drawerLink} href="#contact" onClick={close}>
               Contact Us
             </Link>
           </div>

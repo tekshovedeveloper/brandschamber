@@ -90,11 +90,11 @@ export default function Footer() {
           <div className={styles.footerBox}>
             <span className={styles.footerTitle}>QUICK LINKS</span>
             <div className={styles.footerBoxOptions}>
-              <a href="#">Home</a>
-              <a href="#">About Us</a>
-              <a href="#">Services</a>
+              <a href="/">Home</a>
+              <a href="#about">About Us</a>
+              <a href="#services">Services</a>
               <a href="#pricing">Pricing</a>
-              <a href="#contactFormDiv">Contact Us</a>
+              <a href="#contact">Contact Us</a>
             </div>
           </div>
 
