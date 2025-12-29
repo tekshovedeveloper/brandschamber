@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import MainNavbar  from "@/components/main-nav-bar/main-nav-bar";
 import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button, Box } from "@mui/material";
-import styles from "../styles/index.module.css";
+import styles from "../src/styles/index.module.css";
 import PortfolioView from "@/components-pages/index-component/achievements/achievements";
 import BuisnessProblem from "@/components-pages/index-component/buisness-problem/buisness-problem";
 import Testimonial from "@/components/testimonial/testimonial";
