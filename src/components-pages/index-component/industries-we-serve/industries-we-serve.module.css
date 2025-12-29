@@ -1,0 +1,154 @@
+.industriesWeServeBox {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.industriesWeServeBackHeading {
+    width: 100%;
+    font-size: 7.6rem;
+    margin-top: -20px;
+    z-index: -1;
+    font-weight: 1000;
+    color: rgba(0, 0, 0, 0.02);
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.industriesWeServeHeading {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 900;
+    font-family: Poppins, sans-serif;
+    font-size: 3.1rem;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.industriesWeServeHeading.industriesWeServeAnimate {
+    opacity: 1;
+    animation: slideInFromTop 1.5s ease-in-out forwards;
+}
+
+.industriesWeServeHeading h3 {
+    letter-spacing: -0.07rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.industriesWeServeHeading span {
+    margin-right: 16px;
+    color: #31B3C1;
+    font-weight: 1000;
+}
+
+.industriesWeServeUnderline {
+    margin-top: -10px;
+    max-width: 70%;
+}
+
+
+.carouselContainer {
+    position: relative;
+    /* background-color: #31B3C1; */
+    z-index: 1;
+    margin-top: 90px;
+    /* margin-left: 20px; */
+    padding: 0 10px;
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+  margin-bottom: 70px;
+}
+.carouselItem {
+    
+    /* background-color: blue; */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items */
+    align-items: center; /* Align items vertically */
+    padding: 0; /* Remove padding */
+}
+.reactMultiCarouselArrow {
+    position: absolute; /* Ensure they are positioned absolutely */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #31B3C1; /* Customize as needed */
+    z-index: 2; /* Ensure it's above other content */
+    cursor: pointer; 
+}
+
+/* Left Arrow */
+.reactMultiCarouselArrowLeft {
+    left: 0;
+}
+
+/* Right Arrow */
+.reactMultiCarouselArrowRight {
+    right: 0;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    width: 76%;
+    height: 190px;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #DDE2EE;
+    border-radius: 20px;
+    padding: 10px;
+    
+}
+
+
+
+.card a img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.card a h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #363636;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+.card:hover {
+    background-color:  #31B3C1; /* Change background color to blue */
+}
+
+.card:hover a h3 {
+    color: white; /* Change text color to white */
+}
+
+.card:hover a img {
+    filter: brightness(0) invert(1); /* Invert colors for the image to make it white */
+}

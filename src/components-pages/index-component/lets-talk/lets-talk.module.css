@@ -1,0 +1,346 @@
+.letsTalkBox {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    background: #ffffff url(https://www.alphadesigncrew.com/assets/images/lets-talk-bg.png) top center / cover no-repeat;
+    position: relative; /* Make this a positioned container */
+}
+
+.bodyContainer{
+    width: 85%; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: self-start ;
+    margin-top: 90px;
+    /* background-color: #7a1212; */
+    margin-bottom: 70px;
+    position: relative; /* To position child elements absolutely */
+    transition: opacity 0.5s ease;   /*  exx */
+}
+
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* End at original position */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* End at original position */
+        opacity: 1;
+    }
+}
+
+.contentContainer,
+.formContainer {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and position */
+}
+
+.contentLetsTalkAnimate {
+  opacity: 1; /* Show when in view */
+}
+
+.leftLetsTalkAnimate {
+  opacity: 1; /* Show left column when in view */
+  animation: slideInFromLeft 1.4s ease forwards; /* Apply slide in from left */
+}
+
+.rightLetsTalkAnimate {
+  opacity: 1; /* Show right column when in view */
+  animation: slideInFromRight 1.4s ease forwards; /* Apply slide in from right */
+}
+
+
+
+.contentContainer {
+    width: 40%; /* Set width to 80% */
+    text-align: left; /* Align text to the left */
+    margin-right: 20px; /* Space between text and form */
+    /* background-color: rgb(49, 99, 143); */
+}
+
+.letsTalkHeading {
+    display: flex;
+    justify-content: start ;
+    align-items: end;
+    font-weight: 1000;
+    font-family:  sans-serif;
+    font-size: 3.3rem;
+    
+}
+
+.letsTalkHeading h3 {
+    letter-spacing: -0.1rem;
+    word-spacing: -0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    font-weight: 1000;
+    color: #F4F5F6;
+}
+
+.letsTalkHeading span {
+    margin-left: 10px;
+    margin-right: 6px;
+    margin-top: 0px;
+    color: #31B3C1;
+    font-weight: bold;
+    font-weight: 1000;
+}
+
+.letsTalkHeadingUnderline {
+    margin-top: -10px;
+    max-width: 90%;
+}
+
+.letsTalkText{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #F4F5F6;
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: start; /* Center the items vertically */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    margin: 1.3rem 0;
+    letter-spacing: -0.01rem;
+}
+
+
+.letsTalkButton {
+    padding: 10px 45px;
+    letter-spacing: 0.01rem;
+    word-spacing: 0.01rem;
+    background-image: linear-gradient(45deg, #71499a, #24939f);
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #F4F5F6;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-radius: 10px;
+    
+
+}
+
+/* .activeButton {
+    color: white;
+    background-image: linear-gradient(45deg, #71499a, #24939f);
+    border-radius: 7px;
+} */
+
+
+
+.formContainer {
+    width: 40%; /* Set width to 80% */
+    text-align: left; /* Align text to the left */
+    margin-left: 20px; /* Space between text and form */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    /* margin-top: 10px; */
+    /* opacity: 0; 
+    transition: opacity 1.5s ease-in-out; */
+}
+
+.letsTalkFormHeading {
+    font-size: 2em;
+    font-weight: 800;
+    margin: 30px 0;
+    text-align: center;
+    line-height: 1;
+  }
+  .formContainer label {
+    width: 80%;
+    margin-left: 0%;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 5px;
+    /* background-color: #24939f; */
+  }
+.formContainer .textField{
+   border: none;
+   /* border-bottom: -0.2px solid #ffffff; */
+   width: 80%;
+   margin-top: 10px;
+   font-size: 14px;
+   /* background-color: #24939f; */
+   /* height: 15px; */
+}
+.placeholder{
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #7a7a7a;
+}
+
+.submitLetsTalkButton {
+    padding: 12px 29%;
+    letter-spacing: 0.01rem;
+    word-spacing: 0.01rem;
+    background-image: linear-gradient(45deg, #71499a, #24939f);
+    font-family: poppins, sans-serif;
+    font-size: 1.04rem;
+    font-weight: 700;
+    color: #F4F5F6;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-radius: 10px;
+    margin:10px 0 40px 0 ;
+
+}
+
+@media (max-width: 1100px) {
+    .bodyContainer{
+        width: 97%; 
+        justify-content: space-around;
+   
+    }
+    
+}
+
+@media (max-width: 950px) {
+    .letsTalkHeading {
+      
+        font-size: 2.8rem;
+        
+    }
+    .letsTalkText{
+        font-size: 0.9rem;
+        margin-top: 14px;
+    }
+    .letsTalkButton {
+        padding: 8px 45px;
+        font-size: 0.9rem;
+    }
+
+    .letsTalkFormHeading {
+        font-size: 1.5em;
+    }
+
+    .formContainer label {
+     
+        font-size: 15px;
+    
+        margin-top: 7px;
+
+      }
+    .formContainer .textField{
+       margin-top: 5px;
+       font-size: 12px;
+    
+    }
+    .placeholder{
+        font-size: 12px;
+    
+    }
+    
+    .submitLetsTalkButton {
+        padding: 11px 29%;
+      
+        font-size: 0.95rem;
+        
+    
+    }
+    
+}
+@media (max-width: 800px) {
+    .formContainer {
+        width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+    .bodyContainer{
+        width: 70%; 
+   
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start ;
+        margin-top: 40px;
+        /* background-color: #7a1212; */
+    }
+    .contentContainer {
+        width: 80%;
+    }
+    .letsTalkHeading {
+      
+        font-size: 2.2rem;
+    
+    }
+    .letsTalkText{
+        font-size: 0.75rem;
+        margin-top: 12px;
+        
+    }
+    .letsTalkButton {
+        padding: 8px 45px;
+        font-size: 0.9rem;
+    }
+
+    .formContainer {
+        width: 100%;
+        margin-top: 30px;
+        margin-left: 0;
+     
+    }
+
+    .formContainer label {
+     
+        font-size: 16px;
+    
+        margin-top: 7px;
+    
+
+      }
+    .formContainer .textField{
+       margin-top: 5px;
+       font-size: 13px;
+      
+    }
+    .placeholder{
+        font-size: 13px;
+   
+
+    
+    }
+    
+    .submitLetsTalkButton {
+        padding: 12px 29%;
+      
+        font-size: 0.95rem;
+        
+    
+    }
+
+}
+
+@media (max-width: 440px) {
+    .bodyContainer{
+        width: 90%; 
+        
+    
+    }
+}
+
+

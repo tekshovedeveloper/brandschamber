@@ -1,0 +1,1047 @@
+/* .facinBox {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    position: relative; 
+}
+
+.facinBackHeading {   
+    margin-top: -30px;
+    font-size: 9.08rem;
+    font-weight: 1000;
+    color: rgb(0 0 0 / 2%);
+}
+
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+.facinHeading {
+    width: 100%;
+    position: absolute;
+    top: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 1000;
+    font-family: Poppins, sans-serif;
+    font-size: 3.1rem;
+    margin-top: 10px;
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out;
+}
+
+.facinHeading.animate {
+    opacity: 1;
+    animation: slideInFromTop 1.5s ease-in-out forwards; 
+}
+
+.facinHeading h3 {
+    letter-spacing: -0.03rem;
+    word-spacing: -0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.facinHeading span {
+    color: #31B3C1;
+    font-weight: bold;
+}
+
+.underline {
+    margin-top: -10px;
+    max-width: 70%;
+}
+
+
+
+.facinBody {
+    display: flex;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.facinImage {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 48%;
+    position: relative;
+}
+
+
+@keyframes slideFadeIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+.facinPoints {
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+    margin-top: 70px;
+}
+
+
+.Point {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 13px 25px;
+    border-radius: 10px;
+    background-color: #EFE9E9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+.animateIn {
+    animation: slideFadeIn 1.5s ease forwards;
+}
+
+
+
+
+.Point:hover {
+    background-color: #222730;
+    color: white;
+}
+
+.Point:hover .facinText {
+    color: white;
+}
+
+
+.Point:hover .image {
+    filter: invert(1); 
+    transform: scale(1.1); 
+    transition: transform 0.3s ease;
+}
+
+.Point:active {
+    background-color: #222730;
+    color: white;
+}
+
+.Point:active .facinText {
+    color: white;
+}
+
+.Point:active .image {
+    transform: scale(1);
+}
+
+.image {
+    width: 58px;
+    height: 58px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+
+.facinText {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: poppins, sans-serif;
+    color: #212529;
+    transition: color 0.3s ease; 
+}
+
+.selected {
+    background-color: #222730;
+    color: white;
+}
+
+.selected .facinText {
+    color: white;
+}
+.selectedImage {
+    filter: invert(1);
+}
+
+
+
+@keyframes headingSlideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes headingSlideOut {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+
+.heading {
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+}
+
+.headingAnimateIn {
+    opacity: 1; 
+    animation: headingSlideIn 0.5s forwards; 
+}
+
+.headingAnimateOut {
+    opacity: 0; 
+    animation: headingSlideOut 0.5s forwards; 
+}
+
+.selectedImageDisplay{
+    z-index: 1;
+}
+
+.facinImageBoxCircle {
+   
+    width: 85%; 
+    height: 110%; 
+    background-color: #31B3C1;
+    border-top-left-radius: 50% ;
+    border-top-right-radius: 50% ;
+    border-bottom-left-radius:50% ;
+    
+    position: absolute; 
+    top: 110%; 
+    left: 70%;
+    transform: translate(-50%, -50%); 
+}
+
+
+@media (max-width: 1200px) {
+    .facinBackHeading {
+        font-size: 6rem;
+    }
+    .facinHeading {
+        top: 6%; 
+        font-size: 2.1rem;
+    }
+    .facinHeading h3 {
+         margin-right: 10px;
+    }
+    .facinHeading span {
+        width: 90px;
+        margin-left: 0px;
+     
+    }
+    .facinBody{
+        margin-top: -30px;
+    }
+
+    .facinPoints {
+        width: 60%;
+      
+        align-items: center;
+      
+    }
+    .facinImage {
+       
+        width: 40%;
+        justify-content: start;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+    .selectedImageDisplay{
+        min-height: 300px;
+        min-width: 490px;
+        margin-left: -60px;
+        margin-top: 100px;
+    }
+    
+
+    .Point {
+        width: 74%;
+      
+        padding: 10px 22px;
+        
+    }
+    .image {
+        width: 47px;
+        height: 47px;
+        margin-right: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .facinText {
+        font-size: 1.1rem;
+       
+    }
+    .facinImageBoxCircle {
+      
+        width: 100%; 
+        height: 100%; 
+    
+    }
+    
+    
+}
+
+@media (max-width: 950px) {
+    .facinImage {
+       
+        width: 43%;
+      
+    }
+    .selectedImageDisplay{
+        min-height: 280px;
+        min-width: 460px;
+   
+    }
+}
+
+@media (max-width: 800px) {
+    .facinBackHeading {
+        font-size: 5rem;
+        margin-top: -15px;
+    }
+    .facinHeading {
+        top: 6%; 
+        font-size: 1.6rem;
+    }
+    .facinHeading h3 {
+         margin-right: 10px;
+    }
+    .facinHeading span {
+        width: 65px;
+        margin-left: 0px;
+ 
+    }
+
+    .facinBody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+   
+    }
+    .facinPoints {
+        width: 80%;
+      
+        align-items: center;
+        margin-bottom: 70px;
+
+    }
+    .Point {
+        width: 100%;
+        padding: 12px 22px;
+   
+    }
+
+    .facinImage {
+       
+        width: 70%;
+        justify-content: start;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    
+    }
+    .selectedImageDisplay{
+       margin-bottom: -20px;
+       margin-left: 0px;
+       margin-top: 0px;
+    }
+    .facinImageBoxCircle {
+       
+        width: 100%; 
+        height: 500px; 
+        border-top-left-radius: 50% ;
+        border-top-right-radius: 50% ;
+        border-bottom-left-radius:50% ;
+        
+        position: absolute; 
+        top: 110%; 
+        left: 80%; 
+        transform: translate(-50%, -50%);
+        margin-top: 30px;
+    }
+    
+}
+
+@media (max-width: 610px) {
+    .facinBackHeading {
+        font-size: 3.2rem;
+        margin-top: -15px;
+    }
+    .facinHeading {
+        top: 6%; 
+        width: 80%;
+        font-size: 1.6rem;
+    
+        align-items: start;
+        position: relative;
+        justify-content: center;
+        margin : 0 auto
+    }
+    .facinHeading h3 {
+        width: 100%;
+        margin: 0; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center; 
+    }
+    .facinHeading span {
+        width: 15%;
+        margin-right: -4%;
+        margin-top: -40px;
+        display: none;
+    flex-flow: nowrap;
+      
+    }
+
+    .facinImage {
+       
+        width: 100%;
+        justify-content: start;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+       display: flex;
+       justify-content: center;
+    }
+    .selectedImageDisplay{
+        height: 280px;
+        min-height: 100px;
+        width: 460px;
+        min-width: 340px;
+   
+    }
+
+}
+
+
+@media (max-width: 422px) {
+    .facinHeading {
+        top: 4%; 
+        width: 80%;
+        left: 10%;
+        font-size: 1.5rem;
+        align-items: start;
+        position: absolute;
+        justify-content: center;
+        margin : 0 auto;
+    }
+    .image {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        transition: transform 0.3s ease;
+    }
+    .facinPoints {
+        margin-bottom: 40px;
+    }
+    .facinText {
+        font-size: 0.9rem;
+       
+    }
+
+    .selectedImageDisplay{
+        margin-bottom: -40px;
+        height: 180px;
+        min-height: 100px;
+        width: 260px;
+        min-width: 340px;
+   
+    }
+    .facinImageBoxCircle {
+       
+        width: 90%; 
+        height: 300px;
+        background-color: #31B3C1; 
+        border-top-left-radius: 50% ;
+        border-top-right-radius: 50% ;
+        border-bottom-left-radius:50% ;
+       
+        position: absolute; 
+        top: 110%;
+        left: 80%; 
+        transform: translate(-50%, -50%);
+        margin-top: 30px
+    }
+   
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.facinBody {
+  width: 100%;
+  height: 100vh;
+  min-height: 900px;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  /* gradient background like the screenshot */
+  /* background: radial-gradient(circle at 0% 30%, #ff00e5 0%, #ff00e5 30%, #8b2aff 55%, #071435 78%, #020308 100%); */
+}
+
+/* .facinBody {
+  width: 100%;
+  height: 100vh;
+  min-height: 900px;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* middle image column */
+.facinImage {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  width: 34%;
+  max-width: 600px;
+  height: 617px;
+  position: relative;
+  border-radius: 50px;
+}
+
+/* animation for points */
+@keyframes slideFadeIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* left column */
+.facinPoints {
+  width: 35%;
+  max-width: 570px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 15px;
+}
+
+.facinPointHeading {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 2.435rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 60px;
+}
+
+.paragraphFacinPoint {
+  font-size: 15px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 400;
+  text-align: left;
+  line-height: 200%;
+  padding-bottom: 40px;
+  padding-right: 20px;
+}
+
+
+/* each “01/02/03/04 …” row */
+.point {
+  width: 100%;
+  max-width: 480px;
+  height: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 15px;
+  padding: 0 25px;
+
+  border-radius: 999px; /* full pill shape */
+  cursor: pointer;
+
+  /* base gradient (dimmer) for non‑selected items */
+  background-image: linear-gradient(
+    90deg,
+    rgba(25, 65, 191, 0.6),
+    rgba(200, 97, 254, 0.6)
+  );
+
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+
+  /* IMPORTANT: show them by default */
+  opacity: 1;
+  transition:
+    background-image 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* stronger gradient for the selected row */
+.selected {
+  background-image: linear-gradient(90deg, #1941bf, #c861fe);
+}
+
+/* hover should look like selected (bright) */
+.point:hover {
+  background-image: linear-gradient(90deg, #1941bf, #c861fe);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* text inside point */
+.facinText {
+  font-size: 17.9px;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: normal;
+  word-spacing: 0;
+  font-family: "Archivo", sans-serif;
+  color: #fff;
+}
+
+
+/* each “01/02/03/04 …” row */
+/* .point {
+  width: 100%;
+  max-width: 480px;
+  height: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 15px;
+  padding: 0 25px;
+  border-radius: 42px;
+  background-color: #0f0f101a;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+} */
+
+.animateIn {
+  animation: slideFadeIn 1.5s ease forwards;
+}
+
+/* .point:hover {
+  background-image: linear-gradient(45deg, #1941bf, #c861fe);
+  color: #fff;
+} */
+
+.point:active .facinText,
+.point:hover .facinText {
+  color: #fff;
+}
+
+/* optional icon in each point (not used in HTML yet) */
+.pointImage {
+  width: 62px;
+  height: 55px;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* .facinText {
+  font-size: 17.9px;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: normal;
+  word-spacing: 0;
+  font-family: "Archivo", sans-serif;
+  color: #fff;
+  transition: color 0.3s ease;
+} */
+
+/* selected (active) row */
+/* .selected {
+  background-image: linear-gradient(45deg, #1941bf, #c861fe);
+
+  color: #fff;
+} */
+
+.selected .facinText {
+  color: #fff;
+}
+
+.selectedImage {
+  filter: invert(1);
+}
+
+/* heading animation helpers */
+@keyframes headingSlideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes headingSlideOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.heading {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.headingAnimateIn {
+  opacity: 1;
+  animation: headingSlideIn 0.5s forwards;
+}
+
+.headingAnimateOut {
+  opacity: 0;
+  animation: headingSlideOut 0.5s forwards;
+}
+
+/* middle image element */
+.selectedImageDisplay {
+  height: 100%;
+  z-index: 1;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+/* right column with 2 cards */
+.facinLastContactDiv {
+  width: 30%;
+  max-width: 400px;
+  height: 617px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  padding-left: 15px;
+}
+
+.firstContainerFacinLastContactDiv,
+.secondContainerFacinLastContactDiv {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  row-gap: 10px;
+  padding: 40px 30px 40px 40px;
+  background-color: #000;
+  border-radius: 40px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: background-color 1s ease-in-out;
+}
+
+.firstContainerFacinLastContactDiv:hover,
+.secondContainerFacinLastContactDiv:hover {
+  background-image: linear-gradient(180deg, #1941bf, #c861fe);
+  transition: background-color 1s ease-in-out;
+}
+
+.facinLastContactDivText {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Archivo", sans-serif;
+  text-align: start;
+}
+
+.facinLastContactDivButtonText {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  width: 32%;
+  text-align: start;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1400px) {
+  .facinBody {
+    gap: 20px;
+    height: auto;
+    min-height: auto;
+    margin: 50px 0;
+  }
+
+  .facinPoints {
+    width: 32%;
+    max-width: 500px;
+    row-gap: 5px;
+  }
+
+  .facinPointHeading {
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 44px;
+  }
+
+  .paragraphFacinPoint {
+    line-height: 23px;
+    padding-bottom: 10px;
+  }
+
+  .point {
+    width: 100%;
+    max-width: 480px;
+    height: 65px;
+    margin-top: 5px;
+  }
+
+  .facinText {
+    font-size: 16px;
+    text-align: left;
+    line-height: 22px;
+  }
+
+  .facinImage {
+    width: 29%;
+    max-width: 600px;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .selectedImageDisplay {
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .facinLastContactDiv {
+    width: 21%;
+    max-width: 400px;
+    height: 490px;
+    padding: 0;
+  }
+
+  .firstContainerFacinLastContactDiv,
+  .secondContainerFacinLastContactDiv {
+    row-gap: 8px;
+    padding: 20px 20px 20px 30px;
+  }
+
+  .facinLastContactDivText {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+  }
+
+  .facinLastContactDivButtonText {
+    font-size: 15px;
+    line-height: 20px;
+    width: 38%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .facinLastContactDivButtonText {
+    font-size: 15px;
+    line-height: 20px;
+    width: 42%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .facinBody {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .facinPoints {
+    width: 50%;
+  }
+
+  .facinImage {
+    width: 40%;
+  }
+
+  .facinLastContactDiv {
+    width: 90%;
+    max-width: 90%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 20px;
+    margin-top: -100px;
+  }
+
+  .firstContainerFacinLastContactDiv,
+  .secondContainerFacinLastContactDiv {
+    width: 45%;
+    height: 260px;
+    padding: 40px 30px 40px 40px;
+    margin-top: 130px;
+  }
+
+  .facinLastContactDivText {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Archivo", sans-serif;
+    text-align: start;
+  }
+
+  .facinLastContactDivButtonText {
+    font-size: 18px;
+    font-family: "TT Hoves Pro Trial", sans-serif;
+    width: 32%;
+    text-align: start;
+  }
+}
+
+@media (max-width: 700px) {
+  .facinBody {
+    height: auto;
+    min-height: auto;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 80px 0;
+    row-gap: 70px;
+  }
+
+  .facinPoints {
+    width: 90%;
+    max-width: 90%;
+    row-gap: 10px;
+  }
+
+  .point {
+    max-width: 100%;
+  }
+
+  .facinImage {
+    width: 90%;
+    max-width: 90%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .selectedImageDisplay {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .facinLastContactDiv {
+    margin-top: 0;
+  }
+
+  .firstContainerFacinLastContactDiv,
+  .secondContainerFacinLastContactDiv {
+    width: 47%;
+    height: 260px;
+    padding: 40px 30px 40px 40px;
+    margin-top: 0;
+  }
+
+  .facinLastContactDivButtonText {
+    width: 40%;
+  }
+}
+
+@media (max-width: 510px) {
+  .firstContainerFacinLastContactDiv,
+  .secondContainerFacinLastContactDiv {
+    width: 48%;
+    height: auto;
+    min-height: 230px;
+    padding: 30px 20px 20px;
+  }
+
+  .facinLastContactDivText {
+    font-size: 15px;
+  }
+
+  .facinLastContactDivButtonText {
+    font-size: 15px;
+    font-family: "TT Hoves Pro Trial", sans-serif;
+    width: 38%;
+    text-align: start;
+  }
+}
+
+@media (max-width: 440px) {
+  .facinLastContactDiv {
+    width: 90%;
+    max-width: 90%;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  .firstContainerFacinLastContactDiv,
+  .secondContainerFacinLastContactDiv {
+    width: 95%;
+    height: 260px;
+    padding: 40px 30px 40px 40px;
+  }
+
+  .facinLastContactDivText {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Archivo", sans-serif;
+    text-align: start;
+  }
+
+  .facinLastContactDivButtonText {
+    font-size: 18px;
+    line-height: 25px;
+    font-family: "TT Hoves Pro Trial", sans-serif;
+    width: 40%;
+    text-align: start;
+  }
+}

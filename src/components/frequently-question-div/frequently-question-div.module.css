@@ -1,0 +1,227 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+
+@keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-120px); /* Start off-screen to the right */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* Back to original position */
+    }
+  }
+  
+  .inView {
+    animation: slideInFromRight 1.6s ease forwards; /* Apply the animation */
+  }
+
+
+.faqContainer {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 70px;
+  margin-top: 30px;
+  opacity: 0;
+}
+
+.faqHeader {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.faqItem {
+  /* border: 1px solid #ccc; */
+  border-radius: 27px;
+  padding: 10px 0;
+  margin-top: 15px;
+  background-color: #F9F8F8;
+}
+
+.faqQuestion {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  color: #3d3d3d;
+  padding-top: 7px;
+  font-weight: 500;
+  padding-left: 25px;
+}
+
+.faqAnswer {
+  padding: 10px 0 0 25px;
+  color: #555;
+  
+  /* background-color: aquamarine; */
+  display: none; /* Hidden by default */
+  transition: max-height 2.5s ease;
+
+}
+
+.faqAnswer.show {
+  display: block; /* Shows when the answer is active */
+
+}
+
+.arrowButton {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  background-color: #31B3C1;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  margin-right: 30px;
+  /* Maintain circle shape by keeping width and height equal */
+  min-width: 35px;
+  min-height: 35px;
+}
+
+/* .arrowButton:hover {
+  background-color: #ddd;
+} */
+
+
+@media (max-width: 1005px) {
+  .faqContainer {
+    width: 90%;
+  
+  }
+}
+
+@media (max-width: 800px) {
+  .faqContainer {
+    width: 85%;
+  
+  }
+  .faqItem {
+  
+    padding: 8px 0;
+
+  }
+  
+  .faqQuestion {
+
+    font-size: 14px;
+    padding-top: 0;
+    
+    display: flex;
+    align-items: center;
+
+
+  }
+  
+  .faqAnswer {
+    padding: 10px 0 0 25px;
+    font-size: 14px;
+  
+  }
+  
+  .faqAnswer.show {
+    display: block; /* Shows when the answer is active */
+  
+  }
+
+  .arrowButton {
+  
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    margin-right: 10px;
+    font-size: 12px;
+  }
+
+  
+}
+
+@media (max-width: 600px) {
+  .faqItem {
+  
+    padding: 7px 0;
+
+  }
+  
+  .faqQuestion {
+
+    font-size: 12px;
+
+
+  }
+  .faqAnswer {
+    padding: 7px 0 0 25px;
+    font-size: 12px;
+  
+  }
+  .arrowButton {
+  
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+    margin-right: 10px;
+    font-size: 10px;
+  }
+
+}
+@media (max-width: 470px) {
+  .faqContainer{
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .faqItem {
+    width: 120%;
+    margin-left: -10%;
+  
+    padding: 7px 0;
+
+  }
+  
+  .faqQuestion {
+    /* width: 110%; */
+    font-size: 10px;
+
+
+  }
+  .faqAnswer {
+    width: 120%;
+    margin-left: -10%;
+    padding: 7px 5px 0 25px;
+    font-size: 10px;
+  
+  }
+  .arrowButton {
+  
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+  
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 329px) {
+  .faqContainer{
+    margin-top: 50px;
+    /* margin-bottom: 50px; */
+  }
+}
+@media (max-width: 274px) {
+  .faqContainer{
+    margin-top: 10px;
+    /* margin-bottom: 50px; */
+  }
+}

@@ -1,0 +1,309 @@
+/* .achieve {
+  height: 170px; 
+  width: 100%;
+  background-color: #23222B;
+  display: flex; 
+  justify-content: space-evenly; 
+  align-items: center; 
+  overflow: hidden; 
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  text-align: flex-start;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.75s ease;
+}
+
+.slideFromTop {
+  animation: fadeInTop 1.5s forwards; 
+}
+
+.slideFromBottom {
+  animation: fadeInBottom 1.5s forwards;
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0; 
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.image {
+  width: 60px; 
+  height: auto;
+  margin-bottom: 10px; 
+}
+
+
+.portfolioContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: -10px;
+  color: white;
+}
+
+.portfolioHeading {
+  font-size: 1.8rem;
+  font-weight: bold; 
+}
+
+.portfolioText {
+  font-size: 14px;
+  font-weight: 500; 
+  margin-top: -5px; 
+  letter-spacing: 0.02em; 
+}
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* ===== Achievements (stats) section ===== */
+
+.mainAchieve {
+  height: 175px;
+  width: 100%;
+  background-color: #0F0F10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.achieve {
+  width: 100%;
+  max-width: 1540px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 88px;
+}
+
+.portfolio {
+  width: 24%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: flex-start;
+  color: #fff;
+  opacity: 0;
+  column-gap: 15px;
+  transition: opacity 0.75s ease;
+  position: relative;
+  margin-top: -5px;
+}
+
+.portfolio::after {
+  position: absolute;
+  content: "";
+  right: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 6.6rem;
+  width: 2px;
+  opacity: 0.16;
+  background: -webkit-linear-gradient(90deg, #252525, #afafaf);
+}
+
+.portfolio:last-child::after {
+  content: none;
+}
+
+/* fade‑in animations */
+.slideFromTop {
+  animation: fadeInTop 1.5s forwards;
+}
+
+.slideFromBottom {
+  animation: fadeInBottom 1.5s forwards;
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* icon image */
+.image {
+  width: 70px;
+  height: auto;
+  transition: transform 0.8s ease, scale 0.8s ease;
+}
+
+/* rotate on hover */
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(2turn);
+  }
+}
+
+.portfolio:hover .image {
+  animation: rotateImage 0.9s linear;
+  scale: 1.05;
+}
+
+.portfolio:not(:hover) .image {
+  transform: rotate(-2turn);
+  transition: transform 0.8s ease-in-out;
+  scale: 1;
+}
+
+/* text */
+.portfolioContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  color: #fff;
+}
+
+.portfolioHeading {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 45px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  word-spacing: 0;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+}
+
+.portfolioText {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: normal;
+  word-spacing: 0;
+  font-family: "Archivo", sans-serif;
+  color: #e2e2e2;
+}
+
+/* mobile carousel container (hidden on desktop) */
+.carousel {
+  display: none;
+}
+
+/* carousel item wrapper on mobile */
+.carouselItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 190px;
+  text-align: center;
+}
+
+/* indicators extra spacing on mobile */
+.carouselIndicators {
+  margin-bottom: -160px;
+}
+
+/* hide controls on mobile */
+.carouselControlNext,
+.carouselControlPrev {
+  display: none;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1010px) {
+  .achieve {
+    justify-content: space-between;
+  }
+
+  .portfolioHeading {
+    font-size: 1.5rem;
+  }
+
+  .portfolioText {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 820px) {
+  /* show carousel instead of 4‑column row */
+  .carousel {
+    display: block;
+  }
+
+  .achieve {
+    display: none;
+  }
+
+  .portfolio {
+    opacity: 1;
+  }
+
+  .portfolioContent {
+    margin-left: 20px;
+  }
+
+  /* .carouselItem, .carouselIndicators, .carouselControlNext/Prev
+     already defined above and apply here as well */
+}
+
+
+
+
+
+
+

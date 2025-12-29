@@ -1,0 +1,239 @@
+.faqBox {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 120px;
+
+  /* same pattern: let main background show */
+  background: transparent;
+}
+
+/* heading animation */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.faqHeading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 0;
+}
+
+.pricingAnimate {
+  opacity: 1;
+  animation: slideInFromTop 1.5s ease-in-out forwards;
+}
+
+.faqHeading h3 {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 2.435rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 55px;
+  color: #fff;
+}
+
+.faqHeading p {
+  width: 55%;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  color: #e2e2e2;
+}
+
+/* cards layout */
+.faqBody {
+  width: 100%;
+  max-width: 1560px;
+  height: auto;
+  margin: 80px auto 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardContainer {
+  position: relative;
+  width: 19.5%;
+  height: 430px;
+  overflow: hidden;
+}
+
+/* question card (front) */
+.questionCard {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 23px 15px 27px 25px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.questionCard h2 {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 65px;
+  font-weight: 500;
+  color: #fff;
+  -webkit-text-stroke: 2px #c5c5c6;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.questionCard p {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+  color: #0f0f10;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.icon {
+  opacity: 1;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+}
+
+/* answer card (slides up on hover) */
+.answerCard {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(180deg, #c861fe, #1941bf);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 2;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 23px 15px 23px 25px;
+}
+
+.cardContainer:hover .answerCard {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.answerCard h2 {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.answerCard p {
+  min-height: 250px;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1400px) {
+  .faqHeading h3 {
+    margin-right: 10px;
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  .faqHeading p {
+    width: 80%;
+    font-size: 15px;
+  }
+
+  .cardContainer {
+    min-width: 310px;
+  }
+
+  .faqBody {
+    padding: 0 20px;
+    justify-content: center;
+    gap: 30px;
+    row-gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .answerCard h2,
+  .questionCard h2 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardContainer {
+    width: 30%;
+    min-width: auto;
+    height: 380px;
+  }
+
+  .questionCard p {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .answerCard p {
+    min-height: 210px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 776px) {
+  .cardContainer {
+    width: 47%;
+    min-width: auto;
+    height: 400px;
+  }
+
+  .questionCard p {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .questionCard h2 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 550px) {
+  .cardContainer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .cardContainer {
+    width: 95%;
+  }
+}

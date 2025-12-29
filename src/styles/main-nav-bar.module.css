@@ -1,0 +1,42 @@
+.navbar {
+    background-color: transparent; /* Change to your preferred color */
+    height: 130px;
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 150px; 
+    margin-left: -280px; 
+
+  }
+  
+  .navItems {
+    display: flex;
+    gap: 15px; /* Space between nav items */
+ 
+
+  }
+
+  .navItems Button {
+    font-size: 16px;
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+    color: #fff;
+  } 
+  
+  .numberButton {
+    background-color: #2196F3; /* Example button color */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  
+  .serviceMenu {
+    margin-top: 40px; /* Position the dropdown menu */
+  }
+  

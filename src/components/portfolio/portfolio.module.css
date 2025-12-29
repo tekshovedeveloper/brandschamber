@@ -1,0 +1,98 @@
+@keyframes fadeIn {
+    0% {
+      opacity: 0; /* Fully transparent at the start */
+      transform: translateX(-120px); /* Slightly moved down */
+    }
+    100% {
+      opacity: 1; /* Fully opaque at the end */
+      transform: translateX(0); /* Back to original position */
+    }
+  }
+ 
+  
+  .animatePortfolio {
+    opacity: 1; /* Fully visible */
+    animation: fadeIn 1.6s ease forwards; /* Apply fade-in animation */
+  }
+
+.portfolioGallery { 
+    width: 100%;
+    margin-top: 20px;
+    /* background-color: aqua; */
+    padding: 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.6s ease; 
+}
+
+
+  
+  .portImg {
+    position: relative;
+    display: block;
+    margin: 4px;
+  }
+  
+  .portImg img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Rounds the image corners */
+  }
+  
+  /* Icon styling */
+  .portfolioIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Hide icon initially */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 50%;
+    color: #fff;
+  }
+  
+  .portImg:hover .portfolioIcon {
+    display: block; /* Show icon on hover */
+  }
+  
+  /* Removes gutter space between columns */
+  .noGutters {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  
+  .noGutters > .col,
+  .noGutters > [class*='col-'] {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  /* Sets up each column to take 20% width for a 5-column layout */
+  .col2 {
+    flex: 0 0 20%;
+    max-width: 20%;
+
+  }
+
+@media (max-width: 700px) {
+  .portfolioGallery { 
+    
+    padding: 0px;
+}
+}  
+@media (max-width: 560px) {
+
+
+  .col2 {
+    flex: 0 0 40%;
+    max-width: 33%;
+  
+  }
+
+
+}  
