@@ -1,7 +1,7 @@
 "use client";
 
 import Slider from "react-slick";
-import styles from "./Testimonial.module.css";
+import styles from "./testimonial.module.css";
 
 
 const TESTIMONIALS = [
