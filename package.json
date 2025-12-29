@@ -8,6 +8,11 @@
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
+  "dev": "next dev -p 4000",
+  "build": "next build",
+  "start": "next start -p 4000",
+  "lint": "next lint"
+},
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
