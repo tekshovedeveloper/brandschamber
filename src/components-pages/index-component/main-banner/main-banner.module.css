@@ -1,0 +1,358 @@
+/* slide like other sections */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Background behind the hero */
+.mainBannerContainer {
+  height: auto;
+  background-image: url("/assets/home/full-website-background.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+}
+
+.inView {
+  opacity: 1;
+  animation: slideInFromTop 1.2s ease forwards;
+}
+
+/* ===== Hero layout ===== */
+
+.mainBannerFirstContainer {
+  width: 100%;
+  height: calc(100vh - 50px);
+  min-height: 850px;
+  text-align: center;
+  margin-top: -50px;
+  color: #fff;
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightSideDiv {
+  width: 50%;
+  max-width: 770px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 30px;
+}
+
+.mainHeading {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 3.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 70px;
+  margin-top: 50px;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 25px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* right-side image stack */
+.leftSideDiv {
+  width: 50%;
+  max-width: 770px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.firstImageContainer,
+.secondImageContainer,
+.thirdImageContainer {
+  width: 33.333%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.firstImageContainer {
+  justify-content: flex-end !important;
+}
+
+.firstImageFirstContainer {
+  width: 100%;
+  padding-bottom: 150px;
+  /* height: 380px; */
+  object-fit: cover;
+}
+
+.secondImageContainer {
+  justify-content: flex-end !important;
+}
+
+.firstImageSecondContainer {
+  width: 100%;
+  /* height: 300px; */
+  object-fit: cover;
+}
+
+.secondImageSecondContainer {
+  width: 100%;
+  /* height: 252px; */
+  object-fit: cover;
+}
+
+.thirdImageContainer {
+  padding-left: 10px;
+}
+
+.firstImageThirdContainer,
+.secondImageThirdContainer,
+.thirdImageThirdContainer {
+  width: 100%;
+  /* height: 252px; */
+  object-fit: cover;
+}
+
+/* make images behave */
+.firstImageFirstContainer img,
+.firstImageSecondContainer img,
+.secondImageSecondContainer img,
+.firstImageThirdContainer img,
+.secondImageThirdContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* CTA button */
+.homeMainBannerButton {
+  padding: 12px 50px;
+  margin-top: 10px;
+  background-image: linear-gradient(180deg, #1941bf, #c861fe);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.7s ease-in-out,
+    background-color 0.7s ease-in-out;
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f4f5f6;
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 26px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.homeMainBannerButton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #222730;
+  transition: left 0.7s ease-in-out;
+  z-index: -1;
+}
+
+.homeMainBannerButton:hover::after {
+  left: 0;
+}
+
+.homeMainBannerButton:hover {
+  color: #fff;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1400px) {
+  .mainHeading {
+    font-size: 3rem;
+  }
+  .paragraph {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainBannerFirstContainer {
+    width: 100%;
+    height: calc(100vh - 50px);
+    min-height: 650px;
+  }
+
+  .rightSideDiv {
+    row-gap: 15px;
+  }
+
+  .mainHeading {
+    font-size: 2.5rem;
+    line-height: 50px;
+  }
+
+  .homeMainBannerButton {
+    padding: 12px 40px;
+    font-size: 15px;
+    margin-top: 0;
+  }
+
+  .leftSideDiv {
+    width: 50%;
+    max-width: 770px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .firstImageContainer {
+    justify-content: center !important;
+  }
+
+  .firstImageFirstContainer {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    margin-top: 180px;
+
+  }
+
+  .secondImageContainer {
+    justify-content: center !important;
+  }
+
+  .firstImageSecondContainer,
+  .secondImageSecondContainer {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+  }
+
+  .thirdImageContainer {
+    padding-left: 10px;
+    justify-content: center !important;
+  }
+
+  .firstImageThirdContainer {
+    margin-top: -80px;
+  }
+
+  .firstImageThirdContainer,
+  .secondImageThirdContainer {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+  }
+
+  /* images when height is fit-content */
+  .firstImageFirstContainer img,
+  .firstImageSecondContainer img,
+  .secondImageSecondContainer img,
+  .firstImageThirdContainer img,
+  .secondImageThirdContainer img {
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .mainBannerFirstContainer {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height: auto;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightSideDiv {
+    width: 90%;
+    row-gap: 20px;
+  }
+
+  .mainHeading {
+    font-size: 3rem;
+  }
+
+  .leftSideDiv {
+    width: 90%;
+  }
+
+  .firstImageFirstContainer {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .secondImageContainer {
+    justify-content: flex-end !important;
+  }
+
+  .firstImageSecondContainer,
+  .secondImageSecondContainer {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .thirdImageContainer {
+    justify-content: flex-end !important;
+  }
+
+  .firstImageThirdContainer {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .secondImageThirdContainer {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 500px) {
+  .mainBannerFirstContainer {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height: auto;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightSideDiv {
+    width: 100%;
+    row-gap: 20px;
+  }
+
+  .mainHeading {
+    font-size: 38px;
+  }
+
+  .leftSideDiv {
+    width: 100%;
+  }
+}

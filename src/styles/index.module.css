@@ -1,0 +1,30 @@
+
+
+.video{
+  
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #575757;
+}
+
+
+.mainBg {
+  min-height: 100vh;
+  /* If you have a background image file */
+  background-image: url("/assets/home/main-background.png");
+
+  /* Or pure CSS gradient similar to your screenshot */
+  /* background: radial-gradient(
+      circle at 0% 30%,
+      #ff00e5 0,
+      #ff00e5 30%,
+      #8b2aff 55%,
+      #071435 78%,
+      #020308 100%
+  ); */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

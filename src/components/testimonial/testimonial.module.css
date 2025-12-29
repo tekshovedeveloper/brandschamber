@@ -1,0 +1,174 @@
+.testimonialBox {
+  width: 100%;
+  min-height: 560px;
+  background-color: #0f0f10;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.testimonialHeading {
+  text-align: center;
+  color: #fff;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+}
+
+.testimonialHeading h3 {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 2.435rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 50px;
+  margin: 0;
+}
+
+.testimonialHeading p {
+  margin: 10px auto 0;
+  max-width: 85%;
+  font-family: "Archivo", sans-serif;
+  font-size: 1rem;
+  line-height: 24px;
+  color: #e2e2e2;
+}
+
+/* slider wrapper */
+.testimonialSliderWrapper {
+  width: 100%;
+  max-width: 1540px;
+  margin: 20px auto 0;
+  position: relative;
+}
+
+/* IMPORTANT: allow variableWidth slides to overflow nicely */
+.testimonialSliderWrapper :global(.slick-list) {
+  overflow: visible;
+}
+
+.testimonialSliderWrapper :global(.slick-track) {
+  display: flex;
+  align-items: center;
+}
+
+/* This is the slide container whose width we control */
+.slideOuter {
+  width: 520px; /* side cards width */
+  padding: 0 16px;
+}
+
+/* Center slide becomes wider (like the screenshot) */
+.testimonialSliderWrapper :global(.slick-center) .slideOuter {
+  width: 950px; /* big center card */
+}
+
+/* Card base */
+.testimonialCard {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 30px 32px;
+  color: #fff;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* softer look like screenshot */
+  border: 1px solid transparent;
+}
+
+/* Center card highlight (white border, stronger) */
+.testimonialSliderWrapper :global(.slick-center) .testimonialCard {
+  background: #0f0f10;
+  border: 2px solid #fff;
+}
+
+/* Top row */
+.clientInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  flex: 0 0 auto;
+}
+
+.clientInfo h4 {
+  margin: 0;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Big quote mark like screenshot */
+.quoteMark {
+  margin-left: auto;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 900;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* Text */
+.testimonialText {
+  margin: 0;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5rem;
+  color: #e2e2e2;
+}
+
+/* Arrows: circular with gradient icon look */
+.testimonialSliderWrapper :global(.slick-prev),
+.testimonialSliderWrapper :global(.slick-next) {
+  z-index: 5;
+  width: 38px;
+  height: 38px;
+}
+
+.testimonialSliderWrapper :global(.slick-prev) {
+  left: 10px;
+}
+
+.testimonialSliderWrapper :global(.slick-next) {
+  right: 10px;
+}
+
+.testimonialSliderWrapper :global(.slick-prev:before),
+.testimonialSliderWrapper :global(.slick-next:before) {
+  font-size: 34px;
+  background: linear-gradient(180deg, #1941bf, #c861fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .slideOuter {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .testimonialCard {
+    height: auto;
+  }
+
+  .testimonialHeading h3 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  .testimonialHeading p {
+    max-width: 95%;
+    font-size: 15px;
+    line-height: 23px;
+  }
+}

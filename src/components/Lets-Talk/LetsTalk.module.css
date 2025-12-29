@@ -1,0 +1,11 @@
+.liveChatButtonOptionDiv {
+  width: 100%;
+  height: 100vh;
+
+  /* keep same as your CSS */
+  background-color: rgba(0, 42, 105, 0.322);
+  background-image: url("/assets/home/lets-talk.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}

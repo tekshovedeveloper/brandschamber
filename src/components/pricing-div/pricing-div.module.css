@@ -1,0 +1,373 @@
+/* ===== Pricing section container ===== */
+
+.pricingBox {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-top: 120px;
+
+  /* same pattern: keep transparent so main background shows */
+  background: transparent;
+}
+
+/* heading animation */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pricingHeading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 0;
+}
+
+.pricingAnimate {
+  opacity: 1;
+  animation: slideInFromTop 1.5s ease-in-out forwards;
+}
+
+.pricingHeading h3 {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 2.435rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 55px;
+  color: #fff;
+}
+
+.pricingHeading p {
+  width: 55%;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  color: #e2e2e2;
+}
+
+/* category buttons */
+
+@keyframes slideDownFadeIn {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pricingButtonRow {
+  display: flex;
+  margin-top: 10px;
+  gap: 5px;
+  justify-content: center;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.pricingSingleButton {
+  padding: 8px 30px;
+  letter-spacing: 0.01rem;
+  word-spacing: 0.08rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  opacity: 0;
+  animation: slideDownFadeIn 0.6s ease forwards;
+  background: none;
+  border: none;
+  position: relative;
+}
+
+/* active underline (optional, matches your other tabs style) */
+.activeCategory::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background-image: linear-gradient(180deg, #1941bf, #c861fe);
+}
+
+/* ===== Pricing cards ===== */
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.pricingContainer {
+  width: 100%;
+  max-width: 1540px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px auto 20px;
+  gap: 20px;
+  row-gap: 40px;
+  column-gap: 70px;
+  opacity: 0;
+}
+
+.inView {
+  opacity: 1;
+  animation: slideInFromRight 1.6s ease forwards;
+}
+
+.pricingCard {
+  border-radius: 20px;
+  width: 30%;
+  margin: 10px 0;
+}
+
+.mainTextDiv {
+  padding: 20px 0 10px;
+}
+
+.websiteName {
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 33.5px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.mainText {
+  font-family: "Archivo", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #fff;
+  padding: 15px 50px 0 70px;
+  text-align: center;
+}
+
+.websitePrice {
+  height: 100px;
+  font-size: 53px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  font-weight: 800;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+}
+
+/* list area */
+.servicesList {
+  max-height: 320px;
+  min-height: 100px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.servicesList::-webkit-scrollbar {
+  position: absolute;
+  right: 10px;
+  width: 3px;
+}
+
+.servicesList::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.servicesList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.servicesList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.servicesList ul li {
+  font-size: 0.9em;
+  padding: 3px 0;
+  font-family: "Archivo", sans-serif;
+  color: #fff;
+}
+
+/* bullet icon using Font Awesome (requires FA loaded globally) */
+.servicesList ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  display: inline-block;
+  color: #fff;
+  padding-right: 10px;
+  font-size: 0.68em;
+  padding-left: 10px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+/* order button */
+.orderButton {
+  padding: 12px 30px;
+  background-image: linear-gradient(180deg, #1941bf, #c861fe);
+  color: #fff;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 26px;
+  margin: 30px auto 30px 110px;
+}
+
+.orderButton:hover {
+  opacity: 0.9;
+}
+
+/* empty state for categories not filled yet */
+.emptyState {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: "Archivo", sans-serif;
+  padding: 40px 0;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1400px) {
+  .pricingHeading h3 {
+    margin-right: 10px;
+    font-size: 34px;
+    line-height: 44px;
+  }
+  .pricingHeading p {
+    width: 80%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  .pricingButtonRow {
+    margin-top: 20px;
+  }
+  .pricingSingleButton {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mainText {
+    padding: 15px 20px 0;
+  }
+}
+
+@media (max-width: 1062px) {
+  .pricingContainer {
+    justify-content: space-evenly;
+  }
+  .pricingCard {
+    width: 360px;
+  }
+}
+
+@media (max-width: 800px) {
+  .websitePrice {
+    height: 80px;
+    font-size: 45px;
+  }
+  .pricingContainer {
+    justify-content: space-around;
+  }
+  .pricingCard {
+    width: 320px;
+  }
+  .websiteName {
+    font-size: 1.6em;
+  }
+  .servicesList ul li {
+    font-size: 0.8em;
+  }
+  .servicesList ul li::before {
+    font-size: 0.62em;
+  }
+  .orderButton {
+    padding: 10px 30px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 710px) {
+  .pricingCard {
+    width: 80%;
+  }
+  .websiteName {
+    font-size: 2.4em;
+  }
+  .websitePrice {
+    height: 70px;
+    font-size: 40px;
+  }
+  .servicesList ul li {
+    font-size: 0.94em;
+  }
+  .servicesList ul li::before {
+    font-size: 0.82em;
+  }
+  .orderButton {
+    padding: 13px 40px;
+    margin-top: 30px;
+    margin-left: 190px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 480px) {
+  .websiteName {
+    font-size: 1.7em;
+  }
+  .mainText {
+    padding: 15px 10px 0;
+  }
+  .websitePrice {
+    font-size: 37px;
+  }
+  .orderButton {
+    padding: 10px 25px;
+    margin-left: 27%;
+  }
+}
+
+@media (max-width: 340px) {
+  .orderButton {
+    margin-left: 23%;
+  }
+}
