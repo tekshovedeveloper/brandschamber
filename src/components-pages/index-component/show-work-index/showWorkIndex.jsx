@@ -197,7 +197,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import styles from "./ShowWorkIndex.module.css";
+import styles from "./showWorkIndex.module.css";
 
 // ===== image data (same as you have) =====
 const allImages = [
