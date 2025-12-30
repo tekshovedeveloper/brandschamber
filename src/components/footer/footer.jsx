@@ -90,7 +90,7 @@ export default function Footer() {
           <div className={styles.footerBox}>
             <span className={styles.footerTitle}>QUICK LINKS</span>
             <div className={styles.footerBoxOptions}>
-              <a href="/">Home</a>
+              <a href="https://brandschamber.com/">Home</a>
               <a href="#about">About Us</a>
               <a href="#services">Services</a>
               <a href="#pricing">Pricing</a>

@@ -180,7 +180,7 @@ export default function MainNavbar() {
         <div className={styles.toolbar}>
           {/* Logo */}
           <div>
-            <Link href="/">
+            <Link href="https://brandschamber.com/">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/assets/home/logo.svg"
@@ -192,7 +192,7 @@ export default function MainNavbar() {
 
           {/* Desktop nav links */}
           <nav className={styles.navItems} aria-label="Main navigation">
-            <Link href="/"><button type="button">Home</button></Link>
+            <Link href="https://brandschamber.com/"><button type="button">Home</button></Link>
             <Link href="#services"><button type="button">Services</button></Link>
             <Link href="#portfolio"><button type="button">Clients Testimonials</button></Link>
             <Link href="#about"><button type="button">About</button></Link>
@@ -248,7 +248,7 @@ export default function MainNavbar() {
           </div>
 
           <div className={styles.listRoot}>
-            <Link className={styles.drawerLink} href="/" onClick={close}>
+            <Link className={styles.drawerLink} href="https://brandschamber.com/" onClick={close}>
               Home
             </Link>
             <Link className={styles.drawerLink} href="#services" onClick={close}>
