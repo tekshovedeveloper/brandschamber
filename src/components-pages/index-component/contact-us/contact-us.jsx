@@ -36,7 +36,7 @@ const [errorMsg, setErrorMsg] = useState("");
         <div className={styles.contactInfo}>
           <div className={styles.contactInfoDiv}>
             <img src="/assets/home/phone.svg" alt="contact" />
-            <a href="tel:+18555359320">(855) 535-9320</a>
+            <a href="tel:+18555359320">+1 (385) 391-1875</a>
           </div>
 
           <div className={styles.contactInfoDiv}>
