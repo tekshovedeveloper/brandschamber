@@ -113,7 +113,7 @@ export default function Footer() {
             <div className={styles.footerBoxOptions}>
               <div className={styles.contactsShowDiv}>
                 <img src="/assets/home/phone.svg" alt="phone" />
-                <a href="tel:8555359320">(855) 535-9320</a>
+                <a href="tel:8555359320">+1 (385) 391-1875</a>
               </div>
 
               <div className={styles.contactsShowDiv}>
