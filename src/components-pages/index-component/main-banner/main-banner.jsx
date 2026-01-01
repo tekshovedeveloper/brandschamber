@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./main-banner.module.css";
 import Link from "next/link";
 
-export default function MainBanner() {
+export default function MainBanner({id}) {
   const sectionRef = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -21,7 +21,7 @@ export default function MainBanner() {
   }, []);
 
   return (
-    <section
+    <section id={id}
       ref={sectionRef}
       className={`${styles.mainBannerContainer} ${inView ? styles.inView : ""}` }
     >

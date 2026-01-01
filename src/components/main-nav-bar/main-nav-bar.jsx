@@ -269,6 +269,22 @@ export default function MainNavbar() {
           </div>
         </aside>
       </div>
+         {/* Floating WhatsApp Button – OUTSIDE header/drawer */}
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/13853911875"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.whatsappButton}
+        aria-label="Chat with us on WhatsApp"
+      >
+        {/* You can replace this with an <img> icon if you have one */}
+         <img
+    src="/assets/home/whatsapp.svg"
+    alt="WhatsApp"
+    className={styles.whatsappIcon}
+  />
+      </a>
     </>
   );
 }

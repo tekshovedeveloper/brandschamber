@@ -204,3 +204,49 @@
     width: 280px;
   }
 }
+
+
+
+
+
+.whatsappButton {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25d366; /* WhatsApp green */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  z-index: 998; /* below drawerOverlay (999) so menu can cover it */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsappButton:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.whatsappIcon {
+  font-size: 24px;
+  line-height: 1;
+  /* If you use an <img>, these become the size */
+  width: 28px;
+  height: 28px;
+}
+
+/* Optional: slightly adjust for very small screens */
+@media (max-width: 540px) {
+  .whatsappButton {
+    bottom: 16px;
+    right: 16px;
+    width: 52px;
+    height: 52px;
+  }
+}
