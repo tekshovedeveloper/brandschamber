@@ -13,7 +13,7 @@
 /* Background behind the hero */
 .mainBannerContainer {
   height: auto;
-  background-image: url("/assets/home/full-website-background.png");
+  /* background-image: url("/assets/home/full-website-background.png"); */
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
