@@ -127,15 +127,110 @@
 
 
 
+// "use client";
+
+//  import styles from './buisness-problem.module.css';
+
+// export default function BusinessProblem({id}) {
+//   return (
+//     <section id={id} className={styles.facinBody}>
+//       <div className={styles.facinPoints}>
+//         <h1 className={styles.facinPointHeading}>WE PROVIDE</h1>
+
+//         <p className={styles.paragraphFacinPoint}>
+//           Lorem Ipsum is simply dummy text of the printing and typesetting
+//           industry. Lorem Ipsum has been the industry's standard dummy text ever
+//           since the 1500s, when an unknown printer took a galley of type and
+//           scrambled it to
+//         </p>
+
+//         <div className={`${styles.point} ${styles.selected}`}>
+//           <p className={styles.facinText}>01 Branding and UI design</p>
+//         </div>
+
+//         <div className={styles.point}>
+//           <p className={styles.facinText}>02 Web and Mobile development</p>
+//         </div>
+
+//         <div className={styles.point}>
+//           <p className={styles.facinText}>03 Ebook Design</p>
+//         </div>
+
+//         <div className={styles.point}>
+//           <p className={styles.facinText}>04 2D Animation</p>
+//         </div>
+//       </div>
+
+//       <div className={styles.facinImage}>
+//         <img
+//           src="/assets/home/branding-and-Ui-design.jpg"
+//           alt="Selected"
+//           className={styles.selectedImageDisplay}
+//         />
+//       </div>
+
+//       <div className={styles.facinLastContactDiv}>
+//         <div className={styles.firstContainerFacinLastContactDiv}>
+//           <p className={styles.facinLastContactDivText}>
+//             Creating unique and memorable brand identities.
+//           </p>
+//           <p className={styles.facinLastContactDivButtonText}>
+//             SEE HOW WE WORK
+//           </p>
+//         </div>
+
+//         <div className={styles.secondContainerFacinLastContactDiv}>
+//           <p className={styles.facinLastContactDivText}>
+//             Looking for design experts who can bring your vision to life?
+//           </p>
+//           <p className={styles.facinLastContactDivButtonText}>
+//             MEET OUR EXPERT
+//           </p>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
 "use client";
 
- import styles from './buisness-problem.module.css';
+import { useState } from "react";
+import styles from "./buisness-problem.module.css";
 
-export default function BusinessProblem({id}) {
+const services = [
+  {
+    id: 1,
+    label: "01 Branding and UI design",
+    image: "/assets/home/ui.png",
+  },
+  {
+    id: 2,
+    label: "02 Web and Mobile development",
+    image: "/assets/home/web.png",
+  },
+  {
+    id: 3,
+    label: "03 Ebook Design",
+    image: "/assets/home/ebook.png",
+  },
+  {
+    id: 4,
+    label: "04 2D Animation",
+    image: "/assets/home/branding.png",
+  },
+];
+
+export default function BusinessProblem({ id }) {
+  const [activeIndex, setActiveIndex] = useState(0); // default: first service
+
   return (
     <section id={id} className={styles.facinBody}>
       {/* Left column: title + points */}
-      <div className={styles.facinPoints}>
+      <div
+        className={styles.facinPoints}
+        onMouseLeave={() => setActiveIndex(0)} // optional: reset on leave
+      >
         <h1 className={styles.facinPointHeading}>WE PROVIDE</h1>
 
         <p className={styles.paragraphFacinPoint}>
@@ -145,34 +240,31 @@ export default function BusinessProblem({id}) {
           scrambled it to
         </p>
 
-        <div className={`${styles.point} ${styles.selected}`}>
-          <p className={styles.facinText}>01 Branding and UI design</p>
-        </div>
-
-        <div className={styles.point}>
-          <p className={styles.facinText}>02 Web and Mobile development</p>
-        </div>
-
-        <div className={styles.point}>
-          <p className={styles.facinText}>03 Ebook Design</p>
-        </div>
-
-        <div className={styles.point}>
-          <p className={styles.facinText}>04 2D Animation</p>
-        </div>
+        {services.map((service, index) => (
+          <div
+            key={service.id}
+            className={`${styles.point} ${
+              index === activeIndex ? styles.selected : ""
+            }`}
+            onMouseEnter={() => setActiveIndex(index)}
+            onFocus={() => setActiveIndex(index)} // keyboard focus
+          >
+            <p className={styles.facinText}>{service.label}</p>
+          </div>
+        ))}
       </div>
 
-      {/* Middle column: image */}
+      {/* Middle column: image changes with activeIndex */}
       <div className={styles.facinImage}>
         <img
-          src="/assets/home/branding-and-Ui-design.jpg"
-          alt="Selected"
+          src={services[activeIndex].image}
+          alt={services[activeIndex].label}
           className={styles.selectedImageDisplay}
         />
       </div>
 
-      {/* Right column: 2 cards */}
-      <div className={styles.facinLastContactDiv}>
+      {/* Right column: stays as you have it (or you can also use services[activeIndex] here) */}
+      {/* <div className={styles.facinLastContactDiv}>
         <div className={styles.firstContainerFacinLastContactDiv}>
           <p className={styles.facinLastContactDivText}>
             Creating unique and memorable brand identities.
@@ -190,7 +282,7 @@ export default function BusinessProblem({id}) {
             MEET OUR EXPERT
           </p>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

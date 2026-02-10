@@ -1,0 +1,464 @@
+/* .section {
+  position: relative;
+  width: 100%;
+  background: #050608; 
+  padding: 0;         
+  overflow: hidden;
+}
+
+
+.bgWrapper {
+  position: relative;
+  width: 100%; 
+  max-width: none; 
+  margin: 0;
+  height: 60vh;    
+  overflow: hidden;
+}
+
+
+.bgInner {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+  transform-origin: right bottom;
+
+  transform: translate3d(0, 140%, 0) rotate(15deg) scale(1.05);
+  opacity: 0;
+
+
+  transition:
+    transform 3.4s cubic-bezier(0.16, 0.84, 0.33, 1),
+    opacity 2.8s ease-out;
+}
+
+
+.inView .bgInner {
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.image {
+  object-fit: cover; 
+}
+
+
+
+@media (max-width: 1024px) {
+  .bgWrapper {
+    height: 60vh; 
+  }
+
+  .chatWrapper {
+    right: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bgWrapper {
+    height: 60vh;
+  }
+
+  .bgInner {
+    border-radius: 0; 
+  }
+
+  .chatWrapper {
+    top: 18px;
+    right: 16px;
+  }
+
+  .chatButton {
+    padding: 8px 22px;
+    font-size: 13px;
+  }
+} */
+
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Fontspring-DEMO-mersin-bold.otf") format("opentype"); /* public/fonts */
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  background: #050608; /* black */
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Live Chat / Book Meeting button – top right */
+.chatWrapper {
+  position: absolute;
+  top: 94px;
+  right: 18%;
+  z-index: 5;
+}
+
+.chatButton {
+  padding: 10px 32px;
+  border-radius: 999px;
+  border: none;
+  background: #000000;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Archivo", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+}
+
+.chatButton:hover {
+  background: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Image container: full‑width, fixed 60vh height */
+.bgWrapper {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  height: 60vh;
+  overflow: hidden;
+}
+
+/* START state (animation) */
+.bgInner {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+  transform-origin: right bottom;
+
+  transform: translate3d(0, 140%, 0) rotate(15deg) scale(1.05);
+  opacity: 0;
+
+  transition:
+    transform 3.4s cubic-bezier(0.16, 0.84, 0.33, 1),
+    opacity 2.8s ease-out;
+}
+
+/* End state */
+.inView .bgInner {
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.image {
+  object-fit: cover; /* fills full 60vh x 100% area */
+}
+
+/* ===== Sliding outlined text (slider) ===== */
+
+.textOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* don't block clicks */
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 150.5px;
+  font-family: "FontspringBD", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  text-stroke: 2px #ffffff;
+  letter-spacing: -0.02em;
+
+  animation: marquee 120s linear infinite;
+}
+
+.marquee span {
+  padding-right: 24px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+  .bgWrapper {
+    height: 60vh;
+  }
+
+  .chatWrapper {
+    right: 24px;
+  }
+
+  .marquee {
+    font-size: clamp(26px, 6vw, 56px);
+  }
+}
+
+@media (max-width: 640px) {
+  .bgWrapper {
+    height: 60vh;
+  }
+
+  .bgInner {
+    border-radius: 0;
+  }
+
+  .chatWrapper {
+    top: 18px;
+    right: 16px;
+  }
+
+  .chatButton {
+    padding: 8px 22px;
+    font-size: 13px;
+  }
+
+  .marquee {
+    font-size: clamp(22px, 8vw, 40px);
+    -webkit-text-stroke-width: 1.5px;
+  }
+}
+
+/* =========================================================
+   BOOK MEETING MODAL (same style as offer popup)
+   ========================================================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.popup {
+  position: relative;
+  width: min(900px, 95vw);
+  min-height: 380px;
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  background: radial-gradient(circle at top left, #7c3aed, #0f172a);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.9);
+}
+
+/* Close button (circular, like offer popup) */
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: none;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Left visual panel */
+.left {
+  position: relative;
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.leftImage {
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/home/tree-bg.png"); /* change to your meeting image */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Logo in bottom-left */
+.logoBlock {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.logoMark {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.logoText {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Right form panel */
+.right {
+  flex: 1 1 50%;
+  min-width: 0;
+  padding: 30px 38px 34px;
+  background: linear-gradient(180deg, #1d4ed8 0%, #9333ea 50%, #ec4899 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  text-align: center;
+  color: rgba(241, 245, 249, 0.85);
+  margin-bottom: 22px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* two-column rows on desktop */
+.row {
+  display: flex;
+  gap: 14px;
+}
+
+.field {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.input,
+.textarea,
+.select {
+  border: none;
+  border-bottom: 1px solid rgba(248, 250, 252, 0.85);
+  padding: 6px 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.select {
+  padding-right: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+/* submit button – pill gradient */
+.submit {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #2563eb, #9333ea, #ec4899);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    filter 0.15s ease-out;
+}
+
+.submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* status messages */
+.successMsg {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #bbf7d0;
+}
+
+.errorMsg {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #fecaca;
+}
+
+/* responsive for modal */
+@media (max-width: 768px) {
+  .popup {
+    flex-direction: column;
+    width: min(95vw, 520px);
+  }
+
+  .left {
+    height: 220px;
+  }
+
+  .right {
+    padding: 24px 24px 28px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
