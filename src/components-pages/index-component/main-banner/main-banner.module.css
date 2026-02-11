@@ -364,9 +364,11 @@
 
 @media (max-width: 500px) {
   .mainBannerFirstContainer {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 20px;
     height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
     gap: 50px;
     display: flex;
     flex-direction: column;
