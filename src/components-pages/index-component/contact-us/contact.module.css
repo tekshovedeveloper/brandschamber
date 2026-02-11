@@ -263,6 +263,8 @@
   }
   .showContactUsHeading h3 {
     font-size: 1.9rem;
+    line-height: normal;
+    color: #fff;
   }
   .showContactUsHeading p {
     width: 90%;
@@ -316,6 +318,8 @@
   }
   .showContactUsHeading h3 {
     font-size: 34px;
+    line-height: normal;
+    color: #fff;
   }
   .contactInfoDiv img {
     width: 35px;
@@ -326,6 +330,7 @@
   }
   .iconContainer .iconContainerHeading {
     font-size: 2.6rem;
+    
   }
   .iconContainer p {
     font-size: 16px;
@@ -362,6 +367,10 @@
   .showContactUsHeading {
     width: 100%;
   }
+    .showContactUsHeading h3 {
+    line-height: normal;
+    color: #fff;
+  }
   .icon,
   .onHoverIcon {
     width: 35px;
@@ -392,5 +401,10 @@
   .submitButton {
     padding: 12px 25px;
     font-size: 15px;
+  }
+  .iconContainer .iconContainerHeading{
+    font-size: 36px;
+    line-height: normal;
+
   }
 }

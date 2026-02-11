@@ -38,7 +38,7 @@
 
 .faqHeading h3 {
   font-family: "FontspringBD";
-  font-size: 37px;
+  font-size: 36px;
   letter-spacing: 3px;
   font-weight: 900;
   text-transform: uppercase;
@@ -198,6 +198,9 @@
     min-width: auto;
     height: 380px;
   }
+  .faqHeading h3{
+    line-height: normal;
+  }
 
   .questionCard p {
     font-size: 22px;
@@ -216,6 +219,10 @@
     min-width: auto;
     height: 400px;
   }
+    .faqHeading h3{
+    line-height: normal;
+  }
+
 
   .questionCard p {
     font-size: 24px;
@@ -231,10 +238,16 @@
   .cardContainer {
     width: 80%;
   }
+    .faqHeading h3{
+    line-height: normal;
+  }
 }
 
 @media (max-width: 400px) {
   .cardContainer {
     width: 95%;
+  }
+    .faqHeading h3{
+    line-height: normal;
   }
 }
