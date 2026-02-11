@@ -527,18 +527,6 @@
   /* background: radial-gradient(circle at 0% 30%, #ff00e5 0%, #ff00e5 30%, #8b2aff 55%, #071435 78%, #020308 100%); */
 }
 
-/* .facinBody {
-  width: 100%;
-  height: 100vh;
-  min-height: 900px;
-  text-align: center;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 /* middle image column */
 .facinImage {
   display: flex;
@@ -575,20 +563,22 @@
 }
 
 .facinPointHeading {
-  font-family: "TT Hoves Pro Trial", sans-serif;
-  font-size: 2.435rem;
+  font-family: "FontspringBD";
+  font-size: 36px;
   font-weight: 900;
+  letter-spacing: 3px;
   text-transform: uppercase;
   text-align: left;
   line-height: 60px;
 }
 
 .paragraphFacinPoint {
-  font-size: 15px;
-  font-family: "Archivo", sans-serif;
+  font-size: 18px;
+  font-family: "Archivo";
   font-weight: 400;
+  text-align: center;
+  line-height: 180%;
   text-align: left;
-  line-height: 200%;
   padding-bottom: 40px;
   padding-right: 20px;
 }
@@ -640,41 +630,26 @@
 
 /* text inside point */
 .facinText {
-  font-size: 17.9px;
-  font-weight: 700;
-  line-height: 33px;
+
+  font-family: "FontspringBD";
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: 900;
   letter-spacing: normal;
+  text-transform: uppercase;
   word-spacing: 0;
   font-family: "Archivo", sans-serif;
   color: #fff;
 }
 
 
-/* each “01/02/03/04 …” row */
-/* .point {
-  width: 100%;
-  max-width: 480px;
-  height: 83px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  column-gap: 15px;
-  padding: 0 25px;
-  border-radius: 42px;
-  background-color: #0f0f101a;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-  opacity: 0;
-} */
+
 
 .animateIn {
   animation: slideFadeIn 1.5s ease forwards;
 }
 
-/* .point:hover {
-  background-image: linear-gradient(45deg, #1941bf, #c861fe);
-  color: #fff;
-} */
+
 
 .point:active .facinText,
 .point:hover .facinText {
@@ -689,23 +664,7 @@
   transition: transform 0.3s ease;
 }
 
-/* .facinText {
-  font-size: 17.9px;
-  font-weight: 700;
-  line-height: 33px;
-  letter-spacing: normal;
-  word-spacing: 0;
-  font-family: "Archivo", sans-serif;
-  color: #fff;
-  transition: color 0.3s ease;
-} */
 
-/* selected (active) row */
-/* .selected {
-  background-image: linear-gradient(45deg, #1941bf, #c861fe);
-
-  color: #fff;
-} */
 
 .selected .facinText {
   color: #fff;
@@ -912,6 +871,7 @@
     width: 40%;
   }
 
+  
   .facinLastContactDiv {
     width: 90%;
     max-width: 90%;
@@ -1049,3 +1009,4 @@
     text-align: start;
   }
 }
+

@@ -1,3 +1,13 @@
+
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Integral-cf.ttf") format("opentype"); /* public/fonts */
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* slide like other sections */
 @keyframes slideInFromTop {
   0% {
@@ -16,6 +26,7 @@
   /* background-image: url("/assets/home/full-website-background.png"); */
   background-size: cover;
   background-position: top;
+
   background-repeat: no-repeat;
 
 
@@ -35,6 +46,7 @@
   min-height: 850px;
   text-align: center;
   margin-top: -50px;
+  /* gap: 150px; */
   color: #fff;
   padding: 0 20px 20px;
   display: flex;
@@ -54,20 +66,23 @@
 }
 
 .mainHeading {
-  font-family: "TT Hoves Pro Trial", sans-serif;
-  font-size: 3.3rem;
+  font-family: "FontspringBD";
+  font-size: 68px;
   font-weight: 900;
   text-transform: uppercase;
+  letter-spacing: 5px;
   text-align: left;
-  line-height: 70px;
+  line-height: 80px;
   margin-top: 50px;
 }
 
 .paragraph {
-  font-size: 16px;
+  font-size: 18px;
+  width: 80%;
   line-height: 25px;
-  font-family: "Archivo", sans-serif;
-  font-weight: 500;
+  font-family: "Archivo";
+  font-weight: 400;
+   line-height: 180%;
   text-align: left;
 }
 
@@ -188,6 +203,8 @@
 .homeMainBannerButton:hover {
   color: #fff;
 }
+
+
 
 /* ===== Responsive ===== */
 

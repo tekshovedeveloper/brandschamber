@@ -1,0 +1,260 @@
+/* ===================== */
+/*  Font: FONTSPRING BD  */
+/* ===================== */
+
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Fontspring-DEMO-mersin-bold.otf") format("opentype"); /* public/fonts */
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "archivo";
+  src: url("/fonts/Archivo_Condensed-SemiBold.otf") format("opentype"); /* public/fonts */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ===================== */
+/*    ANIMATION          */
+/* ===================== */
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===================== */
+/*   HERO LAYOUT         */
+/* ===================== */
+
+/* section wrapper (like .mainBannerContainer + .mainBannerFirstContainer) */
+.hero {
+  width: 100%;
+  height: 770px;
+  min-height: 770px;
+  margin-top: 0px; /* same offset as home hero */
+  padding: 30px 20px 0px 20px;
+  color: #ffffff;
+/* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* animation base state */
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+/* add this class from JS when in view */
+.inView {
+  opacity: 1;
+  animation: slideInFromTop 1.2s ease forwards;
+}
+
+/* inner two-column layout – similar to rightSideDiv/leftSideDiv combo */
+.inner {
+  width: 100%;
+  max-width: 1500px;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* LEFT side: text (same role as .rightSideDiv in home CSS) */
+.content {
+  width: 50%;
+  max-width: 770px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 10px;
+}
+
+/* Heading – same style idea as .mainHeading, but uses FontspringBD */
+.title {
+  font-family: "FontspringBD", sans-serif;
+  font-size: 59px;
+  font-weight: 900;
+   /* letter-spacing: -0.04em; */
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 60px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+/* Paragraph – based on .paragraph from home */
+.description {
+  font-size: 17px;
+  line-height: 29px;
+  font-family: Halvetica ,system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 400;
+  text-align: left;
+  max-width: 55rem;
+}
+
+.highlight {
+  font-weight: 600;
+}
+
+/* RIGHT side: image (GIF) – plays the role of image stack area */
+.visual {
+  width: 50%;
+  max-width: 770px;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GIF container */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  height: 680px;
+  aspect-ratio: 1.3 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* next/image element */
+.image {
+  object-fit: cover;
+}
+
+/* ===================== */
+/*    RESPONSIVE         */
+/* ===================== */
+
+@media (max-width: 1400px) {
+  .title {
+    font-size: 3rem;
+    line-height: 60px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .hero {
+
+  height: 650px;
+  min-height: 650px;
+  
+}
+
+ .imageWrapper {
+ 
+  height: 530px;
+
+}
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    height: 500px;
+    min-height: 500px;
+  }
+
+  .content {
+    row-gap: 15px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    line-height: 50px;
+  }
+
+  .visual {
+    width: 50%;
+    max-width: 600px;
+  }
+    /* .hero {
+
+  height: 650px;
+  min-height: 650px;
+  
+} */
+
+ .imageWrapper {
+ 
+  height: 400px;
+
+}
+}
+
+@media (max-width: 767px) {
+  .hero {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height: auto;
+  }
+
+  .inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .content {
+    width: 90%;
+    row-gap: 20px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+
+  .visual {
+    width: 90%;
+  }
+
+  .imageWrapper {
+    max-width: 560px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  .content {
+    width: 100%;
+  }
+
+  .visual {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+
+  .imageWrapper {
+    max-width: 320px;
+     height: 350px;
+  }
+}

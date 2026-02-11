@@ -293,6 +293,13 @@
 
 
 
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Integral-cf.ttf") format("opentype"); /* public/fonts */
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 .section {
@@ -320,8 +327,9 @@
 }
 
 .heading {
-  font-family: "TT Hoves Pro Trial", sans-serif;
-  font-size: 2.435rem;
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
@@ -336,11 +344,11 @@
 }
 
 .subheading {
-  font-size: 15px;
-  font-family: "Archivo", sans-serif;
+  font-size: 18px;
+  font-family: "Archivo";
   font-weight: 400;
+  line-height: 180%;
   text-align: center;
-  line-height: 200%;
   padding-bottom: 40px;
   padding-right: 20px;
 }

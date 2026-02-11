@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* slide down like your other sections */
 @keyframes slideDown {
   0% {
@@ -54,8 +56,8 @@
 .navItems button,
 .numberButton {
   font-size: 16px;
-  font-family: "Archivo", sans-serif;
-  font-weight: 500;
+  font-family: "Archivo";
+  font-weight: 400;
   color: #fff;
   text-transform: capitalize;
   background: none;

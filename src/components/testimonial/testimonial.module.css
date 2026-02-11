@@ -1,4 +1,4 @@
-.testimonialBox {
+/* .testimonialBox {
   width: 100%;
   min-height: 560px;
   background-color: #0f0f10;
@@ -15,24 +15,24 @@
 }
 
 .testimonialHeading h3 {
-  font-family: "TT Hoves Pro Trial", sans-serif;
-  font-size: 2.435rem;
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 50px;
   margin: 0;
 }
 
 .testimonialHeading p {
   margin: 10px auto 0;
   max-width: 85%;
-  font-family: "Archivo", sans-serif;
-  font-size: 1rem;
-  line-height: 24px;
+  font-size: 18px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
   color: #e2e2e2;
 }
 
-/* slider wrapper */
 .testimonialSliderWrapper {
   width: 100%;
   max-width: 1540px;
@@ -40,7 +40,6 @@
   position: relative;
 }
 
-/* IMPORTANT: allow variableWidth slides to overflow nicely */
 .testimonialSliderWrapper :global(.slick-list) {
   overflow: visible;
 }
@@ -50,18 +49,15 @@
   align-items: center;
 }
 
-/* This is the slide container whose width we control */
 .slideOuter {
-  width: 520px; /* side cards width */
+  width: 520px; 
   padding: 0 16px;
 }
 
-/* Center slide becomes wider (like the screenshot) */
 .testimonialSliderWrapper :global(.slick-center) .slideOuter {
-  width: 950px; /* big center card */
+  width: 950px; 
 }
 
-/* Card base */
 .testimonialCard {
   background: #1e1e1e;
   border-radius: 16px;
@@ -72,17 +68,14 @@
   flex-direction: column;
   justify-content: space-between;
 
-  /* softer look like screenshot */
   border: 1px solid transparent;
 }
 
-/* Center card highlight (white border, stronger) */
 .testimonialSliderWrapper :global(.slick-center) .testimonialCard {
   background: #0f0f10;
   border: 2px solid #fff;
 }
 
-/* Top row */
 .clientInfo {
   display: flex;
   align-items: center;
@@ -104,7 +97,6 @@
   font-weight: 700;
 }
 
-/* Big quote mark like screenshot */
 .quoteMark {
   margin-left: auto;
   font-size: 64px;
@@ -114,7 +106,6 @@
   opacity: 0.9;
 }
 
-/* Text */
 .testimonialText {
   margin: 0;
   font-family: "TT Hoves Pro Trial", sans-serif;
@@ -124,7 +115,6 @@
   color: #e2e2e2;
 }
 
-/* Arrows: circular with gradient icon look */
 .testimonialSliderWrapper :global(.slick-prev),
 .testimonialSliderWrapper :global(.slick-next) {
   z-index: 5;
@@ -150,7 +140,6 @@
   opacity: 1;
 }
 
-/* responsive */
 @media (max-width: 1024px) {
   .slideOuter {
     width: 100%;
@@ -170,5 +159,275 @@
     max-width: 95%;
     font-size: 15px;
     line-height: 23px;
+  }
+} */
+
+
+.testimonialBox {
+  width: 100%;
+  background-color: #0f0f10;
+  padding: 60px 0 90px;
+  overflow: hidden;
+}
+
+/* Heading */
+.testimonialHeading {
+  text-align: center;
+  color: #fff;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.testimonialHeading h3 {
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.testimonialHeading p {
+  margin: 0 auto;
+  max-width: 85%;
+  font-size: 18px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
+  color: #e2e2e2;
+}
+
+/* Slider wrapper */
+.testimonialSliderWrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonialSliderWrapper :global(.slick-list) {
+  overflow: visible;
+}
+
+.testimonialSliderWrapper :global(.slick-track) {
+  display: flex;
+  align-items: center;
+}
+
+/* Slide container */
+.slideOuter {
+  padding: 0 12px;
+}
+
+/* Card */
+.testimonialCard {
+  background: #151515;
+  border-radius: 24px;
+  padding: 28px 36px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  min-height: 170px;
+  margin-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    opacity 0.4s ease,
+    filter 0.4s ease;
+}
+
+/* center slide highlight */
+.testimonialSliderWrapper :global(.slick-center) .testimonialCard {
+  border-color: #ffffff;
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  filter: none;
+}
+
+/* side slides faded */
+.testimonialSliderWrapper
+  :global(.slick-slide:not(.slick-center))
+  .testimonialCard {
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+/* top row */
+.clientInfo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #7f00ff, #e100ff);
+  flex: 0 0 auto;
+}
+
+.clientInfo h4 {
+  margin: 0 0 2px;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.clientRole {
+  margin: 0;
+  font-size: 13px;
+  color: #a0a0a0;
+}
+
+.quoteMark {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+}
+
+.quoteMark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* text */
+.testimonialText {
+  margin: 16px 0 0;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e2e2e2;
+}
+
+/* ---------- custom arrows ---------- */
+
+.customArrow {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* remove default slick icon */
+.customArrow::before {
+  display: none !important;
+}
+
+/* position bottom-center */
+.testimonialSliderWrapper :global(.slick-prev),
+.testimonialSliderWrapper :global(.slick-next) {
+  top: auto !important;
+  bottom: -50px !important;
+}
+
+/* horizontal placement */
+.prevArrow {
+  left: 50% !important;
+  transform: translateX(-60px);
+}
+
+.nextArrow {
+  right: 50% !important;
+  transform: translateX(60px);
+}
+
+/* arrow symbol */
+.arrowIcon {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1024px) {
+  .testimonialSliderWrapper
+  :global(.slick-slide:not(.slick-center))
+  .testimonialCard {
+    opacity: 1;
+    filter: none;
+  }
+  .testimonialBox {
+    padding: 50px 0 70px;
+  }
+
+  .testimonialHeading h3 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .testimonialHeading p {
+    max-width: 95%;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .testimonialCard {
+    padding: 22px 20px;
+    border-radius: 18px;
+  }
+
+  /* On tablets/phones: no blur, all slides look normal */
+  .testimonialSliderWrapper
+    :global(.slick-slide .testimonialCard) {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .testimonialSliderWrapper :global(.slick-center) .testimonialCard {
+    box-shadow: none;
+    transform: none;
+  }
+
+  .testimonialSliderWrapper :global(.slick-prev),
+  .testimonialSliderWrapper :global(.slick-next) {
+    bottom: -45px !important;
+  }
+}
+
+@media (max-width: 600px) {
+   .testimonialSliderWrapper
+  :global(.slick-slide:not(.slick-center))
+  .testimonialCard {
+    opacity: 1;
+    filter: none;
+  }
+  .clientInfo {
+    gap: 10px;
+  }
+
+  .testimonialCard {
+    padding: 18px 16px;
+  }
+
+  .testimonialText {
+    font-size: 14px;
+  }
+
+  .testimonialHeading h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .testimonialHeading p {
+    font-size: 14px;
   }
 }

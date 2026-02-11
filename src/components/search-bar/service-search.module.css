@@ -1,0 +1,131 @@
+.wrapper {
+  width: 80%;
+  max-width: 720px;
+  /* margin: 0 auto 40px; */
+  position: relative;
+  z-index: 5; /* above gradients / bg video */
+}
+
+/* bar container */
+.inputWrapper {
+  display: flex;
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 2px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* text input */
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 12px 18px;
+  border-radius: 999px 0 0 999px;
+  font-size: 0.95rem;
+  color: #111827;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+/* search button on right side */
+.searchButton {
+  width: 44px;
+  border: none;
+  border-radius: 0 999px 999px 0;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default; /* purely visual */
+}
+
+/* CSS search icon */
+.searchIcon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.searchIcon::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  border: 2px solid #f9fafb;
+  top: 0;
+  left: 0;
+}
+
+.searchIcon::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  background: #f9fafb;
+  border-radius: 999px;
+  transform: rotate(45deg);
+  bottom: 1px;
+  right: -1px;
+}
+
+/* dropdown */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  padding: 6px 0;
+  background: #05070c;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  list-style: none;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.option {
+  padding: 0;
+}
+
+.optionLink {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  text-align: left;
+  text-decoration: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.optionLink:hover {
+  background: linear-gradient(90deg, #1f2937, #111827);
+  color: #ffffff;
+}
+
+/* mobile tweaks */
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 100%;
+    /* padding: 0 16px; */
+  }
+
+  .input {
+    font-size: 0.9rem;
+  }
+
+  .optionLink {
+    font-size: 0.88rem;
+  }
+}

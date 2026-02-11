@@ -42,24 +42,26 @@
   justify-content: center;
   align-items: flex-start;
   font-weight: 900;
-  font-family: Poppins, sans-serif;
+  /* font-family: Poppins, sans-serif; */
   margin-top: 15px;
   padding-left: 20px;
 }
 
 .showContactUsHeading h3 {
-  letter-spacing: -0.01rem;
-  font-weight: 800;
-  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 900;
   text-transform: uppercase;
-  font-size: 33.57px;
-  color: #fff;
+  text-align: left;
+  line-height: 60px;
 }
 
 .showContactUsHeading p {
-  font-family: "TT Hoves Pro Trial", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+   font-size: 18px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
   color: #e2e2e2;
 }
 
@@ -92,27 +94,26 @@
 .contactInfo a {
   color: #e5e5e5;
   text-decoration: underline;
-  font-size: 18.81px;
-  font-family: Archivo, sans-serif;
+  font-size: 18px;
+  font-family: "Archivo";
   font-weight: 400;
-  line-height: 47px;
-  letter-spacing: 1px;
+  line-height: 180%;
 }
 
 /* social icons */
 .iconContainer .iconContainerHeading {
   font-weight: 800;
-  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-family: "FontspringBD";
   margin-top: 28px;
-  letter-spacing: 0;
+  letter-spacing: 3;
   font-size: 50px;
   text-transform: capitalize;
   color: #fff;
 }
 
 .iconContainer p {
-  font-family: Archivo, sans-serif;
-  font-size: 20px;
+  font-family: "Archivo";
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
   color: #e5e5e5;

@@ -234,11 +234,11 @@
 
 .portfolioText {
   margin: 0;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: normal;
+  font-size: 16px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
   word-spacing: 0;
-  font-family: "Archivo", sans-serif;
   color: #e2e2e2;
 }
 

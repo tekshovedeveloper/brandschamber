@@ -39,8 +39,9 @@
 }
 
 .pricingHeading h3 {
-  font-family: "TT Hoves Pro Trial", sans-serif;
-  font-size: 2.435rem;
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
@@ -51,9 +52,10 @@
 .pricingHeading p {
   width: 55%;
   text-align: center;
-  font-size: 15px;
-  font-family: "Archivo", sans-serif;
-  font-weight: 500;
+  font-size: 18px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
   color: #e2e2e2;
 }
 
@@ -158,8 +160,9 @@
 }
 
 .websiteName {
-  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-family: "FontspringBD"f;
   font-size: 32px;
+  letter-spacing: 2px;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -170,7 +173,7 @@
 }
 
 .mainText {
-  font-family: "Archivo", sans-serif;
+  font-family: "Archivo";
   font-size: 15px;
   font-weight: 500;
   line-height: 22px;
@@ -227,7 +230,7 @@
 .servicesList ul li {
   font-size: 0.9em;
   padding: 3px 0;
-  font-family: "Archivo", sans-serif;
+  font-family: "Archivo";
   color: #fff;
 }
 

@@ -30,7 +30,7 @@ const [errorMsg, setErrorMsg] = useState("");
     >
       {/* Left side */}
       <div className={styles.showContactUsHeading}>
-        <h3>Let's Talk Don't Be Shy, Say Hi!</h3>
+        <h3>Let<span style={{"font-family": "TT Hoves Pro Trial"}}>'</span>s Talk Don<span style={{"font-family": "TT Hoves Pro Trial"}}>'</span>t Be Shy, Say Hi<span style={{"font-family": "TT Hoves Pro Trial"}}>!</span></h3>
         <p>Have an idea? Fill in the form to get in touch with us.</p>
 
         <div className={styles.contactInfo}>

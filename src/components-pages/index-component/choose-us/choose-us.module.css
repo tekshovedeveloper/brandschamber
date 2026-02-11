@@ -516,9 +516,10 @@
 
 .mainHeading {
   width: 100%;
-  font-family: "TT Hoves Pro Trial", sans-serif;
-  font-size: 2.435rem;
-  font-weight: 800;
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 900;
   text-transform: uppercase;
   text-align: left;
   color: #fff;
@@ -529,10 +530,10 @@
   width: 100%;
   padding: 0 20px 0 0;
   color: #e2e2e2;
-  font-family: "Archivo", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 24px;
+  font-size: 18px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
 }
 
 /* button */

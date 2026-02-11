@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./main-banner.module.css";
 import Link from "next/link";
+import ServiceSearch from "@/components/search-bar/ServiceSearch";
 
 export default function MainBanner({id}) {
   const sectionRef = useRef(null);
@@ -41,12 +42,14 @@ export default function MainBanner({id}) {
             businesses build and revamp their brand identity through thoughtful
             design and reliable digital solutions.
           </p>
-          <Link href="#contact">
+
+          <ServiceSearch />
+          {/* <Link href="#contact">
             <button className={styles.homeMainBannerButton} type="button">
               Chat With Us
             </button>
           
-          </Link>
+          </Link> */}
         </div>
 
         {/* Right: stacked images */}
