@@ -1,0 +1,211 @@
+.awardsSection {
+  width: 100%;
+  background: #0f0f10;
+  padding: 80px 0 40px;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Top row: heading + trophy */
+.topRow {
+  max-width: 1400px;
+  margin: 0 auto 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.headingBlock {
+  max-width: 720px;
+}
+
+.title {
+  margin: 0 0 18px;
+  font-family: "FontspringBD";
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+
+.subtitle {
+  margin: 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #e2e2e2;
+}
+
+/* Trophy */
+.trophyWrapper {
+  flex-shrink: 0;
+}
+
+.trophyImage {
+  max-width: 260px;
+  height: auto;
+}
+
+/* ===== marquee slider ===== */
+
+.sliderWrapper {
+  width: 100%;              /* full width */
+  margin: 0;
+  position: relative;
+}
+
+/* list is full‑width; hide overflow for marquee */
+.sliderWrapper :global(.slick-list) {
+  overflow: hidden;
+}
+
+/* track uses flex row */
+.sliderWrapper :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
+/* each slide: FIXED width so all cards equal */
+.slideOuter {
+  width: 360px;             /* card width */
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Card */
+.card {
+  background-image: linear-gradient(to right, #060606 , #201f21);
+  border-radius: 30px;
+  padding: 25px 31px;
+  height: 250px;            /* fixed height so all equal */
+  box-sizing: border-box;
+  width: 450px;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* top of card: logo + rating */
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.logoWrapper img {
+  height: 3.6rem;
+  max-width: 13rem;
+  width: auto;
+}
+
+/* rating */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+}
+
+.star {
+  color: #00d26a;
+  font-size: 16px;
+}
+
+.ratingValue {
+  font-size: 14px;
+}
+
+/* text */
+.cardText {
+  margin: 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e2e2e2;
+}
+
+/* no dots */
+.sliderWrapper :global(.slick-dots) {
+  display: none !important;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1400px) {
+  .title {
+    font-size: 46px;
+  }
+
+  .trophyImage {
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .awardsSection {
+    padding: 60px 0 40px;
+  }
+
+  .topRow {
+    max-width: 100%;
+    padding: 0 20px;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .headingBlock {
+    max-width: 100%;
+  }
+
+  .trophyImage {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* disable variable width on small screens (we did in JS),
+     so make slides take almost full width */
+  .slideOuter {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .card {
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .awardsSection {
+    padding: 50px 0 30px;
+  }
+
+  .title {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    padding: 0 16px;
+  }
+
+  .cardText {
+    font-size: 14px;
+  }
+}

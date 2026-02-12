@@ -20,6 +20,7 @@ import AnimatedGradientBackground from "@/components/background/AnimatedGradient
 import PopularServices from "@/components-pages/index-component/popular-services/PopularServices";
 import OfferPopup from "@/components/offer-popup/OfferPopup";
 import RevealBanner from "@/components/live-chat-banner/live-chat-banner";
+import AwardsSection from "@/components/award-section/AwardsSection";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -69,7 +70,8 @@ export default function Home() {
         <MainNavbar />
         <MainBanner id="home" />
         <PopularServices />
-        <BuisnessProblem id="services" />
+        {/* <BuisnessProblem id="services" /> */}
+        <AwardsSection />
         <PortfolioView id="portfolio" />
         {/* <ShowWorkIndex /> */}
         <ChooseUs id="about" />
