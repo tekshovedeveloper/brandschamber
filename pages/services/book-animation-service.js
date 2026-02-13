@@ -7,6 +7,7 @@ import BannerSection from "../../src/components-pages/book-animation-component/b
 import SinglePortfolio from "@/components/single-portfolio/single-portfolio";
 import LiveChatBanner from "@/components/live-chat-banner/live-chat-banner"
 import Footer from "@/components/footer/footer";
+import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -87,6 +88,8 @@ export default function LogoService() {
       <MainNavbar />
        <BannerSection />
          <SinglePortfolio title="Book Animation" items={bookAnimationPortfolio} />
+          <ServicePricing id="animation-pricing" service="Animation" />
+
          <LiveChatBanner />
       <Footer /> 
     </main>

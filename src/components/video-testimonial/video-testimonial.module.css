@@ -1,0 +1,312 @@
+.videoTestimonialBox {
+  width: 100%;
+  background-color: #0f0f10;
+  padding: 60px 0 90px;
+  overflow: hidden;
+}
+
+/* Heading */
+.videoHeading {
+  text-align: center;
+  color: #fff;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.videoHeading h3 {
+  font-family: "FontspringBD";
+  font-size: 32px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.videoHeading p {
+  margin: 0 auto;
+  max-width: 85%;
+  font-size: 18px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
+  color: #e2e2e2;
+}
+
+/* Slider wrapper */
+.videoSliderWrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.videoSliderWrapper :global(.slick-list) {
+  overflow: visible;
+}
+
+.videoSliderWrapper :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Slide container */
+.slideOuter {
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+/* Card button */
+.videoCard {
+  width: 100%;
+  background: #151515;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  border-color: #ffffff;
+  background: #181818;
+}
+
+/* Thumbnail with play overlay */
+.thumbnailWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  overflow: hidden;
+}
+
+.thumbnailImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.0),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+.playCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 15, 16, 0.6);
+}
+
+.playTriangle {
+  width: 0;
+  height: 0;
+  border-left: 14px solid #ffffff;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+}
+
+/* Info under thumbnail */
+.videoInfo {
+  padding: 18px 20px 20px;
+}
+
+.videoInfo h4 {
+  margin: 0 0 4px;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.videoRole {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #a0a0a0;
+  font-family: "Archivo", sans-serif;
+}
+
+.videoSummary {
+  margin: 0;
+  font-family: "TT Hoves Pro Trial", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e2e2e2;
+}
+
+/* ---------- custom arrows (same spirit as text testimonial) ---------- */
+
+.customArrow {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 0;
+
+}
+
+.customArrow::before {
+  display: none !important;
+}
+
+/* place arrows centered below the slider, like text testimonials */
+.videoSliderWrapper :global(.slick-prev),
+.videoSliderWrapper :global(.slick-next) {
+  top: auto !important;
+  bottom: -50px !important;  /* distance under the cards */
+}
+
+/* horizontal placement under center */
+.prevArrow {
+  left: 50% !important;
+  transform: translateX(-60px);   /* move a bit left from center */
+}
+
+.nextArrow {
+  right: 50% !important;
+  transform: translateX(60px);    /* move a bit right from center */
+}
+
+.arrowIcon {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+  
+}
+
+/* ---------- Modal / Popup ---------- */
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  background: #050506;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+}
+
+.modalClose {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.modalVideoWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.modalVideoWrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1024px) {
+  .videoTestimonialBox {
+    padding: 50px 0 70px;
+  }
+
+  .videoHeading h3 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .videoHeading p {
+    max-width: 95%;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .videoCard {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .videoTestimonialBox {
+    padding: 40px 0 60px;
+  }
+
+  .videoHeading h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .videoHeading p {
+    font-size: 14px;
+  }
+
+  .videoSummary {
+    font-size: 13px;
+  }
+
+
+/* horizontal placement under center */
+.prevArrow {
+  left: 50% !important;
+  transform: translateX(-60px);
+}
+
+.nextArrow {
+  right: 50% !important;
+  transform: translateX(60px);
+}
+    .videoSliderWrapper :global(.slick-prev),
+  .videoSliderWrapper :global(.slick-next) {
+    bottom: -45px !important;
+  }
+}

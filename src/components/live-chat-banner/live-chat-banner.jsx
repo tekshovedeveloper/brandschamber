@@ -279,7 +279,7 @@ function MeetingModal({ isOpen, onClose }) {
 /* ------------ MAIN BANNER COMPONENT ------------ */
 
 export default function RevealBanner({
-  imageSrc = "/assets/home/live-chat-banner-image.webp", // change to your image path
+  imageSrc = "/assets/home/live-chat-banner.png", // change to your image path
   imageAlt = "We make the difference",
   onChatClick,
 }) {
@@ -308,38 +308,25 @@ export default function RevealBanner({
     setShowMeetingModal(true);
   };
 
-  return (
-    <>
-      <section
-        ref={sectionRef}
-        className={`${styles.section} ${inView ? styles.inView : ""}`}
-      >
-        {/* Book Meeting button */}
-        <div className={styles.chatWrapper}>
-          <button
-            type="button"
-            className={styles.chatButton}
-            onClick={handleBookMeetingClick}
-          >
-            Book Meeting
-          </button>
-        </div>
+ return (
+  <>
+    <section
+      ref={sectionRef}
+      className={`${styles.section} ${inView ? styles.inView : ""}`}
+    >
+      <div className={styles.bgWrapper}>
+        <div className={styles.bgInner}>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className={styles.image}
+          />
 
-        {/* Black background + animated image */}
-        <div className={styles.bgWrapper}>
-          <div className={styles.bgInner}>
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              priority
-              sizes="100vw"
-              className={styles.image}
-            />
-
-            {/* Sliding outlined text over the image */}
-            <div className={styles.textOverlay}>
-              <div className={styles.marquee}>
+          <div className={styles.textOverlay}>
+            <div className={styles.marquee}>
                 <span>WE MAKE THE DIFFERENCE&nbsp;</span>
                 <span>WE MAKE THE DIFFERENCE&nbsp;</span>
                 <span>WE MAKE THE DIFFERENCE&nbsp;</span>
@@ -357,16 +344,28 @@ export default function RevealBanner({
                 <span>WE MAKE THE DIFFERENCE&nbsp;</span>
                 <span>WE MAKE THE DIFFERENCE&nbsp;</span>
                 <span>WE MAKE THE DIFFERENCE&nbsp;</span>
-              </div>
-            </div>
+          </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <MeetingModal
-        isOpen={showMeetingModal}
-        onClose={() => setShowMeetingModal(false)}
-      />
-    </>
+      {/* Button below banner */}
+      <div className={styles.chatWrapper}>
+        <button
+          type="button"
+          className={styles.chatButton}
+          onClick={handleBookMeetingClick}
+        >
+          Book Meeting
+        </button>
+      </div>
+    </section>
+
+    <MeetingModal
+      isOpen={showMeetingModal}
+      onClose={() => setShowMeetingModal(false)}
+    />
+  </>
+
   );
 }

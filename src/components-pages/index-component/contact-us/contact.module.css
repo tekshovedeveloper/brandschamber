@@ -103,11 +103,11 @@
 
 /* social icons */
 .iconContainer .iconContainerHeading {
-  font-weight: 800;
+  font-weight: 900;
   font-family: "FontspringBD";
   margin-top: 28px;
   letter-spacing: 3;
-  font-size: 50px;
+  font-size: 36px;
   text-transform: capitalize;
   color: #fff;
 }

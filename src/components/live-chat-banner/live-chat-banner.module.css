@@ -85,25 +85,23 @@
 .section {
   position: relative;
   width: 100%;
-  background: #050608; /* black */
-  padding: 0;
+  padding: 0 0 20px;  /* extra bottom space under button */
   overflow: hidden;
 }
 
-/* Live Chat / Book Meeting button – top right */
+/* Book Meeting button – centered 50px below banner */
 .chatWrapper {
-  position: absolute;
-  top: 94px;
-  right: 18%;
-  z-index: 5;
+  /* margin-top: 50px;         */
+  display: flex;
+  justify-content: center;
 }
 
 .chatButton {
   padding: 10px 32px;
   border-radius: 999px;
   border: none;
-  background: #000000;
-  color: #ffffff;
+  background: #fff;
+  color: #000;
   font-size: 16px;
   font-weight: 700;
   font-family: "Archivo";
@@ -114,7 +112,7 @@
 }
 
 .chatButton:hover {
-  background: #111827;
+  background: #fff;
   transform: translateY(-1px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
 }
@@ -125,7 +123,7 @@
   width: 100%;
   max-width: none;
   margin: 0;
-  height: 60vh;
+  height: 40vh;
   overflow: hidden;
 }
 
@@ -173,8 +171,8 @@
   font-weight: 900;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 2px #ffffff;
-  text-stroke: 2px #ffffff;
+  -webkit-text-stroke: 1px #ffffff;
+  text-stroke: 1px #ffffff;
   letter-spacing: -0.02em;
 
   animation: marquee 120s linear infinite;
@@ -197,7 +195,7 @@
 
 @media (max-width: 1024px) {
   .bgWrapper {
-    height: 60vh;
+    height: 30vh;
   }
 
   .chatWrapper {
@@ -211,7 +209,7 @@
 
 @media (max-width: 640px) {
   .bgWrapper {
-    height: 60vh;
+    height: 20vh;
   }
 
   .bgInner {

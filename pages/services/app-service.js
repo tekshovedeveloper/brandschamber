@@ -4,7 +4,7 @@ import MainNavbar  from "@/components/main-nav-bar/main-nav-bar";
 import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button, Box } from "@mui/material";
 import styles from "../../src/styles/index.module.css";
 import BannerSection from "../../src/components-pages/App-component/banner-section/banner-section";
-
+import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 import SinglePortfolio from "@/components/single-portfolio/single-portfolio";
 import LiveChatBanner from "@/components/live-chat-banner/live-chat-banner"
 import Footer from "@/components/footer/footer";
@@ -55,6 +55,8 @@ export default function LogoService() {
       <MainNavbar />
        <BannerSection />
          <SinglePortfolio title="App" items={logoPortfolio} />
+         <ServicePricing id="mobile-app-pricing" service="Mobile App" />
+        
          <LiveChatBanner />
       <Footer /> 
     </main>

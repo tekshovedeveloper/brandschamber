@@ -9,7 +9,7 @@ import SeoStepsSlider from "@/components-pages/seo-optimization/seo-steps-slider
 import SinglePortfolio from "@/components/single-portfolio/single-portfolio";
 import LiveChatBanner from "@/components/live-chat-banner/live-chat-banner"
 import Footer from "@/components/footer/footer";
-
+import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 const inter = Inter({ subsets: ["latin"] });
 
 const logoPortfolio =[
@@ -57,6 +57,8 @@ export default function LogoService() {
        <BannerSection />
        <SeoApproachSection />
        <SeoStepsSlider />
+       <ServicePricing id="SEO" service="SEO" />
+       
          {/* <SinglePortfolio title="Logo" items={logoPortfolio} /> */}
         <LiveChatBanner />
       <Footer /> 

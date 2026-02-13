@@ -21,6 +21,7 @@ import PopularServices from "@/components-pages/index-component/popular-services
 import OfferPopup from "@/components/offer-popup/OfferPopup";
 import RevealBanner from "@/components/live-chat-banner/live-chat-banner";
 import AwardsSection from "@/components/award-section/AwardsSection";
+import VideoTestimonial from "@/components/video-testimonial/VideoTestimonial";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -60,7 +61,7 @@ export default function Home() {
         loop
         playsInline
       >
-        <source src="/assets/home/brands_chamber.mp4" type="video/mp4" />
+        <source src="/assets/home/brands-chamber-bg2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -76,6 +77,7 @@ export default function Home() {
         {/* <ShowWorkIndex /> */}
         <ChooseUs id="about" />
         <Pricing id="pricing" />
+        <VideoTestimonial />
         <Testimonial />
         {/* <LetsTalk /> */}
         <RevealBanner />
