@@ -1,6 +1,6 @@
 .videoTestimonialBox {
   width: 100%;
-  background-color: #0f0f10;
+  /* background-color: #0f0f10; */
   padding: 60px 0 90px;
   overflow: hidden;
 }
@@ -56,8 +56,35 @@
   box-sizing: border-box;
 }
 
-/* Card button */
 .videoCard {
+  width: 100%;
+  border-radius: 24px;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #151515;
+
+  transition: border 0.3s ease,    transform 0.35s ease;
+
+}
+
+.videoCard:hover {
+  border: 1px solid transparent;
+    transform: scale(1.04);
+  background:
+    linear-gradient(#151515, #151515) padding-box,
+    linear-gradient(180deg, #1941bf, #c861fe) border-box;
+}
+
+
+/* .videoCard {
   width: 100%;
   background: #151515;
   border-radius: 24px;
@@ -83,9 +110,8 @@
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
   border-color: #ffffff;
   background: #181818;
-}
+} */
 
-/* Thumbnail with play overlay */
 .thumbnailWrapper {
   position: relative;
   width: 100%;

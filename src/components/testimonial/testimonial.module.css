@@ -165,7 +165,7 @@
 
 .testimonialBox {
   width: 100%;
-  background-color: #0f0f10;
+  /* background-color: #0f0f10; */
   padding: 60px 0 90px;
   overflow: hidden;
 }
@@ -220,8 +220,46 @@
   padding: 0 12px;
 }
 
-/* Card */
+
 .testimonialCard {
+  background: #151515;
+  border-radius: 24px;
+  padding: 28px 36px;
+  color: #fff;
+  min-height: 170px;
+  margin-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* important */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.3s ease;
+}
+.testimonialCard:hover {
+  transform: scale(1.06);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(#151515, #151515) padding-box,
+    linear-gradient(180deg, #1941bf, #c861fe) border-box;
+
+  z-index: 5;
+}
+
+/* ✅ Hover specifically for CENTER card (overrides slick-center transform) */
+.testimonialSliderWrapper :global(.slick-center) .testimonialCard:hover {
+  transform: scale(1.04);
+  z-index: 10;
+}
+/* .testimonialCard {
   background: #151515;
   border-radius: 24px;
   padding: 28px 36px;
@@ -240,16 +278,16 @@
     border-color 0.4s ease,
     opacity 0.4s ease,
     filter 0.4s ease;
-}
+} */
 
 /* center slide highlight */
 .testimonialSliderWrapper :global(.slick-center) .testimonialCard {
-  border-color: #ffffff;
-  transform: scale(1.02);
+  /* transform: scale(1.03); */
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
   opacity: 1;
   filter: none;
 }
+
 
 /* side slides faded */
 .testimonialSliderWrapper

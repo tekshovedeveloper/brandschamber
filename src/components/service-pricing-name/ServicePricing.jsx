@@ -6,7 +6,7 @@ import {
   SERVICE_CATEGORIES,
   SERVICE_PRICING_DATA,
 } from "./servicePricingData";
-
+import MeetingModal from "../MeetingModal/MeetingModal";
 /**
  * ServicePricing
  *
@@ -26,6 +26,9 @@ export default function ServicePricing({ id, service }) {
   const cardsRef = useRef(null);
   const [headingInView, setHeadingInView] = useState(false);
   const [cardsInView, setCardsInView] = useState(false);
+  const [showMeetingModal, setShowMeetingModal] = useState(false);
+  const [selectedService, setSelectedService] = useState("Logo");
+  const [selectedPackage, setSelectedPackage] = useState("");
 
   useEffect(() => {
     const obs1 = new IntersectionObserver(
@@ -130,9 +133,18 @@ export default function ServicePricing({ id, service }) {
               </ul>
             </div>
 
-            <button type="button" className={styles.orderButton}>
+            <button
+              className={styles.orderButton}
+              type="button"
+              onClick={() => {
+                setSelectedService(activeCategory);     // ✅ auto preselect service
+                setSelectedPackage(pkg.title);          // optional
+                setShowMeetingModal(true);
+              }}
+            >
               Order Now
             </button>
+
           </div>
         ))}
 
@@ -142,6 +154,17 @@ export default function ServicePricing({ id, service }) {
           </div>
         )}
       </div>
+      <MeetingModal
+  isOpen={showMeetingModal}
+  onClose={() => setShowMeetingModal(false)}
+  defaultService={selectedService}
+  defaultMessage={
+    selectedPackage
+      ? `Hi, I’m interested in the ${selectedPackage} package. Please share next steps.`
+      : ""
+  }
+/>
+
     </section>
   );
 }

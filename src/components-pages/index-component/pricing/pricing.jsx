@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./pricing.module.css";
+import MeetingModal from "@/components/MeetingModal/MeetingModal";
+
 
 const CATEGORIES = [
   "Logo",
@@ -666,6 +668,10 @@ export default function Pricing({id}) {
 
   const [headingInView, setHeadingInView] = useState(false);
   const [cardsInView, setCardsInView] = useState(false);
+  const [showMeetingModal, setShowMeetingModal] = useState(false);
+  const [selectedService, setSelectedService] = useState("Logo");
+  const [selectedPackage, setSelectedPackage] = useState("");
+
 
   useEffect(() => {
     const obs1 = new IntersectionObserver(
@@ -750,12 +756,35 @@ export default function Pricing({id}) {
               </ul>
             </div>
 
-            <button className={styles.orderButton} type="button">
+            {/* <button className={styles.orderButton} type="button">
               Order Now
-            </button>
+            </button> */}
+                      <button
+            className={styles.orderButton}
+            type="button"
+            onClick={() => {
+              setSelectedService(activeCategory);     // ✅ auto preselect service
+              setSelectedPackage(pkg.title);          // optional
+              setShowMeetingModal(true);
+            }}
+          >
+            Order Now
+          </button>
+
           </div>
         ))}
       </div>
+          <MeetingModal
+      isOpen={showMeetingModal}
+      onClose={() => setShowMeetingModal(false)}
+      defaultService={selectedService}
+      defaultMessage={
+        selectedPackage
+          ? `Hi, I’m interested in the ${selectedPackage} package. Please share next steps.`
+          : ""
+      }
+    />
+
     </section>
   );
 }

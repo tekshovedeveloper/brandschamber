@@ -89,9 +89,7 @@
   overflow: hidden;
 }
 
-/* Book Meeting button – centered 50px below banner */
-.chatWrapper {
-  /* margin-top: 50px;         */
+/* .chatWrapper {
   display: flex;
   justify-content: center;
 }
@@ -115,6 +113,62 @@
   background: #fff;
   transform: translateY(-1px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+} */
+
+
+/* Center the button overlapping the banner */
+.chatWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* allows banner clicks */
+
+  z-index: 22;
+}
+
+.chatButton {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Archivo";
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.arrowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowIcon svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.25s ease;
+}
+
+.chatButton:hover {
+  transform: scale(1.08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+}
+
+.chatButton:hover .arrowIcon svg {
+  transform: scale(1.08);
 }
 
 /* Image container: full‑width, fixed 60vh height */
