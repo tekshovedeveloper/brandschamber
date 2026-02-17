@@ -156,23 +156,173 @@
 // export default MainNavbar;
 
 
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import Link from "next/link";
+// import styles from "./main-nav-bar.module.css";
+
+// export default function MainNavbar() {
+//   const [open, setOpen] = useState(false);
+//   const [mounted, setMounted] = useState(false);
+
+//   useEffect(() => {
+//     setMounted(true);
+//   }, []);
+
+//   const close = () => setOpen(false);
+
+//   return (
+//     <>
+//       <header className={`${styles.navbar} ${mounted ? styles.slideIn : ""}`}>
+//         <div className={styles.toolbar}>
+//           <div>
+//             <Link href="https://brandschamber.com/">
+//               <img
+//                 src="/assets/home/logo.svg"
+//                 alt="Brands Chamber logo"
+//                 className={styles.logo}
+//               />
+//             </Link>
+//           </div>
+
+//           <nav className={styles.navItems} aria-label="Main navigation">
+//             <Link href="https://brandschamber.com/"><button type="button">Home</button></Link>
+//             <Link href="#services"><button type="button">Services</button></Link>
+//             <Link href="#portfolio"><button type="button">Clients Testimonials</button></Link>
+//             <Link href="#about"><button type="button">About</button></Link>
+//             <Link href="#pricing"><button type="button">Pricing</button></Link>
+//             <Link href="#contact"><button type="button">Contact Us</button></Link>
+//           </nav>
+
+//           <div>
+//             <Link href="#contact">
+//             <button className={styles.numberButton} type="button">
+//               Let&apos;s Talk
+//             </button>
+            
+//             </Link>
+//           </div>
+
+//           <div className={styles.filterToolbarNavBarDiv}>
+//             <button
+//               className={styles.headingDrawerIcon}
+//               aria-label="Menu"
+//               type="button"
+//               onClick={() => setOpen(true)}
+//             >
+//               ☰
+//             </button>
+//           </div>
+//         </div>
+//       </header>
+
+//       <div
+//         className={`${styles.drawerOverlay} ${open ? styles.drawerOpen : ""}`}
+//         onClick={close}
+//         role="presentation"
+//       >
+//         <aside
+//           className={`${styles.drawer} ${open ? styles.drawerOpen : ""}`}
+//           onClick={(e) => e.stopPropagation()}
+//           aria-label="Mobile menu"
+//         >
+//           <div className={styles.drawerHeader}>
+//             <span className={styles.drawerTitle}>Menu</span>
+//             <button
+//               type="button"
+//               className={styles.drawerClose}
+//               aria-label="Close menu"
+//               onClick={close}
+//             >
+//               ✕
+//             </button>
+//           </div>
+
+//           <div className={styles.listRoot}>
+//             <Link className={styles.drawerLink} href="https://brandschamber.com/" onClick={close}>
+//               Home
+//             </Link>
+//             <Link className={styles.drawerLink} href="#services" onClick={close}>
+//               Services
+//             </Link>
+//             <Link className={styles.drawerLink} href="#portfolio" onClick={close}>
+//               Clients Testimonials
+//             </Link>
+//             <Link className={styles.drawerLink} href="#about" onClick={close}>
+//               About
+//             </Link>
+//             <Link className={styles.drawerLink} href="#pricing" onClick={close}>
+//               Pricing
+//             </Link>
+//             <Link className={styles.drawerLink} href="#contact" onClick={close}>
+//               Contact Us
+//             </Link>
+//           </div>
+//         </aside>
+//       </div>
+//       <a
+//         href="https://wa.me/13853911875"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className={styles.whatsappButton}
+//         aria-label="Chat with us on WhatsApp"
+//       >
+//          <img
+//     src="/assets/home/whatsapp.svg"
+//     alt="WhatsApp"
+//     className={styles.whatsappIcon}
+//   />
+//       </a>
+//     </>
+//   );
+// }
+
+
+
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./main-nav-bar.module.css";
-
+import { SERVICES } from "../../constants/service";
 export default function MainNavbar() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
+  // Desktop dropdown state
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef(null);
+
+  // Mobile accordion state
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileActiveParent, setMobileActiveParent] = useState(null);
+
   useEffect(() => {
-    // triggers slide-down animation
     setMounted(true);
   }, []);
 
-  // close drawer when clicking a link
-  const close = () => setOpen(false);
+  // Close desktop dropdown when clicking outside
+  useEffect(() => {
+    const handler = (e) => {
+      if (!servicesRef.current) return;
+      if (!servicesRef.current.contains(e.target)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const close = () => {
+    setOpen(false);
+    setMobileServicesOpen(false);
+    setMobileActiveParent(null);
+  };
+
+  const onMobileParentClick = (label) => {
+    setMobileActiveParent((prev) => (prev === label ? null : label));
+  };
 
   return (
     <>
@@ -192,21 +342,81 @@ export default function MainNavbar() {
 
           {/* Desktop nav links */}
           <nav className={styles.navItems} aria-label="Main navigation">
-            <Link href="https://brandschamber.com/"><button type="button">Home</button></Link>
-            <Link href="#services"><button type="button">Services</button></Link>
-            <Link href="#portfolio"><button type="button">Clients Testimonials</button></Link>
-            <Link href="#about"><button type="button">About</button></Link>
-            <Link href="#pricing"><button type="button">Pricing</button></Link>
-            <Link href="#contact"><button type="button">Contact Us</button></Link>
+            <Link href="https://brandschamber.com/">
+              <button type="button">Home</button>
+            </Link>
+
+            {/* SERVICES DROPDOWN (Desktop) */}
+            <div className={styles.dropdownWrap} ref={servicesRef}>
+
+              <button
+                type="button"
+                className={styles.dropdownTrigger}
+                aria-haspopup="menu"
+                aria-expanded={servicesOpen}
+                onClick={() => setServicesOpen((v) => !v)}
+              >
+                Services <span className={styles.caret}>▾</span>
+              </button>
+
+              {servicesOpen && (
+                <div className={styles.dropdownMenu} role="menu">
+                  {SERVICES.map((s) => {
+                    const hasChildren = Array.isArray(s.children) && s.children.length > 0;
+
+                    return (
+                      <div className={styles.dropdownItemWrap} key={s.href || s.label}>
+                        <Link
+                          href={s.href}
+                          className={styles.dropdownItem}
+                          role="menuitem"
+                          onClick={() => setServicesOpen(false)}
+                        >
+                          {s.label}
+                        </Link>
+
+                        {/* Sub-services (future) */}
+                        {hasChildren && (
+                          <div className={styles.subMenu}>
+                            {s.children.map((c) => (
+                              <Link
+                                key={c.href}
+                                href={c.href}
+                                className={styles.subMenuItem}
+                                onClick={() => setServicesOpen(false)}
+                              >
+                                {c.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            <Link href="#portfolio">
+              <button type="button">Clients Testimonials</button>
+            </Link>
+            <Link href="#about">
+              <button type="button">About</button>
+            </Link>
+            <Link href="#pricing">
+              <button type="button">Pricing</button>
+            </Link>
+            <Link href="#contact">
+              <button type="button">Contact Us</button>
+            </Link>
           </nav>
 
           {/* Right-side CTA */}
           <div>
             <Link href="#contact">
-            <button className={styles.numberButton} type="button">
-              Let&apos;s Talk
-            </button>
-            
+              <button className={styles.numberButton} type="button">
+                Let&apos;s Talk
+              </button>
             </Link>
           </div>
 
@@ -251,9 +461,67 @@ export default function MainNavbar() {
             <Link className={styles.drawerLink} href="https://brandschamber.com/" onClick={close}>
               Home
             </Link>
-            <Link className={styles.drawerLink} href="#services" onClick={close}>
-              Services
-            </Link>
+
+            {/* SERVICES (Mobile Accordion) */}
+            <button
+              type="button"
+              className={styles.drawerAccordionBtn}
+              onClick={() => setMobileServicesOpen((v) => !v)}
+              aria-expanded={mobileServicesOpen}
+            >
+              Services <span className={styles.caret}>▾</span>
+            </button>
+
+            {mobileServicesOpen && (
+              <div className={styles.drawerSubList}>
+                {SERVICES.map((s) => {
+                  const hasChildren = Array.isArray(s.children) && s.children.length > 0;
+                  const isOpen = mobileActiveParent === s.label;
+
+                  return (
+                    <div key={s.href || s.label} className={styles.drawerSubItemWrap}>
+                      <div className={styles.drawerSubRow}>
+                        <Link
+                          href={s.href}
+                          className={styles.drawerSubLink}
+                          onClick={close}
+                        >
+                          {s.label}
+                        </Link>
+
+                        {hasChildren && (
+                          <button
+                            type="button"
+                            className={styles.drawerMiniToggle}
+                            onClick={() => onMobileParentClick(s.label)}
+                            aria-expanded={isOpen}
+                            aria-label={`Toggle ${s.label} sub services`}
+                          >
+                            ▸
+                          </button>
+                        )}
+                      </div>
+
+                      {hasChildren && isOpen && (
+                        <div className={styles.drawerSubChildren}>
+                          {s.children.map((c) => (
+                            <Link
+                              key={c.href}
+                              href={c.href}
+                              className={styles.drawerChildLink}
+                              onClick={close}
+                            >
+                              {c.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
             <Link className={styles.drawerLink} href="#portfolio" onClick={close}>
               Clients Testimonials
             </Link>
@@ -269,7 +537,7 @@ export default function MainNavbar() {
           </div>
         </aside>
       </div>
-         {/* Floating WhatsApp Button – OUTSIDE header/drawer */}
+
       {/* Floating WhatsApp Button */}
       <a
         href="https://wa.me/13853911875"
@@ -278,12 +546,7 @@ export default function MainNavbar() {
         className={styles.whatsappButton}
         aria-label="Chat with us on WhatsApp"
       >
-        {/* You can replace this with an <img> icon if you have one */}
-         <img
-    src="/assets/home/whatsapp.svg"
-    alt="WhatsApp"
-    className={styles.whatsappIcon}
-  />
+        <img src="/assets/home/whatsapp.svg" alt="WhatsApp" className={styles.whatsappIcon} />
       </a>
     </>
   );

@@ -7,6 +7,7 @@ import BannerSection from "../../src/components-pages/App-component/banner-secti
 import SinglePortfolio from "@/components/single-portfolio/single-portfolio";
 import LiveChatBanner from "@/components/live-chat-banner/live-chat-banner"
 import Footer from "@/components/footer/footer";
+import Testimonial from "@/components/testimonial/testimonial";
 import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,6 +56,7 @@ export default function LogoService() {
        <BannerSection />
          <SinglePortfolio title="Website" items={logoPortfolio} />
          <ServicePricing id="website-pricing" service="Website" />
+          <Testimonial />
          
           <LiveChatBanner />
       <Footer /> 
