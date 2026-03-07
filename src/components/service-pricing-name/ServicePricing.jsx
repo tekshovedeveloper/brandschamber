@@ -7,14 +7,13 @@ import {
   SERVICE_PRICING_DATA,
 } from "./servicePricingData";
 import MeetingModal from "../MeetingModal/MeetingModal";
+
 /**
  * ServicePricing
  *
  * Props:
- * - id?: string        – section id for anchor links.
- * - service?: string   – category name (e.g. "Logo", "Website").
- *                        If provided => only that category shown (no tabs).
- *                        If omitted  => full tabbed pricing (all categories).
+ * - id?: string
+ * - service?: string
  */
 export default function ServicePricing({ id, service }) {
   const serviceSpecific = !!service;
@@ -49,7 +48,6 @@ export default function ServicePricing({ id, service }) {
     };
   }, []);
 
-  // keep activeCategory in sync if `service` prop changes
   useEffect(() => {
     if (service && SERVICE_PRICING_DATA[service]) {
       setActiveCategory(service);
@@ -63,24 +61,14 @@ export default function ServicePricing({ id, service }) {
 
   return (
     <section id={id} className={styles.pricingBox}>
-      {/* Heading */}
+          
       <div
         ref={headingRef}
         className={`${styles.pricingHeading} ${
           headingInView ? styles.pricingAnimate : ""
         }`}
-      >
-        {/* <h3>Affordable Pricing</h3>
-        <p>
-          We at Brands Chamber thrive to ensure that our customers are. Our
-          packages have been meticulously created for all businesses. Obtain
-          appealing design deals at special prices to elevate your brand. We
-          guarantee the highest level of client satisfaction while providing our
-          great services at the most competitive prices!
-        </p> */}
-      </div>
+      />
 
-      {/* Category tabs (only on global pricing, not on individual service pages) */}
       {!serviceSpecific && (
         <div className={styles.pricingButtonRow}>
           {SERVICE_CATEGORIES.map((cat) => (
@@ -98,15 +86,19 @@ export default function ServicePricing({ id, service }) {
         </div>
       )}
 
-      {/* Optional label on service pages */}
       {serviceSpecific && (
-  <div className={styles.serviceDividerWrapper}>
-    <span className={styles.serviceDividerText}>{service} Packages</span>
-    <span className={styles.serviceDividerLine} />
-  </div>
-)}
+          <div className={styles.header}>
+              <h2 className={styles.heading}>AFFORDABLE PRICING</h2>
+              {/* <p className={styles.subheading}>
+                Every logo in our portfolio was built for a real business with a real goal. Browse our work and see how we've helped small businesses across industries establish identities that stand out, scale up, and stick. 
+              </p> */}
+            </div>
+        // <div className={styles.serviceDividerWrapper}>
+        //   <span className={styles.serviceDividerText}>{service} Packages</span>
+        //   <span className={styles.serviceDividerLine} />
+        // </div>
+      )}
 
-      {/* Cards */}
       <div
         ref={cardsRef}
         className={`${styles.pricingContainer} ${
@@ -118,33 +110,34 @@ export default function ServicePricing({ id, service }) {
             key={`${activeCategory}-${pkg.title}`}
             className={styles.pricingCard}
           >
-            <div className={styles.mainTextDiv}>
-              <h2 className={styles.websiteName}>{pkg.title}</h2>
-              {pkg.desc && <p className={styles.mainText}>{pkg.desc}</p>}
+            <div className={styles.cardInner}>
+              <div className={styles.mainTextDiv}>
+                <h2 className={styles.websiteName}>{pkg.title}</h2>
+                {pkg.desc && <p className={styles.mainText}>{pkg.desc}</p>}
+              </div>
+
+              <h3 className={styles.websitePrice}>{pkg.price}</h3>
+
+              <div className={styles.servicesList}>
+                <ul>
+                  {pkg.features.map((f, idx) => (
+                    <li key={`${pkg.title}-${idx}`}>{f}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <button
+                className={styles.orderButton}
+                type="button"
+                onClick={() => {
+                  setSelectedService(activeCategory);
+                  setSelectedPackage(pkg.title);
+                  setShowMeetingModal(true);
+                }}
+              >
+                Quote Now
+              </button>
             </div>
-
-            <h3 className={styles.websitePrice}>{pkg.price}</h3>
-
-            <div className={styles.servicesList}>
-              <ul>
-                {pkg.features.map((f, idx) => (
-                  <li key={`${pkg.title}-${idx}`}>{f}</li>
-                ))}
-              </ul>
-            </div>
-
-            <button
-              className={styles.orderButton}
-              type="button"
-              onClick={() => {
-                setSelectedService(activeCategory);     // ✅ auto preselect service
-                setSelectedPackage(pkg.title);          // optional
-                setShowMeetingModal(true);
-              }}
-            >
-              Order Now
-            </button>
-
           </div>
         ))}
 
@@ -154,17 +147,17 @@ export default function ServicePricing({ id, service }) {
           </div>
         )}
       </div>
-      <MeetingModal
-  isOpen={showMeetingModal}
-  onClose={() => setShowMeetingModal(false)}
-  defaultService={selectedService}
-  defaultMessage={
-    selectedPackage
-      ? `Hi, I’m interested in the ${selectedPackage} package. Please share next steps.`
-      : ""
-  }
-/>
 
+      <MeetingModal
+        isOpen={showMeetingModal}
+        onClose={() => setShowMeetingModal(false)}
+        defaultService={selectedService}
+        defaultMessage={
+          selectedPackage
+            ? `Hi, I’m interested in the ${selectedPackage} package. Please share next steps.`
+            : ""
+        }
+      />
     </section>
   );
 }

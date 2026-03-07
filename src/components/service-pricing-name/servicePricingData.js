@@ -9,7 +9,10 @@ export const SERVICE_CATEGORIES = [
   "SEO",
   "SMM",
   "Label Design",
-  "Book Cover",        // ✅ NEW
+  "Book Cover",
+  "UI/UX",
+  "Video Creation",
+  "Graphics Designing",
 ];
 
 // ---------- LOGO ----------
@@ -73,51 +76,6 @@ export const LOGO_PACKAGES = [
       "Free Icon Design",
       "Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG",
       "24 - 48 Business Hours Turn Around Time",
-      "MORE FEATURES",
-      "100% Satisfaction",
-      "100% Ownership Rights",
-      "Money Back Guarantee",
-      "Dedicated Account Manager",
-    ],
-  },
-  {
-    title: "Logo Infinite",
-    price: "$1249",
-    desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
-    features: [
-      "Unlimited Original Logo Concepts",
-      "12 Dedicated Logo Designer (Industry Specific)",
-      "Unlimited Revisions",
-      "5 Page Informative Website",
-      "Stationery Design (Business Card, Letterhead, Envelope)",
-      "Brand Book",
-      "Email Signature Design",
-      "Social Media Designs (Facebook, Twitter, Instagram)",
-      "2 Sided Flyer OR Bi-Fold Brochure Design",
-      "With Grey Scale Format",
-      "Free Icon Design",
-      "Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG",
-      "24 - 48 Business Hours Turn Around Time",
-      "MORE FEATURES",
-      "100% Satisfaction",
-      "100% Ownership Rights",
-      "Money Back Guarantee",
-      "Dedicated Account Manager",
-    ],
-  },
-  {
-    title: "Mascot Logo",
-    price: "$599",
-    desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
-    features: [
-      "2 Mascot Logo Concepts",
-      "Unlimited Revisions",
-      "Hand drawn Sketch",
-      "Presentation on mockup",
-      "24 - 48 Business Hours Turn Around Time",
-      "File Formats: Ai,Eps,Png,Jpeg,pdf",
       "MORE FEATURES",
       "100% Satisfaction",
       "100% Ownership Rights",
@@ -314,7 +272,6 @@ export const WEBSITE_PACKAGES = [
   },
 ];
 
-
 // ---------- MOBILE APP ----------
 export const MOBILE_APP_PACKAGES = [
   {
@@ -394,7 +351,6 @@ export const MOBILE_APP_PACKAGES = [
     ],
   },
 ];
-
 
 // ---------- ANIMATION ----------
 export const ANIMATION_PACKAGES = [
@@ -739,7 +695,7 @@ export const LABEL_PACKAGES = [
   },
 ];
 
-// ---------- BOOK COVER (NEW) ----------
+// ---------- BOOK COVER ----------
 export const BOOK_COVER_PACKAGES = [
   {
     title: "Book Cover Basic",
@@ -799,6 +755,168 @@ export const BOOK_COVER_PACKAGES = [
   },
 ];
 
+// ---------- UI/UX ----------
+export const UI_UX_PACKAGES = [
+  {
+    title: "UI/UX Starter",
+    price: "$299",
+    desc: "Essential UI/UX package for landing pages and small digital products.",
+    features: [
+      "Up to 5 Screens",
+      "Wireframes Included",
+      "Basic User Flow",
+      "Clean Visual Interface Design",
+      "Mobile or Web (One Platform)",
+      "Figma Source File",
+      "2 Rounds of Revisions",
+      "5–7 Business Days Turnaround",
+      "100% Ownership Rights",
+    ],
+  },
+  {
+    title: "UI/UX Growth",
+    price: "$699",
+    desc: "A complete design solution for startups and growing apps.",
+    features: [
+      "Up to 12 Screens",
+      "Low + High Fidelity Wireframes",
+      "User Journey Mapping",
+      "Responsive UI Design",
+      "Design System Basics",
+      "Clickable Prototype",
+      "Figma Source File",
+      "Unlimited Revisions",
+      "Dedicated Account Manager",
+      "100% Ownership Rights",
+    ],
+  },
+  {
+    title: "UI/UX Premium",
+    price: "$1299",
+    desc: "Advanced product design for SaaS, mobile apps, and complex platforms.",
+    features: [
+      "Up to 25 Screens",
+      "UX Research & Competitor Review",
+      "Advanced User Flows",
+      "High-Fidelity UI Design",
+      "Full Design System",
+      "Interactive Prototype",
+      "Developer Handoff in Figma",
+      "Unlimited Revisions",
+      "Priority Support",
+      "100% Ownership Rights",
+    ],
+  },
+];
+
+// ---------- VIDEO CREATION ----------
+export const VIDEO_CREATION_PACKAGES = [
+  {
+    title: "Video Starter",
+    price: "$399",
+    desc: "A polished short-form video package for promotions and social media.",
+    features: [
+      "Up to 30 Seconds Duration",
+      "Basic Editing",
+      "Text Animations",
+      "Background Music",
+      "Logo Intro/Outro",
+      "HD Export",
+      "2 Revisions",
+      "Social Media Ready Format",
+      "100% Ownership Rights",
+    ],
+  },
+  {
+    title: "Video Growth",
+    price: "$799",
+    desc: "Professional brand video with stronger storytelling and motion design.",
+    features: [
+      "Up to 60 Seconds Duration",
+      "Professional Editing",
+      "Motion Graphics",
+      "Stock Footage Support",
+      "Brand Color & Typography Styling",
+      "Voice-over Sync",
+      "HD / Full HD Export",
+      "Unlimited Revisions",
+      "Dedicated Project Manager",
+      "100% Ownership Rights",
+    ],
+  },
+  {
+    title: "Video Premium",
+    price: "$1499",
+    desc: "High-end commercial quality video content for campaigns and brands.",
+    features: [
+      "Up to 90 Seconds Duration",
+      "Advanced Editing & Transitions",
+      "Custom Motion Graphics",
+      "Storyboard Assistance",
+      "Voice-over Integration",
+      "Sound Design & Music",
+      "4K Export",
+      "Multiple Platform Versions",
+      "Unlimited Revisions",
+      "Priority Support",
+      "100% Ownership Rights",
+    ],
+  },
+];
+
+// ---------- GRAPHICS DESIGNING ----------
+export const GRAPHICS_DESIGNING_PACKAGES = [
+  {
+    title: "Graphics Starter",
+    price: "$249",
+    desc: "Perfect for small businesses needing quick branded visuals.",
+    features: [
+      "3 Design Concepts",
+      "Social Media Post Design Set",
+      "Flyer or Poster Design",
+      "Brand Color Usage",
+      "Print-ready Files",
+      "JPEG / PNG / PDF Formats",
+      "2 Revisions",
+      "Fast Turnaround",
+      "100% Ownership Rights",
+    ],
+  },
+  {
+    title: "Graphics Growth",
+    price: "$599",
+    desc: "A complete graphics package for marketing and daily content needs.",
+    features: [
+      "6 Design Concepts",
+      "Social Media Creatives Bundle",
+      "Brochure / Flyer / Poster Design",
+      "Ad Banner Design",
+      "Brand Consistency Across Assets",
+      "Print-ready + Source Files",
+      "Unlimited Revisions",
+      "Dedicated Account Manager",
+      "100% Ownership Rights",
+    ],
+  },
+  {
+    title: "Graphics Premium",
+    price: "$1099",
+    desc: "A premium graphics solution for campaigns, launches, and ongoing branding.",
+    features: [
+      "10 Custom Design Concepts",
+      "Full Marketing Collateral Set",
+      "Social Media + Ads + Print Assets",
+      "Presentation / Pitch Deck Support",
+      "Advanced Creative Direction",
+      "Source Files Included",
+      "Unlimited Revisions",
+      "Priority Support",
+      "Brand Asset Organization",
+      "100% Ownership Rights",
+    ],
+  },
+];
+
 // ---------- map category -> packages ----------
 export const SERVICE_PRICING_DATA = {
   Logo: LOGO_PACKAGES,
@@ -809,5 +927,8 @@ export const SERVICE_PRICING_DATA = {
   SEO: SEO_PACKAGES,
   SMM: SMM_PACKAGES,
   "Label Design": LABEL_PACKAGES,
-  "Book Cover": BOOK_COVER_PACKAGES,     // ✅ NEW
+  "Book Cover": BOOK_COVER_PACKAGES,
+  "UI/UX": UI_UX_PACKAGES,
+  "Video Creation": VIDEO_CREATION_PACKAGES,
+  "Graphics Designing": GRAPHICS_DESIGNING_PACKAGES,
 };

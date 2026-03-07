@@ -3,11 +3,13 @@ import { Inter } from "next/font/google";
 import MainNavbar  from "@/components/main-nav-bar/main-nav-bar";
 import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button, Box } from "@mui/material";
 import styles from "../../src/styles/index.module.css";
-import BannerSection from "../../src/components-pages/App-component/banner-section/banner-section";
 import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 import SinglePortfolio from "@/components/single-portfolio/single-portfolio";
 import LiveChatBanner from "@/components/live-chat-banner/live-chat-banner"
 import Footer from "@/components/footer/footer";
+import BrandSection from "@/components/brand-section/banner-section";
+import RunningSlider from "@/components/running-slider/running-slider";
+
 import Testimonial from "@/components/testimonial/testimonial";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +25,8 @@ const logoPortfolio =[
       { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 9" },
       { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 10" },
        { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 11" },
+      { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },
+      { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },
       { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },
 
   
@@ -47,14 +51,32 @@ export default function LogoService() {
         loop
         playsInline
       >
-        <source src="/assets/brands_chamber.mp4" type="video/mp4" />
+        <source src="/assets/home/brands-chamber-bg2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
 
+
       <MainNavbar />
-       <BannerSection />
-         <SinglePortfolio title="App" items={logoPortfolio} />
+                 <BrandSection
+           id="service-banner"
+           title={`Your Business Deserves Its Own App`}
+           highlightText="From idea to App Store — we handle everything. "
+           description={`Your customers are on their phones — all day, every day. A well-built mobile app puts your business in their pocket, keeps them engaged, and gives you a direct line to the people who matter most. At Brands Chamber, we build mobile apps that are fast, functional, and built for real business results.
+From idea to App Store — we handle everything. `}
+           image="/assets/logo-service/logo-banner.gif"
+           imageAlt="Logo design showcase"
+           buttonText="Book Your Free Consultation"
+           buttonHref="#contact"
+         />
+         <RunningSlider
+             text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
+           />
+         <SinglePortfolio 
+         title="App" 
+         heading="Our App Portfolio"
+         subheading="Explore the apps we’ve designed and developed. Each project combines sleek design, smooth functionality, and user-focused experiences to bring ideas to life on every device. "
+         items={logoPortfolio} />
          <ServicePricing id="mobile-app-pricing" service="Mobile App" />
         <Testimonial />
          

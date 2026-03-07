@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Integral-cf.ttf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-35px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hero {
+  width: 100%;
+  padding: 70px 24px 40px;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(-35px);
+}
+
+.inView {
+  opacity: 1;
+  animation: slideInFromTop 1s ease forwards;
+}
+
+.inner {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.content {
+  width: 50%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+ font-family: "FontspringBD";
+  font-size: 60px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: left;
+  line-height: 70px;
+  margin-top: 50px;
+}
+
+.description {
+  margin: 18px 0 0;
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 560px;
+}
+
+.highlightLine {
+  margin: 8px 0 0;
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 700;
+  color: #ffffff;
+  max-width: 560px;
+}
+
+.ctaLink {
+  text-decoration: none;
+}
+
+.ctaButton {
+  margin-top: 24px;
+  min-width: 190px;
+  height: 46px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #1941bf, #c861fe);
+  color: #fff;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.visual {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1.45 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1200px) {
+  .inner {
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 52px;
+  }
+
+  .description,
+  .highlightLine {
+    font-size: 15px;
+  }
+
+  .imageWrapper {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 60px 20px 30px;
+  }
+
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+  }
+
+  .content,
+  .visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .visual {
+    justify-content: flex-start;
+  }
+
+  .imageWrapper {
+    max-width: 420px;
+  }
+
+  .title {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 50px 16px 24px;
+  }
+
+  .title {
+    font-size: 38px;
+    line-height: 1;
+  }
+
+  .description,
+  .highlightLine {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .ctaButton {
+    min-width: 170px;
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+    border-radius: 14px;
+  }
+}

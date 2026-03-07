@@ -13,13 +13,16 @@ const SERVICES = [
   // { label: "E‑Commerce Development", href: "/services/ecommerce-development" },
   { label: "Logo Design", href: "/services/logo-service" }, //
   // { label: "Mobile UI/UX", href: "/services/mobile-ui-ux" },
-  { label: "SEO Services", href: "/services/search-engine-optimization" }, //
-  { label: "Logo Animations", href: "/services/logo-animation-service" }, //
-  { label: "Book Cover", href: "/services/book-cover" }, //
-  { label: "Book Cover Animations", href: "/services/book-animation-service" }, //
+  // { label: "SEO Services", href: "/services/search-engine-optimization" }, //
+  // { label: "Logo Animations", href: "/services/logo-animation-service" }, //
+  // { label: "Book Cover", href: "/services/book-cover" }, //
+  // { label: "Book Cover Animations", href: "/services/book-animation-service" }, //
   // { label: "Social Media Marketing", href: "/services/social-media-marketing", },
   // { label: "Web Design", href: "/services/web-design" },
   { label: "Web Development", href: "/services/website-service" }, //
+  { label: "UI/UX", href: "/services/ui-ux-service" }, //
+  { label: "Video Creation", href: "/services/video-creation-service" }, //
+  { label: "Branding", href: "/services/branding-service" }, //
   // add/remove services here as needed
 ];
 

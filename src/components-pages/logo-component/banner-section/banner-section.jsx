@@ -2,9 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./banner-section.module.css";
 
-export default function BrandSection({ id }) {
+export default function BrandSection({
+  id,
+  title = "YOUR BUSINESS DESERVES ITS OWN APP",
+  description = `Your customers are on their phones — all day, every day. A well-built mobile app puts your business in their pocket, keeps them engaged, and gives you a direct line to the people who matter most. At Brands Chamber, we build mobile apps that are fast, functional, and built for real business results. From idea to App Store — we handle everything.`,
+  image = "/assets/logo-service/logo-banner.gif",
+  imageAlt = "Service banner image",
+  buttonText = "Book Your Free Consultation",
+  buttonHref = "#contact",
+}) {
   const sectionRef = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -27,36 +36,27 @@ export default function BrandSection({ id }) {
       className={`${styles.hero} ${inView ? styles.inView : ""}`}
     >
       <div className={styles.inner}>
-        {/* LEFT: text */}
         <div className={styles.content}>
-          <h1 className={styles.title}>
-            TRANSFORM YOUR
-           
-            BRAND IDENTITY WITH
-           
-            META WEB PRO
-          </h1>
+          <h1 className={styles.title}>{title}</h1>
 
-          <p className={styles.description}>
-            At Meta Web Pro, we offer expert{" "}
-            <span className={styles.highlight}>logo design services</span> in{" "}
-            <span className={styles.highlight}>Florida</span>, crafting logos
-            that define your brand’s identity with precision and purpose.
-            Blending creativity with strategy, our logos are built to be clear,
-            memorable, and impactful—ensuring your business stands out and
-            connects instantly with your audience.
-          </p>
+          <p className={styles.description}>{description}</p>
+
+          <Link href={buttonHref} className={styles.ctaLink}>
+            <button type="button" className={styles.ctaButton}>
+              {buttonText}
+            </button>
+          </Link>
         </div>
 
-        {/* RIGHT: GIF / logo visual */}
         <div className={styles.visual}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/assets/logo-service/logo-banner.gif"   // public/assets/logo-banner.gif
-              alt="Meta Web Pro logo"
+              src={image}
+              alt={imageAlt}
               fill
               className={styles.image}
-              sizes="(max-width: 900px) 60vw, 400px"
+              sizes="(max-width: 900px) 100vw, 420px"
+              priority
             />
           </div>
         </div>

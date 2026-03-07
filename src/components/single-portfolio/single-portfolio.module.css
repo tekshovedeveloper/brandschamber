@@ -1,12 +1,32 @@
-@font-face {
+/* @font-face {
   font-family: "archivo";
   src: url("/fonts/Archivo_Condensed-SemiBold.ttf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+} */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Integral-cf.ttf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo-Regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* ===== Layout wrapper ===== */
+
+
+
 
 .wrapper {
   width: 100%;
@@ -14,89 +34,163 @@
   color: #ffffff;
 }
 
-/* top header with line & centered title */
 .header {
-  max-width: 90%;
-  margin: 0 auto 74px;
-  padding-top: 12px;
-  border-bottom: 2px solid #2b4575;
+  max-width: 720px;
+  margin: 0 auto 34px auto;
   text-align: center;
+}
+
+.heading {
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+}
+
+.subheading {
+  font-size: 18px;
+  font-family: "Archivo" !important;
+  font-weight: 400;
+  line-height: 180%;
+  text-align: center;
+  margin-top: 6px;
+  padding-bottom: 20px;
 }
 
 .title {
   display: inline-block;
   margin: 0;
   padding: 0 18px 20px 18px;
-  /* font-size: 20px; */
-  /* font-weight: 600; */
   text-transform: capitalize;
   font-family: "Archivo", sans-serif;
   font-size: 18px;
 }
 
-/* ===== Grid ===== */
-
-.grid {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto 32px;
-  display: grid;
-  gap: 24px;
-  padding: 0 170px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-/* Card look */
-
-.card {
-  height: 390px;
-  background: rgba(7, 10, 22, 0.95);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(33, 43, 79, 0.8);
+.groupsWrapper {
   display: flex;
   flex-direction: column;
+  gap: 40px;
+}
+
+/* =========================================================
+   SAME STYLE AS POPULAR SERVICES GRID
+   ========================================================= */
+
+.cardsGrid {
+  position: relative;
+  width: 1112.96px;
+  height: 925.59px;
+  margin: 0 auto;
+
+  --colW: 356.32px;
+  --gap: 22px;
+
+  --x2: calc(var(--colW) + var(--gap));
+  --x3: calc((var(--colW) * 2) + (var(--gap) * 2));
+
+  --y1: 0px;
+  --y4: calc(298.24px + var(--gap));
+  --y5: calc(212.61px + var(--gap));
+  --yBottomRow: calc(540.38px + var(--gap));
+}
+
+.a,
+.b,
+.c,
+.d,
+.e,
+.f,
+.g {
+  position: absolute;
+}
+
+.a {
+  left: 0px;
+  top: var(--y1);
+  width: 356.32px;
+  height: 298.24px;
+}
+
+.c {
+  left: var(--x2);
+  top: var(--y1);
+  width: 356.32px;
+  height: 540.38px;
+}
+
+.d {
+  left: var(--x3);
+  top: var(--y1);
+  width: 356.32px;
+  height: 212.61px;
+}
+
+.b {
+  left: 0px;
+  top: var(--y4);
+  width: 356.32px;
+  height: 216.61px;
+}
+
+.e {
+  left: var(--x3);
+  top: var(--y5);
+  width: 356.32px;
+  height: 298.34px;
+}
+
+.f {
+  left: 0px;
+  top: var(--yBottomRow);
+  width: 734.64px;
+  height: 363.21px;
+}
+
+.g {
+  left: var(--x3);
+  top: var(--yBottomRow);
+  width: 356.32px;
+  height: 363.21px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.75);
-  border-color: rgba(79, 70, 229, 0.8);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.65);
 }
 
-.cardHeader {
-  height: 30px;
-  background: #1f2125;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  gap: 6px;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: #6b7280;
-}
-
-/* image / video area */
-.imageWrapper {
+.mediaViewport {
   position: relative;
   width: 100%;
   height: 100%;
-  flex: 1;             /* fill remaining card height below header */
+  border-radius: 5px;
   overflow: hidden;
+  background: transparent;
 }
 
-/* shared class for both <Image> and <video> */
-.image {
-  position: absolute;
-  inset: 0;
+.mediaInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.media {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -107,29 +201,24 @@
 .buttonRow {
   display: flex;
   justify-content: center;
-  margin-top: 12px;
+  margin-top: 20px;
 }
 
 .loadMoreButton {
   min-width: 170px;
   padding: 13px 40px;
   margin-top: 10px;
-
   background: transparent;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.35);
-
-  font-family: "Archivo", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  font-family: "Archivo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #f9fafb;
-
   cursor: pointer;
   position: relative;
   overflow: hidden;
   z-index: 1;
-
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
@@ -183,56 +272,56 @@
   transform: scale(1);
 }
 
-/* ===== Modal / Lightbox ===== */
+/* ===== Modal ===== */
 
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 80;
+  z-index: 999;
 }
 
 .modalContent {
   position: relative;
-  max-width: 1100px;
-  width: min(90vw, 1100px);
-  background: transparent;
+  width: 90%;
+  max-width: 900px;
+  max-height: 80vh;
+  padding: 16px 48px;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-/* bigger container for the image/video */
 .modalImageWrapper {
   position: relative;
   width: 100%;
-  height: min(70vh, 720px);
-  background: #1a133000;
-  border-radius: 24px;
+  height: 60vh;
+  min-height: 260px;
+  border-radius: 5px;
   overflow: hidden;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.9);
 }
 
-/* shared for modal image & video */
 .modalImage {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* Close button (top-right) */
 .closeButton {
   position: absolute;
-  top: -40px;
-  right: 0;
+  top: 12px;
+  right: 18px;
   width: 32px;
   height: 32px;
   border-radius: 999px;
   border: none;
-  background: #111827;
+  background: rgba(15, 23, 42, 0.9);
   color: #f9fafb;
   font-size: 22px;
   line-height: 1;
@@ -242,7 +331,6 @@
   justify-content: center;
 }
 
-/* Navigation arrows */
 .navButton {
   position: absolute;
   top: 50%;
@@ -251,7 +339,7 @@
   height: 38px;
   border-radius: 999px;
   border: none;
-  background: #111827;
+  background: rgba(15, 23, 42, 0.9);
   color: #f9fafb;
   font-size: 24px;
   cursor: pointer;
@@ -262,81 +350,103 @@
 }
 
 .prevButton {
-  left: -70px;
+  left: 14px;
 }
 
 .nextButton {
-  right: -70px;
+  right: 14px;
 }
 
 /* ===== Responsive ===== */
 
-/* Slightly smaller screens (≤1200px) – just reduce side padding */
 @media (max-width: 1200px) {
-  .grid {
-    padding: 0 0px;
-  }
-}
-
-/* Tablets and small laptops (≤1024px) – 2 columns, 50% each */
-@media (max-width: 1024px) {
-  .grid {
-    padding: 0 10px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    margin: 0 0 32px;
-  }
-}
-
-/* Mobile (≤600px) – 1 column, full width */
-@media (max-width: 600px) {
-  .wrapper {
-    padding: 30px 0 50px;
-  }
-
-  .grid {
-    padding: 0 60px;
-    max-width: 100%;
-    margin: 0 0 32px;
+  .cardsGrid {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: grid;
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+
+  .a,
+  .b,
+  .c,
+  .d,
+  .e,
+  .f,
+  .g {
+    position: static;
+    width: 100%;
+    height: 340px;
+  }
+
+  .c {
+    height: 480px;
+  }
+
+  .f,
+  .g {
+    height: 380px;
+  }
+  .heading {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 30px 16px 60px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .a,
+  .b,
+  .d,
+  .e {
+    height: 320px;
+  }
+
+  .c {
+    height: 440px;
+  }
+
+  .f,
+  .g {
+    height: 360px;
+  }
+
+  .modalContent {
+    padding: 16px 32px;
+  }
+   .heading {
+    font-size: 34px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .a,
+  .b,
+  .d,
+  .e {
+    height: 300px;
+  }
+
+  .c {
+    height: 400px;
+  }
+
+  .f,
+  .g {
+    height: 340px;
   }
 
   .title {
     font-size: 15px;
-  }
-
-  .modalContent {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .modalImageWrapper {
-    width: 100%;
-    height: min(70vh, 480px);
-    border-radius: 18px;
-  }
-
-  .prevButton {
-    left: 8px;
-  }
-
-  .nextButton {
-    right: 8px;
-  }
-
-  .closeButton {
-    top: -36px;
-    right: 4px;
-  }
-}
-
-@media (max-width: 450px) {
-  .grid {
-    padding: 0 10px;
-    max-width: 100%;
-    margin: 0 0 32px;
-    grid-template-columns: 1fr;
-    gap: 18px;
   }
 }
