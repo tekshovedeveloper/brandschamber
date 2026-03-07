@@ -1,7 +1,7 @@
 .awardsSection {
   width: 100%;
-  background: #0f0f10;
-  padding: 80px 0 40px;
+  /* background: #0f0f10; */
+  padding: 0px 0 90px;
   color: #ffffff;
   box-sizing: border-box;
 }
@@ -23,7 +23,7 @@
 .title {
   margin: 0 0 18px;
   font-family: "FontspringBD";
-  font-size: 52px;
+  font-size: 35px;
   font-weight: 900;
   line-height: 1.1;
   text-transform: capitalize;

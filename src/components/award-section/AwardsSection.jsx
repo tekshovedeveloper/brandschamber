@@ -87,6 +87,13 @@ export default function AwardsSection({ id }) {
     <section id={id} className={styles.awardsSection}>
       {/* Top row: heading + trophy */}
       <div className={styles.topRow}>
+        <div className={styles.trophyWrapper}>
+          <img
+            src="/assets/award/award.png"
+            alt="Awards trophy"
+            className={styles.trophyImage}
+          />
+        </div>
         <div className={styles.headingBlock}>
           <h2 className={styles.title}>Winning Hearts, Minds, And Awards</h2>
           <p className={styles.subtitle}>
@@ -96,13 +103,7 @@ export default function AwardsSection({ id }) {
           </p>
         </div>
 
-        <div className={styles.trophyWrapper}>
-          <img
-            src="/assets/award/award.png"
-            alt="Awards trophy"
-            className={styles.trophyImage}
-          />
-        </div>
+        
       </div>
 
       {/* Bottom: continuous slider of award cards */}

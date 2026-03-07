@@ -1,267 +1,6 @@
-// "use client";
-
-// import { useState } from "react";
-// import Image from "next/image";
-// import styles from "./popular-services.module.css";
-
-// const categories = [
-//   { id: "logos", label: "Logos" },
-//   { id: "websites", label: "Websites" },
-//   { id: "branding", label: "Branding" },
-//   { id: "animations", label: "Animations" },
-// ];
-
-// const itemsByCategory = {
-//   logos: [
-//     {
-//       id: "logo-1",
-//       title: "Minimal Monogram",
-//       subtitle: "Brand for SaaS Startup",
-//       thumb: "/assets/popular/logos/logo-1.jpg",
-//     },
-//     {
-//       id: "logo-2",
-//       title: "Gradient Mark",
-//       subtitle: "Creative Agency Logo",
-//       thumb: "/assets/popular/logos/logo-2.jpg",
-//     },
-//     {
-//       id: "logo-3",
-//       title: "Line Art Icon",
-//       subtitle: "Finance Brand Identity",
-//       thumb: "/assets/popular/logos/logo-3.jpg",
-//     },
-//     {
-//       id: "logo-4",
-//       title: "Abstract Symbol",
-//       subtitle: "Tech Company Rebrand",
-//       thumb: "/assets/popular/logos/logo-4.jpg",
-//     },
-//     {
-//       id: "logo-5",
-//       title: "Badge Logo",
-//       subtitle: "Heritage Brand",
-//       thumb: "/assets/popular/logos/logo-5.jpg",
-//     },
-//     {
-//       id: "logo-6",
-//       title: "Wordmark",
-//       subtitle: "Lifestyle Brand",
-//       thumb: "/assets/popular/logos/logo-6.jpg",
-//     },
-//   ],
-//   websites: [
-//     {
-//       id: "web-1",
-//       title: "E‑commerce Store",
-//       subtitle: "Fashion UI & UX",
-//       thumb: "/assets/popular/websites/web-1.jpg",
-//     },
-//     {
-//       id: "web-2",
-//       title: "Corporate Website",
-//       subtitle: "B2B Tech Platform",
-//       thumb: "/assets/popular/websites/web-2.jpg",
-//     },
-//     {
-//       id: "web-3",
-//       title: "Portfolio Site",
-//       subtitle: "Personal Brand",
-//       thumb: "/assets/popular/websites/web-3.jpg",
-//     },
-//     {
-//       id: "web-4",
-//       title: "Landing Page",
-//       subtitle: "Product Launch",
-//       thumb: "/assets/popular/websites/web-4.jpg",
-//     },
-//     {
-//       id: "web-5",
-//       title: "Dashboard UI",
-//       subtitle: "SaaS Analytics",
-//       thumb: "/assets/popular/websites/web-5.jpg",
-//     },
-//     {
-//       id: "web-6",
-//       title: "Mobile‑First Site",
-//       subtitle: "Restaurant Brand",
-//       thumb: "/assets/popular/websites/web-6.jpg",
-//     },
-//   ],
-//   branding: [
-//     {
-//       id: "brand-1",
-//       title: "Full Brand System",
-//       subtitle: "Tech Conference Identity",
-//       thumb: "/assets/popular/branding/brand-1.jpg",
-//     },
-//     {
-//       id: "brand-2",
-//       title: "Packaging Design",
-//       subtitle: "Premium Skincare Line",
-//       thumb: "/assets/popular/branding/brand-2.jpg",
-//     },
-//     {
-//       id: "brand-3",
-//       title: "Social Kit",
-//       subtitle: "Content‑Ready Templates",
-//       thumb: "/assets/popular/branding/brand-3.jpg",
-//     },
-//     {
-//       id: "brand-4",
-//       title: "Stationery Set",
-//       subtitle: "Business Collateral",
-//       thumb: "/assets/popular/branding/brand-4.jpg",
-//     },
-//     {
-//       id: "brand-5",
-//       title: "Event Branding",
-//       subtitle: "Annual Summit",
-//       thumb: "/assets/popular/branding/brand-5.jpg",
-//     },
-//     {
-//       id: "brand-6",
-//       title: "Rebranding",
-//       subtitle: "Logo + Guidelines",
-//       thumb: "/assets/popular/branding/brand-6.jpg",
-//     },
-//   ],
-//   animations: [
-//     {
-//       id: "anim-1",
-//       title: "2D Explainer",
-//       subtitle: "Product Overview",
-//       thumb: "/assets/popular/animations/anim-1.jpg",
-//     },
-//     {
-//       id: "anim-2",
-//       title: "Logo Reveal",
-//       subtitle: "Intro Animation",
-//       thumb: "/assets/popular/animations/anim-2.jpg",
-//     },
-//     {
-//       id: "anim-3",
-//       title: "Social Ad",
-//       subtitle: "15‑sec Promo",
-//       thumb: "/assets/popular/animations/anim-3.jpg",
-//     },
-//     {
-//       id: "anim-4",
-//       title: "UI Motion",
-//       subtitle: "Micro‑interactions",
-//       thumb: "/assets/popular/animations/anim-4.jpg",
-//     },
-//     {
-//       id: "anim-5",
-//       title: "Character Animation",
-//       subtitle: "Brand Mascot",
-//       thumb: "/assets/popular/animations/anim-5.jpg",
-//     },
-//     {
-//       id: "anim-6",
-//       title: "Title Sequence",
-//       subtitle: "Event Opener",
-//       thumb: "/assets/popular/animations/anim-6.jpg",
-//     },
-//   ],
-// };
-
-// export default function PopularServices() {
-//   const [activeCategory, setActiveCategory] = useState("logos");
-//   const items = itemsByCategory[activeCategory];
-
-//   return (
-//     <section className={styles.section}>
-//       <div className={styles.background} />
-
-//       <div className={styles.inner}>
-//         <div className={styles.left}>
-//           <p className={styles.kicker}>Popular Services</p>
-//           <h2 className={styles.heading}>
-//             Our Most In‑Demand
-//             <span className={styles.headingAccent}>
-//               Design &amp; Development Work
-//             </span>
-//           </h2>
-//           <p className={styles.subheading}>
-//             Explore our most requested logo designs, websites, branding
-//             projects, and animations. Hover to preview, click to dive deeper.
-//           </p>
-
-//           <div className={styles.categoryList}>
-//             {categories.map((cat) => {
-//               const active = cat.id === activeCategory;
-//               return (
-//                 <button
-//                   key={cat.id}
-//                   type="button"
-//                   className={
-//                     active
-//                       ? `${styles.categoryPill} ${styles.categoryPillActive}`
-//                       : styles.categoryPill
-//                   }
-//                   onClick={() => setActiveCategory(cat.id)}
-//                 >
-//                   {cat.label}
-//                 </button>
-//               );
-//             })}
-//           </div>
-//         </div>
-
-//         <div className={styles.right}>
-//           <div className={styles.grid}>
-//             {items.map((item, index) => (
-//               <article
-//                 key={item.id}
-//                 className={styles.card}
-//                 style={{ animationDelay: `${index * 80}ms` }}
-//               >
-//                 <div className={styles.cardImageWrapper}>
-//                   <Image
-//                     src={item.thumb}
-//                     alt={item.title}
-//                     fill
-//                     className={styles.cardImage}
-//                     sizes="(min-width: 1024px) 33vw, 50vw"
-//                   />
-//                   <div className={styles.cardImageOverlay} />
-//                 </div>
-
-//                 <div className={styles.cardBody}>
-//                   <p className={styles.cardTag}>{activeCategory}</p>
-//                   <h3 className={styles.cardTitle}>{item.title}</h3>
-//                   <p className={styles.cardSubtitle}>{item.subtitle}</p>
-
-//                   <div className={styles.cardFooter}>
-//                     <span className={styles.badge}>
-//                       <span className={styles.badgeDot} />
-//                       Top project
-//                     </span>
-//                     <span className={styles.viewLink}>View case study →</span>
-//                   </div>
-//                 </div>
-
-//                 <span className={styles.cardGlow} />
-//               </article>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-
-
 "use client";
 
-import {
-  useState,
-  useRef,
-  useEffect,
-  type CSSProperties,
-} from "react";
+import { useState, useRef, useEffect, type CSSProperties } from "react";
 import Image from "next/image";
 import styles from "./popular-services.module.css";
 
@@ -314,13 +53,20 @@ const data = {
     "/assets/popular/app-5.png",
     "/assets/popular/app-6.png",
   ],
+  GraphicsDesigning: [
+    "/assets/popular/app-1.png",
+    "/assets/popular/app-2.png",
+    "/assets/popular/app-3.png",
+    "/assets/popular/app-4.png",
+    "/assets/popular/app-5.png",
+    "/assets/popular/app-6.png",
+  ],
 } as const;
 
 type Category = keyof typeof data;
-
 type OpenHandler = (category: Category, index: number) => void;
 
-/* ------------- LOGOS / BRANDING / ANIMATIONS CARD (now auto scroll) ------------- */
+/* ---------- Scroll cards (logos/branding/etc.) ---------- */
 
 function ScrollCard({
   category,
@@ -333,11 +79,10 @@ function ScrollCard({
   const [activeIndex, setActiveIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // auto-scroll through items
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % items.length);
-    }, 2500); // 2.5s per item
+    }, 2500);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
@@ -348,6 +93,11 @@ function ScrollCard({
     <article
       className={`${styles.card} ${styles["card_" + category]}`}
       onClick={() => onOpen(category, activeIndex)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") onOpen(category, activeIndex);
+      }}
     >
       <div className={styles.sliderViewport}>
         <div
@@ -355,14 +105,17 @@ function ScrollCard({
           style={{ transform: `translateY(-${activeIndex * 100}%)` }}
         >
           {items.map((src, idx) => (
-            <div key={src} className={styles.slide}>
-              <Image
-                src={src}
-                alt={`${category} ${idx + 1}`}
-                fill
-                className={styles.slideImage}
-                sizes="(min-width:1024px) 260px, 80vw"
-              />
+            <div key={`${category}-${src}-${idx}`} className={styles.slide}>
+              <div className={styles.slideInner}>
+                <Image
+                  src={src}
+                  alt={`${category} ${idx + 1}`}
+                  fill
+                  className={styles.slideImage}
+                  sizes="(min-width:1200px) 356px, 92vw"
+                  priority={idx === 0}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -371,7 +124,7 @@ function ScrollCard({
   );
 }
 
-/* ------------- WEBSITE SLIDE (same scroll behaviour as ShowWorkIndex) ------------- */
+/* ---------- Website slide (old pan behavior) ---------- */
 
 function WebsiteSlide({
   src,
@@ -395,8 +148,7 @@ function WebsiteSlide({
       if (!box || !img) return;
 
       const boxHeight = box.clientHeight;
-      const imgHeight = img.clientHeight;
-      if (!boxHeight || !imgHeight) return;
+      const imgHeight = img.scrollHeight || img.clientHeight;
 
       const dist = imgHeight > boxHeight ? boxHeight - imgHeight : 0;
       setScrollDistance(`${dist}px`);
@@ -405,16 +157,13 @@ function WebsiteSlide({
     const img = imgRef.current;
     if (!img) return;
 
-    if (img.complete) {
-      updateScrollDistance();
-    } else {
-      img.addEventListener("load", updateScrollDistance);
-    }
+    if (img.complete) updateScrollDistance();
+    else img.addEventListener("load", updateScrollDistance);
 
     window.addEventListener("resize", updateScrollDistance);
 
     return () => {
-      if (img) img.removeEventListener("load", updateScrollDistance);
+      img.removeEventListener("load", updateScrollDistance);
       window.removeEventListener("resize", updateScrollDistance);
     };
   }, []);
@@ -433,21 +182,23 @@ function WebsiteSlide({
           isActive && isPanning ? styles.websiteScrollImagePanning : ""
         }`}
         style={style}
+        loading="lazy"
       />
     </div>
   );
 }
 
-/* ------------- WEBSITE CARD (now auto scroll, slower pan) ------------- */
+/* ---------- Website card ---------- */
 
 function WebsiteCard({ onOpen }: { onOpen: OpenHandler }) {
   const category: Category = "websites";
   const items = data[category];
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPanning, setIsPanning] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const PAN_DURATION = 5000; // ms; matches CSS transition (slower)
+  const PAN_DURATION = 5000;
   const PAUSE_BETWEEN = 500;
 
   const runCycle = () => {
@@ -464,8 +215,7 @@ function WebsiteCard({ onOpen }: { onOpen: OpenHandler }) {
   };
 
   useEffect(() => {
-    runCycle(); // start auto cycle on mount
-
+    runCycle();
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
@@ -476,6 +226,11 @@ function WebsiteCard({ onOpen }: { onOpen: OpenHandler }) {
     <article
       className={`${styles.card} ${styles.card_websites}`}
       onClick={() => onOpen(category, activeIndex)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") onOpen(category, activeIndex);
+      }}
     >
       <div className={styles.sliderViewport}>
         <div
@@ -483,13 +238,15 @@ function WebsiteCard({ onOpen }: { onOpen: OpenHandler }) {
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
           {items.map((src, idx) => (
-            <div key={src} className={styles.slide}>
-              <WebsiteSlide
-                src={src}
-                alt={`${category} ${idx + 1}`}
-                isActive={idx === activeIndex}
-                isPanning={isPanning && idx === activeIndex}
-              />
+            <div key={`${category}-${src}-${idx}`} className={styles.slide}>
+              <div className={styles.slideInner}>
+                <WebsiteSlide
+                  src={src}
+                  alt={`${category} ${idx + 1}`}
+                  isActive={idx === activeIndex}
+                  isPanning={isPanning && idx === activeIndex}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -498,7 +255,7 @@ function WebsiteCard({ onOpen }: { onOpen: OpenHandler }) {
   );
 }
 
-/* ------------- MODAL GALLERY ------------- */
+/* ---------- Modal gallery ---------- */
 
 function GalleryModal({
   isOpen,
@@ -518,6 +275,15 @@ function GalleryModal({
     setIndex(startIndex);
   }, [isOpen, startIndex, category]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isOpen, onClose]);
+
   if (!isOpen || !category) return null;
 
   const items = data[category];
@@ -535,23 +301,22 @@ function GalleryModal({
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
-      <div
-        className={styles.modalContent}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button className={styles.modalClose} onClick={onClose}>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <button className={styles.modalClose} onClick={onClose} aria-label="Close">
           ×
         </button>
 
         <button
           className={`${styles.modalArrow} ${styles.modalArrowLeft}`}
           onClick={goPrev}
+          aria-label="Previous"
         >
           ‹
         </button>
         <button
           className={`${styles.modalArrow} ${styles.modalArrowRight}`}
           onClick={goNext}
+          aria-label="Next"
         >
           ›
         </button>
@@ -574,7 +339,7 @@ function GalleryModal({
   );
 }
 
-/* ------------- MAIN SECTION ------------- */
+/* ---------- Main section ---------- */
 
 export default function PopularServices() {
   const [modalCategory, setModalCategory] = useState<Category | null>(null);
@@ -592,22 +357,48 @@ export default function PopularServices() {
       <div className={styles.background} />
 
       <div className={styles.header}>
-        <h2 className={styles.heading}>
-          Popular creative work
-        </h2>
+        <h2 className={styles.heading}>Popular creative work</h2>
         <p className={styles.subheading}>
-          Hover cards to scroll through our top websites, logos, branding and
-          animations. Click any card to open the full gallery.
+          Hover cards to scroll through our top websites, logos, branding and animations.
+          Click any card to open the full gallery.
         </p>
       </div>
 
       <div className={styles.cardsGrid}>
-        <ScrollCard category="logos" onOpen={openModal} />
-        <WebsiteCard onOpen={openModal} />
-        <ScrollCard category="branding" onOpen={openModal} />
-        <ScrollCard category="animations" onOpen={openModal} />
-        <ScrollCard category="animations" onOpen={openModal} />
-        <ScrollCard category="animations" onOpen={openModal} />
+        {/* 1 */}
+        <div className={styles.a}>
+          <ScrollCard category="logos" onOpen={openModal} />
+        </div>
+
+        {/* 2 */}
+        <div className={styles.c}>
+          <WebsiteCard onOpen={openModal} />
+        </div>
+
+        {/* 3 */}
+        <div className={styles.d}>
+          <ScrollCard category="branding" onOpen={openModal} />
+        </div>
+
+        {/* 4 */}
+        <div className={styles.b}>
+          <ScrollCard category="animations" onOpen={openModal} />
+        </div>
+
+        {/* 5 */}
+        <div className={styles.e}>
+          <ScrollCard category="UI" onOpen={openModal} />
+        </div>
+
+        {/* 6 */}
+        <div className={styles.f}>
+          <ScrollCard category="videoEditing" onOpen={openModal} />
+        </div>
+
+        {/* 7 */}
+        <div className={styles.g}>
+          <ScrollCard category="GraphicsDesigning" onOpen={openModal} />
+        </div>
       </div>
 
       <GalleryModal

@@ -22,6 +22,7 @@ import OfferPopup from "@/components/offer-popup/OfferPopup";
 import RevealBanner from "@/components/live-chat-banner/live-chat-banner";
 import AwardsSection from "@/components/award-section/AwardsSection";
 import VideoTestimonial from "@/components/video-testimonial/VideoTestimonial";
+import ServicesGrid from "@/components/service-cards/services-grid";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -70,19 +71,20 @@ export default function Home() {
         <OfferPopup />
         <MainNavbar />
         <MainBanner id="home" />
+        <PortfolioView id="portfolio" />
         <PopularServices />
         {/* <BuisnessProblem id="services" /> */}
+        <ServicesGrid />
         <AwardsSection />
-        <PortfolioView id="portfolio" />
         {/* <ShowWorkIndex /> */}
         <ChooseUs id="about" />
-        <Pricing id="pricing" />
-        <VideoTestimonial />
         <Testimonial />
+        <Pricing id="pricing" />
+        {/* <VideoTestimonial /> */}
         {/* <LetsTalk /> */}
         <RevealBanner />
-        <FrequentlyQuestion />
-        <Contact id="contact" />
+        {/* <FrequentlyQuestion /> */}
+        {/* <Contact id="contact" /> */}
         <Footer />
       </div>
     </main>

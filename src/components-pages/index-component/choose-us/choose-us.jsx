@@ -210,68 +210,60 @@
 
 
 
-
-
-
 "use client";
 
-import styles from "./choose-us.module.css";  
 import Link from "next/link";
+import styles from "./choose-us.module.css";
 
-export default function ChooseUs({id}) {
+export default function ChooseUs({ id }) {
   return (
     <section id={id} className={styles.chooseUsBox}>
-      <div className={`${styles.contentChooseUs} ${styles.contentAnimate}`}>
-        {/* Left column: text */}
-        <div className={`${styles.leftColumn} ${styles.leftAnimate}`}>
-          <h1 className={styles.mainHeading}>Reasons To Choose Us.</h1>
+      <div className={styles.container}>
+        {/* LEFT: Big headline */}
+        <div className={styles.leftColumn}>
+          <h2 className={styles.mainHeading}>
+            WE DON'T JUST DESIGN.
+            <br />
+            WE BUILD BRANDS THAT
+            <br />
+            GROW BUSINESSES.
+          </h2>
+        </div>
 
-          <p>
-            We at Brands Chamber thrive to ensure that our customers are
-            completely satisfied with our work and we deliver unique projects
-            that help you reach unmatchable levels of success.
+        {/* RIGHT: Text */}
+        <div className={styles.rightColumn}>
+          <p className={styles.paragraph}>
+            Most small businesses have something genuinely worth building — a
+            great product, a valuable service, a founder with real expertise.
+            What they often lack is the{" "}
+            <strong>brand, the digital presence, and the marketing</strong> that
+            communicates that value to the world with the clarity and confidence
+            it deserves.
           </p>
 
-          <p>
-            We have managed to create a vibrant development methodology to
-            recognize the proper ingredients that go into the development of a
-            successful online business. We make sure to incorporate the
-            methodology into our clients’ projects, to fulfill all the
-            objectives of the project at hand. We at Brands Chamber hire the
-            best professionals from the industry that are proven for their work
-            and abilities. Our experts come from different fields and walks of
-            life so that we are able to understand our clients’ need better and
-            we do not lack any expertise needed to fulfill projects of our
-            clients.
+          <p className={styles.paragraph}>
+            That's exactly what Brands Chamber was built to solve. We are a
+            creative agency specialising in brand building — combining strategy,
+            design, technology, and marketing into a{" "}
+            <strong>single, coherent service</strong> built specifically for
+            small businesses and startups.
           </p>
 
-          <p>
-            Most agencies claim to offer inexpensive services but fail to
-            deliver so as they tend to charge you throughout the project life
-            and if you take an in‑depth look at the bills, you will see that you
-            have overpaid for certain services. We do not encourage such
-            policies and there are no surprise bills at Brands Chamber.
+          <p className={styles.paragraph}>
+            We believe that great branding should not be the exclusive privilege
+            of businesses with large budgets.{" "}
+            <strong>
+              Every business deserves a brand that competes with confidence.
+            </strong>
           </p>
 
-          <div className={styles.choose_btn_div}>
-
-            <Link href="#pricing">
+          <div className={styles.ctaRow}>
+            <Link href="#pricing" className={styles.ctaLink}>
               <button className={styles.chooseUsGetStarted}>
                 Lets Get Started
               </button>
-            
             </Link>
-
           </div>
-        </div>
-
-        {/* Right column: image */}
-        <div className={`${styles.rightColumn} ${styles.rightAnimate}`}>
-          <img
-            src="/assets/home/choose-us-section.png"
-            alt="choose us"
-            className={styles.chooseUsImage}
-          />
         </div>
       </div>
     </section>

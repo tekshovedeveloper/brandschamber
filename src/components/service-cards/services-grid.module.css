@@ -1,0 +1,172 @@
+.section {
+  width: 100%;
+  padding: 0px 20px 90px;
+  color: #fff;
+}
+
+.header {
+  max-width: 980px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.heading {
+  font-family: "FontspringBD", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: 0;
+  font-size: clamp(24px, 3.1vw, 34px);
+}
+
+.subheading {
+  margin: 20px auto 0;
+  max-width: 720px;
+  font-family: "Archivo";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 180%;
+  color: #fff;
+}
+
+.grid {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  min-height: 250px;
+  border-radius: 10px;
+  padding: 30px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#151515, #151515) padding-box,
+    linear-gradient(180deg, #1941BF, #C861FE) border-box;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 250ms ease;
+}
+
+.card:hover {
+  background: linear-gradient(180deg, rgba(200, 97, 254, 0.95), rgba(25, 65, 191, 0.95));
+  transform: translateY(-3px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.7);
+}
+
+.iconWrap {
+  width: 70px;
+  height: 70px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  /* background: radial-gradient(circle at 30% 20%, #C861FE, #1941BF); */
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceIcon {
+  width: 71px;
+  height: 71px;
+  object-fit: contain;
+  position: absolute;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.defaultIcon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hoverIcon {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.card:hover .defaultIcon {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.card:hover .hoverIcon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: "FontspringBD", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+.cardDesc {
+  margin: 10px 0 16px;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.card:hover .cardDesc,
+.featured .cardDesc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  margin-top: 20px;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: linear-gradient(360deg, rgba(200, 97, 254, 0.95), rgba(25, 65, 191, 0.95));
+  color: #fff;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+  border: none;
+}
+
+.card:hover .btn {
+  background: #fff;
+  color: #2143C2;
+  border-color: transparent;
+}
+
+.featured .btn {
+  background: linear-gradient(360deg, rgba(200, 97, 254, 0.95), rgba(25, 65, 191, 0.95));
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    line-height: normal;
+    font-size: 34px;
+  }
+}

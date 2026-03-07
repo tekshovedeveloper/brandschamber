@@ -9,13 +9,13 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #050711; /* fallback background */
+  background-color: #000000;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   /* Remove the Next.js starter gradient: */
-  background: #050711;
+  background: #000000;
 }
 
 :root {

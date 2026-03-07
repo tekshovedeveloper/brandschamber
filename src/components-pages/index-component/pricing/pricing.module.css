@@ -1,17 +1,13 @@
-/* ===== Pricing section container ===== */
-
+/* 
 .pricingBox {
   height: auto;
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding-top: 120px;
 
-  /* same pattern: keep transparent so main background shows */
   background: transparent;
 }
 
-/* heading animation */
 @keyframes slideInFromTop {
   0% {
     transform: translateY(-100%);
@@ -59,7 +55,6 @@
   color: #e2e2e2;
 }
 
-/* category buttons */
 
 @keyframes slideDownFadeIn {
   0% {
@@ -98,7 +93,6 @@
   position: relative;
 }
 
-/* active underline (optional, matches your other tabs style) */
 .activeCategory::after {
   content: "";
   position: absolute;
@@ -109,7 +103,6 @@
   background-image: linear-gradient(180deg, #1941bf, #c861fe);
 }
 
-/* ===== Pricing cards ===== */
 
 @keyframes slideInFromRight {
   0% {
@@ -140,18 +133,13 @@
   animation: slideInFromRight 1.6s ease forwards;
 }
 
-/* .pricingCard {
-  border-radius: 20px;
-  width: 30%;
-  margin: 10px 0;
-} */
+
 .pricingCard {
   border-radius: 20px;
   width: 30%;
   margin: 10px 0;
 
-  /* ✅ force equal height */
-  height: 550px;               /* adjust if you want bigger/smaller */
+  height: 550px;               
   display: flex;
   flex-direction: column;
 }
@@ -182,7 +170,6 @@
   text-align: center;
 }
 
-/* price stays fixed */
 .websitePrice {
   height: 100px;
   font-size: 53px;
@@ -194,14 +181,13 @@
   border-bottom: 2px solid #fff;
   font-weight: 800;
   font-family: "TT Hoves Pro Trial", sans-serif;
-  margin: 0; /* ✅ prevent extra height differences */
+  margin: 0; 
 }
 
-/* ✅ list takes remaining space and scrolls inside */
 .servicesList {
-  flex: 1;                     /* key: equal card height */
-  max-height: none;            /* remove fixed max-height */
-  min-height: 0;               /* key for flex + overflow */
+  flex: 1;                  
+  max-height: none;         
+  min-height: 0;               
   overflow-y: auto;
   padding: 10px;
   border-radius: 5px;
@@ -234,7 +220,6 @@
   color: #fff;
 }
 
-/* bullet icon using Font Awesome (requires FA loaded globally) */
 .servicesList ul li::before {
   font-family: "Font Awesome 5 Free";
   content: "\f054";
@@ -247,8 +232,6 @@
   font-weight: 600;
 }
 
-/* order button */
-/* ✅ button always sits at bottom */
 .orderButton {
   padding: 12px 30px;
   background-image: linear-gradient(180deg, #1941bf, #c861fe);
@@ -261,15 +244,13 @@
   text-transform: capitalize;
   border-radius: 26px;
 
-  /* remove left margin that breaks alignment */
-  margin: 20px auto 30px;      /* centered and same position */
+  margin: 20px auto 30px;     
 }
 
 .orderButton:hover {
   opacity: 0.9;
 }
 
-/* empty state for categories not filled yet */
 .emptyState {
   width: 100%;
   text-align: center;
@@ -278,7 +259,6 @@
   padding: 40px 0;
 }
 
-/* ===== Responsive ===== */
 
 @media (max-width: 1400px) {
   .pricingHeading h3 {
@@ -383,8 +363,7 @@
   }
   .orderButton {
     padding: 10px 25px;
-    /* margin-left: 27%; */
-        margin: 20px auto 30px; /* ensure still centered */
+    margin: 20px auto 30px; 
        
   }
 }
@@ -403,4 +382,206 @@
 
 
 
+ */
 
+
+
+.pricingBox {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  padding: 90px 20px;
+}
+
+.pricingHeading {
+    text-align: center;
+  color: #fff;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.pricingHeading h3 {
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.pricingHeading p {
+  margin: 0 auto;
+  max-width: 85%;
+  font-size: 18px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
+  color: #e2e2e2;
+}
+
+.pricingContainer {
+  width: min(1400px, 100%);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 42px auto 0;
+}
+
+.pricingCard {
+  position: relative;
+  min-height: 430px;
+  border-radius: 5px;
+  padding: 1px;
+  background: linear-gradient(180deg, #1941bf, #c861fe);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.cardInner {
+  height: 100%;
+  border-radius: 4px;
+  background: #151515;
+  padding: 22px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  transition: background 250ms ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.7);
+}
+
+.pricingCard:hover .cardInner,
+.featuredCard .cardInner {
+  background: linear-gradient(180deg, rgba(25, 65, 191, 0.96), rgba(200, 97, 254, 0.96));
+}
+
+.mainTextDiv {
+  text-align: center;
+}
+
+.websiteName {
+  font-family: "FontspringBD";
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.mainText {
+  font-family: "Archivo";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #fff;
+  text-align: center;
+  margin: 10px 0 0;
+  min-height: 42px;
+}
+
+.websitePrice {
+  font-size: 35px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.78);
+  font-weight: 900;
+  font-family: "Archivo", sans-serif;
+  margin: 18px 0 16px;
+  padding: 14px 0;
+}
+
+.servicesList {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.servicesList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.servicesList ul li {
+  font-size: 14px;
+  padding: 6px 0;
+  font-family: "Archivo";
+  color: #fff;
+  line-height: 200%;
+  font-weight: 500;
+}
+
+.servicesList ul li::before {
+  content: "✓";
+  display: inline-block;
+  color: #fff;
+  padding-right: 8px;
+  font-weight: 700;
+}
+
+.orderButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 38px;
+  margin: 18px auto 0;
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  color: #2042C2;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.orderButton:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+
+@media (max-width: 1200px) {
+  .pricingContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .pricingBox {
+    padding: 70px 16px;
+  }
+  .pricingHeading h3{
+    font-size: 34px;
+    line-height: normal;
+  }
+  .pricingContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard {
+    min-height: 400px;
+  }
+
+  .websiteName {
+    font-size: 18px;
+  }
+
+  .websitePrice {
+    font-size: 24px;
+  }
+
+  .servicesList ul li {
+    font-size: 13px;
+  }
+}
