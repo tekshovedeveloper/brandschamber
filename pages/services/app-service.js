@@ -9,6 +9,12 @@ import LiveChatBanner from "@/components/live-chat-banner/live-chat-banner"
 import Footer from "@/components/footer/footer";
 import BrandSection from "@/components/brand-section/banner-section";
 import RunningSlider from "@/components/running-slider/running-slider";
+import ServiceProcess from "@/components/service-process/service-process";
+import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
+import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
+import { APP_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
+
+
 
 import Testimonial from "@/components/testimonial/testimonial";
 const inter = Inter({ subsets: ["latin"] });
@@ -68,16 +74,25 @@ From idea to App Store — we handle everything. `}
            imageAlt="Logo design showcase"
            buttonText="Book Your Free Consultation"
            buttonHref="#contact"
+           defaultService="MOBILE APPS"
          />
          <RunningSlider
              text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
            />
+           
          <SinglePortfolio 
          title="App" 
          heading="Our App Portfolio"
          subheading="Explore the apps we’ve designed and developed. Each project combines sleek design, smooth functionality, and user-focused experiences to bring ideas to life on every device. "
          items={logoPortfolio} />
-         <ServicePricing id="mobile-app-pricing" service="Mobile App" />
+          <ServiceFeatureCards
+                   title="Our Mobile App Development Services"
+                   subtitle="We offer a complete suite of mobile app services — covering every platform, every stage of development, and every need your business might have. Whether you're bringing a new idea to life or optimising an existing app, we have the expertise to make it happen."
+                   cards={APP_SERVICE_CARDS}
+                 />
+
+          <ServiceProcess {...SERVICE_PROCESS_DATA.app} />
+         <ServicePricing id="mobile-app-pricing" service="Mobile App" currentService="MOBILE APPS" />
         <Testimonial />
          
         

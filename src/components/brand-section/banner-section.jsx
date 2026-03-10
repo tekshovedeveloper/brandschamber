@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./banner-section.module.css";
+import MeetingModal from "@/components/MeetingModal/MeetingModal";
 
 export default function BrandSection({
   id,
@@ -13,10 +13,12 @@ export default function BrandSection({
   image = "/assets/logo-service/logo-banner.gif",
   imageAlt = "Service banner image",
   buttonText = "Book Your Free Consultation",
-  buttonHref = "#contact",
+  defaultService = "",
 }) {
   const sectionRef = useRef(null);
   const [inView, setInView] = useState(false);
+
+  const [isMeetingOpen, setMeetingOpen] = useState(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -31,41 +33,51 @@ export default function BrandSection({
   }, []);
 
   return (
-    <section
-      id={id}
-      ref={sectionRef}
-      className={`${styles.hero} ${inView ? styles.inView : ""}`}
-    >
-      <div className={styles.inner}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>{title}</h1>
+    <>
+      <section
+        id={id}
+        ref={sectionRef}
+        className={`${styles.hero} ${inView ? styles.inView : ""}`}
+      >
+        <div className={styles.inner}>
+          <div className={styles.content}>
+            <h1 className={styles.title}>{title}</h1>
 
-          <p className={styles.description}>{description}</p>
+            <p className={styles.description}>{description}</p>
 
-          {highlightText && (
-            <p className={styles.highlightLine}>{highlightText}</p>
-          )}
+            {highlightText && (
+              <p className={styles.highlightLine}>{highlightText}</p>
+            )}
 
-          <Link href={buttonHref} className={styles.ctaLink}>
-            <button type="button" className={styles.ctaButton}>
+            <button
+              type="button"
+              className={styles.ctaButton}
+              onClick={() => setMeetingOpen(true)}
+            >
               {buttonText}
             </button>
-          </Link>
-        </div>
+          </div>
 
-        <div className={styles.visual}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              className={styles.image}
-              sizes="(max-width: 900px) 100vw, 420px"
-              priority
-            />
+          <div className={styles.visual}>
+            <div className={styles.imageWrapper}>
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                className={styles.image}
+                sizes="(max-width: 900px) 100vw, 420px"
+                priority
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <MeetingModal
+        isOpen={isMeetingOpen}
+        onClose={() => setMeetingOpen(false)}
+        defaultService={defaultService}
+      />
+    </>
   );
 }

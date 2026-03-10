@@ -78,7 +78,7 @@ export default function Home() {
         <AwardsSection />
         {/* <ShowWorkIndex /> */}
         <ChooseUs id="about" />
-        <Testimonial />
+        <Testimonial id="testimonial" />
         <Pricing id="pricing" />
         {/* <VideoTestimonial /> */}
         {/* <LetsTalk /> */}

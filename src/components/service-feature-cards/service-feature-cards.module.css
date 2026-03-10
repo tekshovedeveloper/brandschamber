@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Integral-cf.ttf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.section {
+  width: 100%;
+  padding: 0px 20px;
+  color: #fff;
+}
+
+.header {
+  max-width: 920px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 36px;
+  line-height: 50px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.subheading {
+  margin: 16px auto 0;
+  max-width: 760px;
+  font-family: "Archivo", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.grid {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 22px;
+}
+
+.card {
+  position: relative;
+  min-height: 520px;
+  border-radius: 10px;
+  padding: 1px;
+  background: linear-gradient(180deg, #c861fe, #1941bf);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardInner {
+  height: 100%;
+  border-radius: 9px;
+  background: #161616;
+  padding: 34px 18px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.65);
+}
+
+.card:hover .cardInner {
+  background: linear-gradient(
+    180deg,
+    rgba(25, 65, 191, 0.96),
+    rgba(200, 97, 254, 0.96)
+  );
+}
+
+.iconWrap {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+.defaultIcon {
+  opacity: 1;
+}
+
+.hoverIcon {
+  opacity: 0;
+}
+
+.card:hover .defaultIcon {
+  opacity: 0;
+}
+
+.card:hover .hoverIcon {
+  opacity: 1;
+}
+
+.cardTitle {
+  margin: 0 0 12px;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.cardDesc {
+  margin: 0 0 16px;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featureList li {
+  position: relative;
+  padding-left: 16px;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #fff;
+}
+
+.featureList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #c861fe, #1941bf);
+}
+
+.card:hover .featureList li::before {
+  background: #fff;
+}
+
+.bestFor {
+  margin-top: auto;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.bestFor span {
+  font-weight: 700;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 70px 16px;
+  }
+
+  .heading {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .subheading {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: auto;
+  }
+}

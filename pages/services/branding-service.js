@@ -10,6 +10,11 @@ import Footer from "@/components/footer/footer";
 import Testimonial from "@/components/testimonial/testimonial";
 import RunningSlider from "@/components/running-slider/running-slider";
 import ServicePricing from "@/components/service-pricing-name/ServicePricing";
+import ServiceProcess from "@/components/service-process/service-process";
+import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
+import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
+import { BRAND_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const BrandingPortfolio =[
@@ -66,16 +71,25 @@ We don't start with aesthetics. We start with thinking. Because a brand that
          imageAlt="Logo design showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
+         defaultService="BRANDING"
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
          />
+         
          <SinglePortfolio 
          title="Branding" 
          heading="WEBSITES That Work in the Real World"
          subheading="Every logo in our portfolio was built for a real business with a real goal. Browse our work and see how we've helped small businesses across industries establish identities that stand out, scale up, and stick."
          items={BrandingPortfolio} />
-         <ServicePricing id="branding-pricing" service="Branding" />
+         <ServiceFeatureCards
+                  title="Our Branding Portfolio"
+                  subtitle="Explore our work in crafting memorable brands. Each project highlights creativity, strategy, and designs that make businesses stand out."
+                  cards={BRAND_SERVICE_CARDS}
+                />    
+
+        <ServiceProcess {...SERVICE_PROCESS_DATA.brand} />
+         <ServicePricing id="branding-pricing" service="Branding" currentService="BRANDING"/>
           <Testimonial />
          
           <LiveChatBanner />

@@ -10,6 +10,10 @@ import Testimonial from "@/components/testimonial/testimonial";
 import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 import BrandSection from "@/components/brand-section/banner-section";
 import RunningSlider from "@/components/running-slider/running-slider";
+import ServiceProcess from "@/components/service-process/service-process";
+import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 const logoPortfolio =[
@@ -65,18 +69,19 @@ export default function LogoService() {
   imageAlt="Logo design showcase"
   buttonText="Book Your Free Consultation"
   buttonHref="#contact"
+  defaultService="LOGO DESIGN"
 />
 <RunningSlider
     text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
   />
-       
          <SinglePortfolio
           title="Logo"
           heading="Logos That Work in the Real World"
           subheading="Every logo in our portfolio was built for a real business with a real goal. Browse our work and see how we've helped small businesses across industries establish identities that stand out, scale up, and stick. "
           items={logoPortfolio}
         />
-         <ServicePricing id="logo-pricing" service="Logo" />
+         <ServiceProcess {...SERVICE_PROCESS_DATA.logo} />
+         <ServicePricing id="logo-pricing" service="Logo" currentService="LOGO DESIGN"/>
           <Testimonial />
          <LiveChatBanner />
       <Footer /> 

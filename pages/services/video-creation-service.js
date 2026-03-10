@@ -10,6 +10,10 @@ import Footer from "@/components/footer/footer";
 import Testimonial from "@/components/testimonial/testimonial";
 import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 import RunningSlider from "@/components/running-slider/running-slider";
+import ServiceProcess from "@/components/service-process/service-process";
+import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
+import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
+import { VIDEO_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 
 
 
@@ -69,16 +73,25 @@ export default function VideoCreationService() {
          imageAlt="Logo design showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
+         defaultService="VIDEO PRODUCTION"
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
          />
+         
          <SinglePortfolio 
          title="Video Creation" 
          heading="Our Video Creations"
          subheading="We bring stories to life through professional video editing. Every cut, effect, and transition is crafted to engage audiences, convey your message, and leave a lasting impression."
          items={VideoCreationPortfolio} />
-         <ServicePricing id="video-creation-pricing" service="Video Creation" />
+           <ServiceFeatureCards
+                            title="Our Video Production & Motion Graphics Services"
+                            subtitle="We produce all types of videos — from live-action brand films and product videos to animated explainers and motion graphics — handling scripting, production, post-production, and delivery all under one roof."
+                            cards={VIDEO_SERVICE_CARDS}
+                          />
+         
+        <ServiceProcess {...SERVICE_PROCESS_DATA.video} />
+         <ServicePricing id="video-creation-pricing" service="Video Creation" currentService="VIDEO PRODUCTION" />
           <Testimonial />
          
           <LiveChatBanner />

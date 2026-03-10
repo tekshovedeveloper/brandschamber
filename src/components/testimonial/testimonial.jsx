@@ -141,7 +141,7 @@ function NextArrow(props) {
   );
 }
 
-export default function Testimonial() {
+export default function Testimonial({id}) {
   const settings = {
     infinite: true,
     speed: 500,
@@ -172,7 +172,7 @@ export default function Testimonial() {
   };
 
   return (
-    <section className={styles.testimonialBox}>
+    <section className={styles.testimonialBox} id={id}>
       <div className={styles.testimonialHeading}>
         <h3>TESTIMONIALS THAT SPEAK VOLUMES</h3>
         <p>

@@ -397,7 +397,7 @@ export default function MainNavbar() {
               )}
             </div>
 
-            <Link href="#portfolio">
+            <Link href="#testimonial">
               <button type="button">Clients Testimonials</button>
             </Link>
             <Link href="#about">
@@ -406,14 +406,14 @@ export default function MainNavbar() {
             <Link href="#pricing">
               <button type="button">Pricing</button>
             </Link>
-            <Link href="#contact">
+            <Link href="/contact/contact">
               <button type="button">Contact Us</button>
             </Link>
           </nav>
 
           {/* Right-side CTA */}
           <div>
-            <Link href="#contact">
+            <Link href="/contact/contact">
               <button className={styles.numberButton} type="button">
                 Let&apos;s Talk
               </button>
@@ -522,7 +522,7 @@ export default function MainNavbar() {
               </div>
             )}
 
-            <Link className={styles.drawerLink} href="#portfolio" onClick={close}>
+            <Link className={styles.drawerLink} href="#testimonial" onClick={close}>
               Clients Testimonials
             </Link>
             <Link className={styles.drawerLink} href="#about" onClick={close}>
@@ -531,7 +531,7 @@ export default function MainNavbar() {
             <Link className={styles.drawerLink} href="#pricing" onClick={close}>
               Pricing
             </Link>
-            <Link className={styles.drawerLink} href="#contact" onClick={close}>
+            <Link className={styles.drawerLink} href="/contact/contact" onClick={close}>
               Contact Us
             </Link>
           </div>

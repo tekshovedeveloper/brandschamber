@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Integral-cf.ttf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.section {
+  width: 100%;
+  padding: 0px 20px 90px;
+  color: #fff;
+}
+
+.header {
+  max-width: 760px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 50px;
+  color: #fff;
+}
+
+.subheading {
+  margin: 12px auto 0;
+  max-width: 520px;
+  font-family: "Archivo", sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #fff;
+}
+
+.stepsRow {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 34px;
+  align-items: start;
+}
+
+.stepItem {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 22px;
+  position: relative;
+  min-height: 64px;
+  z-index: 2;
+}
+
+.iconBox {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Desktop connector */
+.connector {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 23%);
+  right: calc(-17px);
+  height: 8px;
+  transform: translateY(-50%);
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Slightly larger desktop */
+@media (min-width: 1400px) {
+  .connector {
+    width: 210px;
+  }
+}
+
+.cardTitle {
+  margin: 0 0 12px;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: #fff;
+  max-width: 260px;
+}
+
+.cardText {
+  margin: 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #fff;
+  max-width: 220px;
+}
+
+/* Tablet and below: hide dotted line */
+@media (max-width: 1100px) {
+   .stepsRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+
+  .stepItem {
+    text-align: center;
+  }
+
+  .cardTitle,
+  .cardText {
+    text-align: center;
+  }
+
+  .connector {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .section {
+    padding: 70px 16px;
+  }
+
+  .heading {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .subheading {
+    font-size: 15px;
+  }
+
+  .stepsRow {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    width: 70%;
+  }
+
+  .topRow {
+    margin-bottom: 18px;
+  }
+
+  .iconBox {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 64px;
+  }
+
+  .icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .cardTitle {
+    font-size: 17px;
+  }
+
+  .cardText {
+    font-size: 14px;
+    max-width: 340px;
+
+  }
+}

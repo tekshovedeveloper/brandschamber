@@ -10,6 +10,10 @@ import Footer from "@/components/footer/footer";
 import Testimonial from "@/components/testimonial/testimonial";
 import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 import RunningSlider from "@/components/running-slider/running-slider";
+import ServiceProcess from "@/components/service-process/service-process";
+import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
+import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
+import { UIUX_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -66,17 +70,27 @@ export default function UIUXService() {
          imageAlt="Logo design showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
+         defaultService="UI/UX DESIGN"
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
          />
+         
          <SinglePortfolio 
          title="UI/UX" 
          heading="UI/UX Design That Connects"
          subheading="We create user interfaces that are intuitive, visually appealing, and designed to keep users engaged. Every interaction is carefully crafted to deliver a seamless experience that feels effortless and drives results. "
          items={UIUXPortfolio} />
-         <ServicePricing id="ui-ux-pricing" service="UI/UX" />
-          <Testimonial />
+           <ServiceFeatureCards
+                            title="Our UI/UX Design Services"
+                            subtitle="We provide end-to-end UI/UX design — from research-driven strategy to pixel-perfect interfaces and interactive prototypes, for new or existing products."
+                            cards={UIUX_SERVICE_CARDS}
+                          />
+           
+
+         <ServiceProcess {...SERVICE_PROCESS_DATA.uiux} />
+         <ServicePricing id="ui-ux-pricing" service="UI/UX" currentService="UI/UX DESIGN"/>
+         <Testimonial />
          
           <LiveChatBanner />
       <Footer /> 

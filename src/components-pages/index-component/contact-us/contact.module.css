@@ -1,5 +1,4 @@
-/* slide in animation (same pattern) */
-@keyframes slideInFromRight {
+/* @keyframes slideInFromRight {
   0% {
     opacity: 0;
     transform: translateX(120px);
@@ -20,10 +19,8 @@
   align-items: center;
   margin: 0 auto 50px;
 
-  /* same pattern: let main background show */
   background: transparent;
 
-  /* start hidden for slide */
   opacity: 0;
 }
 
@@ -32,7 +29,6 @@
   animation: slideInFromRight 1.2s ease forwards;
 }
 
-/* Left side */
 .showContactUsHeading {
   width: 50%;
   height: auto;
@@ -42,7 +38,6 @@
   justify-content: center;
   align-items: flex-start;
   font-weight: 900;
-  /* font-family: Poppins, sans-serif; */
   margin-top: 15px;
   padding-left: 20px;
 }
@@ -66,7 +61,6 @@
   color: #e2e2e2;
 }
 
-/* contact info */
 .contactInfo {
   display: flex;
   flex-direction: column;
@@ -101,7 +95,6 @@
   line-height: 180%;
 }
 
-/* social icons */
 .iconContainer .iconContainerHeading {
   font-weight: 900;
   font-family: "FontspringBD";
@@ -160,7 +153,6 @@
   opacity: 1;
 }
 
-/* Right side form */
 .formContainerWrapper {
   width: 50%;
   height: auto;
@@ -256,7 +248,6 @@
   z-index: 1;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .showContactUsHeading {
     width: 47%;
@@ -407,5 +398,303 @@
     font-size: 36px;
     line-height: normal;
 
+  }
+} */
+
+
+@font-face {
+  font-family: "FontspringBD";
+  src: url("/fonts/Integral-cf.ttf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contactSection {
+  width: 100%;
+  padding: 90px 20px;
+  background: transparent;
+  opacity: 0;
+}
+
+.inView {
+  opacity: 1;
+  animation: slideInFromRight 1.2s ease forwards;
+}
+
+.container {
+  width: min(780px, 100%);
+  margin: 0 auto;
+}
+
+/* top cards */
+.infoCards {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+
+.infoCard {
+  width: 250px;
+  min-height: 130px;
+  border-radius: 4px;
+  padding: 40px;
+  gap: 50px;
+  text-align: center;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#151515, #151515) padding-box,
+    linear-gradient(180deg, #1941BF, #C861FE) border-box;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+.infoCard:hover {
+  background: linear-gradient(180deg, rgba(25, 65, 191, 0.96), rgba(200, 97, 254, 0.96));
+  transform: translateY(-4px);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
+}
+
+.infoIconWrap {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 12px;
+}
+
+
+.infoIcon {
+  position: absolute;
+  inset: 0;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  transition: opacity 0.25s ease;
+}
+
+.infoTitle {
+  margin: 0 0 8px;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.infoLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+.defaultInfoIcon {
+  opacity: 1;
+}
+
+.hoverInfoIcon {
+  opacity: 0;
+}
+
+.infoCard:hover .defaultInfoIcon {
+  opacity: 0;
+}
+
+.infoCard:hover .hoverInfoIcon {
+  opacity: 1;
+}
+/* heading */
+.formHeadingWrap {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.formHeading {
+  margin: 0;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 28px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* form box */
+.formContainer {
+  width: 100%;
+  border-radius: 6px;
+  padding: 14px;
+  background:
+    linear-gradient(#151515, #151515) padding-box,
+    linear-gradient(180deg, #1941BF, #C861FE) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.form {
+  border-radius: 4px;
+  background: #151515;
+  padding: 18px 14px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  align-items: flex-start;
+}
+
+.label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  font-family: "Archivo", sans-serif;
+  color: #fff;
+}
+
+.inputField {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 2px;
+  padding: 10px 12px;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  height: 56px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+/* .inputField:focus,
+.inputField:hover {
+  border-color: #C861FE;
+} */
+
+.textArea {
+  display: block;
+  width: 100%;
+  height: 170px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 2px;
+  padding: 12px;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  resize: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.textArea:focus,
+.textArea:hover {
+  border-color: #C861FE;
+}
+
+.submitButton {
+  width: 100%;
+  height: 42px;
+  margin-top: 18px;
+  background-image: linear-gradient(180deg, #1941bf, #c861fe);
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f4f5f6;
+  cursor: pointer;
+  border-radius: 999px;
+  border: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.successMsg {
+  margin-top: 12px;
+  color: #7CFFB2;
+  font-size: 14px;
+  font-family: "Archivo", sans-serif;
+}
+
+.errorMsg {
+  margin-top: 12px;
+  color: #FF8B8B;
+  font-size: 14px;
+  font-family: "Archivo", sans-serif;
+}
+
+/* responsive */
+@media (max-width: 767px) {
+  .contactSection {
+    padding: 70px 16px;
+  }
+
+  .infoCards {
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .infoCard {
+    width: calc(33.333% - 8px);
+    min-width: 140px;
+  }
+
+  .formHeading {
+    font-size: 24px;
+  }
+
+  .textArea {
+    height: 190px;
+  }
+}
+
+@media (max-width: 520px) {
+  .infoCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoCard {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .formHeading {
+    font-size: 22px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .inputField,
+  .textArea {
+    font-size: 13px;
   }
 }

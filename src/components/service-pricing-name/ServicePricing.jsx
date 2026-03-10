@@ -15,7 +15,7 @@ import MeetingModal from "../MeetingModal/MeetingModal";
  * - id?: string
  * - service?: string
  */
-export default function ServicePricing({ id, service }) {
+export default function ServicePricing({ id, service,currentService }) {
   const serviceSpecific = !!service;
   const initialCategory = service || "Logo";
 
@@ -151,7 +151,7 @@ export default function ServicePricing({ id, service }) {
       <MeetingModal
         isOpen={showMeetingModal}
         onClose={() => setShowMeetingModal(false)}
-        defaultService={selectedService}
+        defaultService={currentService}
         defaultMessage={
           selectedPackage
             ? `Hi, I’m interested in the ${selectedPackage} package. Please share next steps.`

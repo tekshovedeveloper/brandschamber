@@ -10,6 +10,10 @@ import Footer from "@/components/footer/footer";
 import Testimonial from "@/components/testimonial/testimonial";
 import ServicePricing from "@/components/service-pricing-name/ServicePricing";
 import RunningSlider from "@/components/running-slider/running-slider";
+import ServiceProcess from "@/components/service-process/service-process";
+import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
+import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
+import { WEBSITE_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -68,6 +72,7 @@ Custom code. Clean architecture. Built for speed, search engines, and real busin
          imageAlt="Logo design showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
+         defaultService="WEB DEVELOPMENT"
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -77,7 +82,14 @@ Custom code. Clean architecture. Built for speed, search engines, and real busin
          heading="WEBSITES That Work in the Real World"
          subheading="Every logo in our portfolio was built for a real business with a real goal. Browse our work and see how we've helped small businesses across industries establish identities that stand out, scale up, and stick. "
          items={logoPortfolio} />
-         <ServicePricing id="website-pricing" service="Website" />
+        <ServiceFeatureCards
+          title="EVERYTHING YOU NEED TO BUILD, LAUNCH, AND GROW ONLINE."
+          subtitle="We offer a complete range of website development services — each one designed to meet a specific business need. Whether you're starting from scratch or levelling up what you have, there's a solution built for you."
+          cards={WEBSITE_SERVICE_CARDS}
+        />
+         
+        <ServiceProcess {...SERVICE_PROCESS_DATA.website} />
+         <ServicePricing id="website-pricing" service="Website" currentService="WEB DEVELOPMENT" />
           <Testimonial />
          
           <LiveChatBanner />
