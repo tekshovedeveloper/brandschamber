@@ -93,7 +93,7 @@ From idea to App Store — we handle everything. `}
 
           <ServiceProcess {...SERVICE_PROCESS_DATA.app} />
          <ServicePricing id="mobile-app-pricing" service="Mobile App" currentService="MOBILE APPS" />
-        <Testimonial />
+          <Testimonial />
          
         
          <LiveChatBanner />
