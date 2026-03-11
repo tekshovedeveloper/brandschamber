@@ -1,0 +1,227 @@
+.pricingBox {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  padding: 90px 20px;
+}
+
+.pricingHeading {
+  text-align: center;
+  color: #fff;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.pricingHeading h3 {
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.pricingHeading p {
+  margin: 0 auto;
+  max-width: 85%;
+  font-size: 18px;
+  font-family: "Archivo";
+  font-weight: 400;
+  line-height: 180%;
+  color: #e2e2e2;
+}
+
+.pricingContainer {
+  width: min(1400px, 100%);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 42px auto 0;
+}
+
+.pricingCard {
+  position: relative;
+  min-height: 470px;
+  border-radius: 5px;
+  padding: 1px;
+  background: linear-gradient(180deg, #1941bf, #c861fe);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.cardInner {
+  height: 100%;
+  border-radius: 4px;
+  background: #151515;
+  padding: 22px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  transition: background 250ms ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.7);
+}
+
+.pricingCard:hover .cardInner {
+  background: linear-gradient(
+    180deg,
+    rgba(25, 65, 191, 0.96),
+    rgba(200, 97, 254, 0.96)
+  );
+}
+
+.mainTextDiv {
+  text-align: center;
+}
+
+.websiteName {
+  font-family: "FontspringBD";
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.mainText {
+  font-family: "Archivo";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #fff;
+  text-align: center;
+  margin: 10px 0 0;
+  min-height: 42px;
+}
+
+.websitePrice {
+  font-size: 35px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.78);
+  font-weight: 900;
+  font-family: "Archivo", sans-serif;
+  margin: 18px 0 16px;
+  padding: 14px 0;
+}
+
+.servicesList {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.servicesList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.servicesList ul li {
+  font-size: 14px;
+  padding: 6px 0;
+  font-family: "Archivo";
+  color: #fff;
+  line-height: 200%;
+  font-weight: 500;
+}
+
+.servicesList ul li::before {
+  content: "✓";
+  display: inline-block;
+  color: #fff;
+  padding-right: 8px;
+  font-weight: 700;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.inquireButton,
+.orderNowButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 999px;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, background 0.2s ease;
+}
+
+.inquireButton {
+  border: none;
+  background: #fff;
+  color: #2042c2;
+}
+
+.orderNowButton {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.inquireButton:hover,
+.orderNowButton:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+
+.orderNowButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1200px) {
+  .pricingContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .pricingBox {
+    padding: 70px 16px;
+  }
+
+  .pricingHeading h3 {
+    font-size: 34px;
+    line-height: normal;
+  }
+
+  .pricingContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard {
+    min-height: 430px;
+  }
+
+  .websiteName {
+    font-size: 18px;
+  }
+
+  .websitePrice {
+    font-size: 24px;
+  }
+
+  .servicesList ul li {
+    font-size: 13px;
+  }
+}

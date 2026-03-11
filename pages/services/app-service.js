@@ -13,6 +13,7 @@ import ServiceProcess from "@/components/service-process/service-process";
 import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { APP_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
+import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 
 
 
@@ -92,7 +93,7 @@ From idea to App Store — we handle everything. `}
                  />
 
           <ServiceProcess {...SERVICE_PROCESS_DATA.app} />
-         <ServicePricing id="mobile-app-pricing" service="Mobile App" currentService="MOBILE APPS" />
+         <ServicePricingStripe id="mobile-app-pricing" service="Mobile App" currentService="MOBILE APPS" />
           <Testimonial />
          
         

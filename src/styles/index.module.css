@@ -47,3 +47,13 @@
   position: relative;
   z-index: 1;
 }
+
+.paymentHeading{
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+}

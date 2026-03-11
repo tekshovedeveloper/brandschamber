@@ -14,6 +14,7 @@ import ServiceProcess from "@/components/service-process/service-process";
 import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { VIDEO_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
+import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 
 
 
@@ -91,7 +92,7 @@ export default function VideoCreationService() {
                           />
          
         <ServiceProcess {...SERVICE_PROCESS_DATA.video} />
-         <ServicePricing id="video-creation-pricing" service="Video Creation" currentService="VIDEO PRODUCTION" />
+         <ServicePricingStripe id="video-creation-pricing" service="Video Creation" currentService="VIDEO PRODUCTION" />
           <Testimonial />
          
           <LiveChatBanner />

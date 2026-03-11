@@ -39,7 +39,8 @@
     "react-multi-carousel": "^2.8.5",
     "react-slick": "^0.31.0",
     "resend": "^6.6.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "stripe": "^20.4.1"
   },
   "devDependencies": {
     "postcss": "^8",

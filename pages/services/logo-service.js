@@ -12,7 +12,7 @@ import BrandSection from "@/components/brand-section/banner-section";
 import RunningSlider from "@/components/running-slider/running-slider";
 import ServiceProcess from "@/components/service-process/service-process";
 import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
-
+import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -81,7 +81,7 @@ export default function LogoService() {
           items={logoPortfolio}
         />
          <ServiceProcess {...SERVICE_PROCESS_DATA.logo} />
-         <ServicePricing id="logo-pricing" service="Logo" currentService="LOGO DESIGN"/>
+         <ServicePricingStripe id="logo-pricing" service="Logo" currentService="LOGO DESIGN"/>
           <Testimonial />
          <LiveChatBanner />
       <Footer /> 

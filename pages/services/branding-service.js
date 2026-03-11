@@ -14,6 +14,7 @@ import ServiceProcess from "@/components/service-process/service-process";
 import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { BRAND_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
+import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -89,7 +90,7 @@ We don't start with aesthetics. We start with thinking. Because a brand that
                 />    
 
         <ServiceProcess {...SERVICE_PROCESS_DATA.brand} />
-         <ServicePricing id="branding-pricing" service="Branding" currentService="BRANDING"/>
+         <ServicePricingStripe id="branding-pricing" service="Branding" currentService="BRANDING"/>
           <Testimonial />
          
           <LiveChatBanner />

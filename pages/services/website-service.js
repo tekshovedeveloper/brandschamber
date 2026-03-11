@@ -14,6 +14,7 @@ import ServiceProcess from "@/components/service-process/service-process";
 import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { WEBSITE_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
+import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -89,7 +90,7 @@ Custom code. Clean architecture. Built for speed, search engines, and real busin
         />
          
         <ServiceProcess {...SERVICE_PROCESS_DATA.website} />
-         <ServicePricing id="website-pricing" service="Website" currentService="WEB DEVELOPMENT" />
+         <ServicePricingStripe id="website-pricing" service="Website" currentService="WEB DEVELOPMENT" />
           <Testimonial />
          
           <LiveChatBanner />

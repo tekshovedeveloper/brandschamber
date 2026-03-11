@@ -1,0 +1,392 @@
+.pricingBox {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  padding: 20px 20px 90px;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  max-width: 550px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.heading {
+  font-family: "FontspringBD", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 50px;
+  margin: 0;
+  color: #fff;
+  font-size: 36px;
+}
+
+.subheading {
+  margin: 20px auto 0;
+  max-width: 720px;
+  color: #fff;
+  font-family: "Archivo";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 180%;
+}
+
+.pricingAnimate {
+  opacity: 1;
+  animation: slideInFromTop 0.9s ease forwards;
+}
+
+@keyframes slideDownFadeIn {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pricingButtonRow {
+  display: flex;
+  margin-top: 10px;
+  gap: 5px;
+  justify-content: center;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.pricingSingleButton {
+  padding: 8px 30px;
+  letter-spacing: 0.01rem;
+  word-spacing: 0.08rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  opacity: 0;
+  animation: slideDownFadeIn 0.6s ease forwards;
+  background: none;
+  border: none;
+  position: relative;
+}
+
+.activeCategory::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background-image: linear-gradient(180deg, #1941bf, #c861fe);
+  border-radius: 999px;
+}
+
+@keyframes slideInCards {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricingContainer {
+  width: min(1400px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 42px auto 0;
+  opacity: 0;
+}
+
+.inView {
+  opacity: 1;
+  animation: slideInCards 0.9s ease forwards;
+}
+
+.pricingCard {
+  position: relative;
+  min-height: 460px;
+  border-radius: 5px;
+  padding: 1px;
+  background: linear-gradient(180deg, #1941bf, #c861fe);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.cardInner {
+  height: 100%;
+  border-radius: 4px;
+  background: #151515;
+  padding: 30px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  transition: background 250ms ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.7);
+}
+
+.pricingCard:hover .cardInner {
+  background: linear-gradient(
+    180deg,
+    rgba(25, 65, 191, 0.96),
+    rgba(200, 97, 254, 0.96)
+  );
+}
+
+.mainTextDiv {
+  text-align: center;
+}
+
+.websiteName {
+  font-family: "FontspringBD";
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.mainText {
+  font-family: "Archivo";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #fff;
+  text-align: center;
+  margin: 10px 0 0;
+  min-height: 42px;
+}
+
+.websitePrice {
+  font-size: 35px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.78);
+  font-weight: 900;
+  font-family: "Archivo", sans-serif;
+  margin: 18px 0 16px;
+  padding: 14px 0;
+}
+
+.servicesList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.servicesList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.servicesList::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+}
+
+.servicesList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.servicesList ul {
+  list-style: none;
+  padding: 0;
+  height: 300px;
+  margin: 0;
+}
+
+.servicesList ul li {
+  font-size: 14px;
+  padding: 6px 0;
+  font-family: "Archivo";
+  color: #fff;
+  line-height: 1.35;
+}
+
+.servicesList ul li::before {
+  content: "✓";
+  display: inline-block;
+  color: #fff;
+  padding-right: 8px;
+  font-weight: 700;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.inquireButton,
+.orderNowButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 999px;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+}
+
+.inquireButton {
+  border: none;
+  background: #fff;
+  color: #2042c2;
+}
+
+.orderNowButton {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.inquireButton:hover,
+.orderNowButton:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+
+.orderNowButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.emptyState {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: "Archivo", sans-serif;
+  padding: 40px 0;
+}
+
+.serviceDividerWrapper {
+  width: 100%;
+  margin: 40px auto 10px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.serviceDividerText {
+  font-family: "Archivo", sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.serviceDividerLine {
+  display: block;
+  width: 90%;
+  height: 2px;
+  background: #3757c7;
+}
+
+@media (max-width: 1400px) {
+  .pricingHeading h3 {
+    margin-right: 10px;
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  .pricingHeading p {
+    width: 80%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .heading {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .pricingContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .pricingButtonRow {
+    margin-top: 20px;
+  }
+
+  .pricingSingleButton {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pricingBox {
+    padding: 20px 16px 70px;
+  }
+
+  .heading {
+    font-size: 34px;
+    line-height: normal;
+  }
+
+  .pricingContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard {
+    min-height: 420px;
+  }
+
+  .websiteName {
+    font-size: 18px;
+  }
+
+  .websitePrice {
+    font-size: 24px;
+  }
+
+  .servicesList ul li {
+    font-size: 13px;
+  }
+
+  .serviceDividerText {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .serviceDividerLine {
+    width: 100%;
+  }
+}

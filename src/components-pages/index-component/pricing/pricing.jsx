@@ -793,7 +793,7 @@ const PRICING_CARDS = [
   {
     title: "LOGO DESIGN",
     desc: "100% custom — designed from scratch for your brand",
-    price: "$799",
+    price: "$49",
     features: [
       "Primary logo + variations",
       "2 initial concepts",
@@ -804,7 +804,7 @@ const PRICING_CARDS = [
   {
     title: "BRANDING",
     desc: "Complete brand identity system — strategy to assets.",
-    price: "$799",
+    price: "$249",
     features: [
       "Brand strategy",
       "Full visual identity",
@@ -816,7 +816,7 @@ const PRICING_CARDS = [
   {
     title: "WEB DEVELOPMENT",
     desc: "Custom, CMS, e-commerce, and Shopify builds.",
-    price: "$799",
+    price: "$199",
     features: [
       "Mobile-responsive design",
       "SEO-ready structure",
@@ -827,7 +827,7 @@ const PRICING_CARDS = [
   {
     title: "MOBILE APPS",
     desc: "iOS, Android, and cross-platform — end-to-end.",
-    price: "$799",
+    price: "$599",
     features: [
       "UI/UX design included",
       "iOS & Android options",
@@ -838,7 +838,7 @@ const PRICING_CARDS = [
   {
     title: "SEO & MARKETING",
     desc: "100% custom — designed from scratch for your brand",
-    price: "$799",
+    price: "$299",
     features: [
       "Full channel strategy",
       "Campaign management",
@@ -849,7 +849,7 @@ const PRICING_CARDS = [
   {
     title: "UI/UX DESIGN",
     desc: "Research-first design — wireframes to final UI",
-    price: "$799",
+    price: "$199",
     features: [
       "User research & personas",
       "Wireframing & prototyping",
@@ -860,7 +860,7 @@ const PRICING_CARDS = [
   {
     title: "GRAPHIC DESIGN",
     desc: "On-brand design for every marketing need.",
-    price: "$799",
+    price: "$49",
     features: [
       "Marketing materials",
       "Digital ad creatives",
@@ -871,7 +871,7 @@ const PRICING_CARDS = [
   {
     title: "VIDEO PRODUCTION",
     desc: "Brand films, explainers, reels & motion graphics.",
-    price: "$799",
+    price: "$99",
     features: [
       "Script & concept",
       "Professional production",

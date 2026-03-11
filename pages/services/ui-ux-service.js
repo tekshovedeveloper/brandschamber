@@ -14,6 +14,7 @@ import ServiceProcess from "@/components/service-process/service-process";
 import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { UIUX_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
+import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -89,7 +90,7 @@ export default function UIUXService() {
            
 
          <ServiceProcess {...SERVICE_PROCESS_DATA.uiux} />
-         <ServicePricing id="ui-ux-pricing" service="UI/UX" currentService="UI/UX DESIGN"/>
+         <ServicePricingStripe id="ui-ux-pricing" service="UI/UX" currentService="UI/UX DESIGN"/>
          <Testimonial />
          
           <LiveChatBanner />
