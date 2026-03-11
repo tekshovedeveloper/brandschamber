@@ -81,7 +81,7 @@ export default function Home() {
         <ChooseUs id="about" />
         <Testimonial id="testimonial" />
         {/* <Pricing id="pricing" /> */}
-        <PricingStripe />
+        <PricingStripe id="pricing"  />
         {/* <VideoTestimonial /> */}
         {/* <LetsTalk /> */}
         <RevealBanner />
