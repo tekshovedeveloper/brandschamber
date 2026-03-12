@@ -142,7 +142,7 @@
 
 
 "use client";
-
+import Link from "next/link";
 import styles from "./footer.module.css";
 
 export default function Footer() {
@@ -153,11 +153,13 @@ export default function Footer() {
         <div className={styles.topRow}>
           {/* Column 1 – Brand + description + badges */}
           <div className={styles.brandColumn}>
+            <Link href="/">
             <img
               className={styles.footerLogo}
               src="/assets/home/logo.svg"
               alt="Brands Chamber Logo"
             />
+            </Link>
 
             <p className={styles.footerText}>
               We blend creativity with technology to deliver exceptional
@@ -202,13 +204,13 @@ export default function Footer() {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="#about">About Us</a>
+                <a href="/#about">About Us</a>
               </li>
               <li>
-                <a href="#portfolio">Our Work</a>
+                <a href="/#portfolio">Our Work</a>
               </li>
               <li>
-                <a href="#testimonial">Testimonials</a>
+                <a href="/#testimonial">Testimonials</a>
               </li>
               <li>
                 <a href="/contact/contact">Contact Us</a>
@@ -242,8 +244,8 @@ export default function Footer() {
             <ul className={styles.contactList}>
               <li className={styles.contactRow}>
                 <img src="/assets/home/mail.svg" alt="email" />
-                <a href="mailto:support@metawebpro.com">
-                  support@metawebpro.com
+                <a href="mailto:support@brandschamber.com">
+                  support@brandschamber.com
                 </a>
               </li>
               <li className={styles.contactRow}>

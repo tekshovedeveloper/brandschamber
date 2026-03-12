@@ -330,7 +330,7 @@ export default function MainNavbar() {
         <div className={styles.toolbar}>
           {/* Logo */}
           <div>
-            <Link href="https://brandschamber.com/">
+            <Link href="/">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/assets/home/logo.svg"
@@ -342,7 +342,7 @@ export default function MainNavbar() {
 
           {/* Desktop nav links */}
           <nav className={styles.navItems} aria-label="Main navigation">
-            <Link href="https://brandschamber.com/">
+            <Link href="/">
               <button type="button">Home</button>
             </Link>
 
@@ -397,13 +397,13 @@ export default function MainNavbar() {
               )}
             </div>
 
-            <Link href="#testimonial">
+            <Link href="/#testimonial">
               <button type="button">Clients Testimonials</button>
             </Link>
-            <Link href="#about">
+            <Link href="/#about">
               <button type="button">About</button>
             </Link>
-            <Link href="#pricing">
+            <Link href="/#pricing">
               <button type="button">Pricing</button>
             </Link>
             <Link href="/contact/contact">
@@ -458,7 +458,7 @@ export default function MainNavbar() {
           </div>
 
           <div className={styles.listRoot}>
-            <Link className={styles.drawerLink} href="https://brandschamber.com/" onClick={close}>
+            <Link className={styles.drawerLink} href="/" onClick={close}>
               Home
             </Link>
 
@@ -522,13 +522,13 @@ export default function MainNavbar() {
               </div>
             )}
 
-            <Link className={styles.drawerLink} href="#testimonial" onClick={close}>
+            <Link className={styles.drawerLink} href="/#testimonial" onClick={close}>
               Clients Testimonials
             </Link>
-            <Link className={styles.drawerLink} href="#about" onClick={close}>
+            <Link className={styles.drawerLink} href="/#about" onClick={close}>
               About
             </Link>
-            <Link className={styles.drawerLink} href="#pricing" onClick={close}>
+            <Link className={styles.drawerLink} href="/#pricing" onClick={close}>
               Pricing
             </Link>
             <Link className={styles.drawerLink} href="/contact/contact" onClick={close}>
