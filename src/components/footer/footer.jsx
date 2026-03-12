@@ -272,13 +272,13 @@ export default function Footer() {
             </ul>
 
             <div className={styles.socialRow}>
-              <a href="#" aria-label="Facebook">
+              <a href="https://www.facebook.com/brandschamberofficial/" aria-label="Facebook">
                 <img
                   src="/assets/home/footer_facebook.svg"
                   alt="Facebook"
                 />
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/brandschamberofficial/" aria-label="Instagram">
                 <img
                   src="/assets/home/footer_instagram.svg"
                   alt="Instagram"
