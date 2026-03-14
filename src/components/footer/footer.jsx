@@ -253,25 +253,25 @@ export default function Footer() {
               </li>
               <li className={styles.contactRow}>
                 <img src="/assets/home/phone.svg" alt="phone" />
-                <a href="tel:+16282882456">(628) 288-2456</a>
+                <a href="tel:+16282882456">+1 (385) 391-1875</a>
               </li>
 
               <li className={styles.contactRow}>
                 <img src="/assets/home/location.svg" alt="location" />
                 <div>
-                  <p>245 Riverside Avenue Suite 100</p>
-                  <p>Jacksonville,</p>
-                  <p>FL 32202 United States</p>
+                  <p>10795 hammerly blvd,</p>
+                  <p>unit B06 Houston,</p>
+                  <p>TX 77043</p>
                 </div>
               </li>
 
-              <li className={styles.contactRow}>
+              {/* <li className={styles.contactRow}>
                 <img src="/assets/home/location.svg" alt="location" />
                 <div>
                   <p>329 Howe St</p>
                   <p>Vancouver‑Ca, Canada V6C 3N2</p>
                 </div>
-              </li>
+              </li> */}
             </ul>
 
             <div className={styles.socialRow}>
