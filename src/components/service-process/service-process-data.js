@@ -190,4 +190,36 @@ export const SERVICE_PROCESS_DATA = {
       },
     ],
   },
+
+    graphics: {
+    title: "How We Handle Your Graphic Design",
+    subtitle:
+      "Simple, fast, and built around your marketing calendar",
+    steps: [
+      {
+        title: "Brief",
+        description:
+          "You share what you need — the format, the message, the deadline, and any reference materials. The clearer the brief, the faster we deliver. We'll ask the right questions if anything needs clarifying.",
+        icon: "/assets/process/graphics-step-1.svg",
+      },
+      {
+        title: "Concept",
+        description:
+          "We develop initial design concepts based on your brief and your brand guidelines. For larger projects, we may present multiple directions for your review before committing to a final route.",
+        icon: "/assets/process/graphics-step-2.svg",
+      },
+      {
+        title: "Review",
+        description:
+          "You review the designs and provide feedback. We work collaboratively — your input shapes the final output, and we revise until every detail is exactly right.",
+        icon: "/assets/process/graphics-step-3.svg",
+      },
+      {
+        title: "Finalise",
+        description:
+          "Once approved, we prepare the final production files — correctly formatted, correctly sized, and correctly specified for print or digital use. No guesswork for your printer or your ad platform.",
+        icon: "/assets/process/graphics-step-4.svg",
+      },
+    ],
+  },
 };

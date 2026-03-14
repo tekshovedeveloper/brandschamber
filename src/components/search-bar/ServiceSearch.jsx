@@ -22,6 +22,7 @@ const SERVICES = [
   { label: "Web Development", href: "/services/website-service" }, //
   { label: "UI/UX", href: "/services/ui-ux-service" }, //
   { label: "Video Creation", href: "/services/video-creation-service" }, //
+  { label: "Graphics Design", href: "/services/graphics-design-service" }, //
   { label: "Branding", href: "/services/branding-service" }, //
   // add/remove services here as needed
 ];

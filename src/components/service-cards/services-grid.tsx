@@ -201,7 +201,7 @@ const services: Service[] = [
     buttonText: "Explore Service",
     icon: "/assets/home/service-icon7.svg",
     hoverIcon: "/assets/home/service-icon-hover7.svg",
-    href: "/",
+    href: "/services/graphics-design-service",
   },
   {
     title: "VIDEO PRODUCTION",

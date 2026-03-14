@@ -474,3 +474,102 @@ export const VIDEO_SERVICE_CARDS = [
       "Service businesses, B2B companies, or any brand where social proof drives trust and conversions.",
   },
 ];
+
+export const GRAPHICS_DESIGN_SERVICE_CARDS = [
+  {
+    icon: "/assets/service-feature-card/graphics-design1.svg",
+    hoverIcon: "/assets/service-feature-card/graphics-design-hover1.svg",
+    title: "Marketing & Print Material Design",
+    description:
+      "We design high-quality, on-brand print assets that are fully prepared for professional printing with correct colours, bleed, and resolution.",
+    features: [
+      "Brochures",
+      "Flyers & leaflets",
+      "Posters & displays",
+      "Roll-up banners",
+      "Catalogues & company profiles",
+    ],
+    bestFor:
+      "Businesses needing professional print materials for events and promotions.",
+  },
+  {
+    icon: "/assets/service-feature-card/graphics-design2.svg",
+    hoverIcon: "/assets/service-feature-card/graphics-design-hover2.svg",
+    title: "Digital Ad Creative Design",
+    description:
+      "We create high-impact ad designs for major platforms, optimized for feeds, stories, and display placements to improve engagement and conversions.",
+    features: [
+      "Facebook & Instagram ads",
+      "Google Display banners",
+      "LinkedIn ad creatives",
+      "Animated ads (GIF/HTML5)",
+      "A/B testing variations",
+    ],
+    bestFor:
+      "Businesses running paid ads on social media or display networks.",
+  },
+  {
+    icon: "/assets/service-feature-card/graphics-design3.svg",
+    hoverIcon: "/assets/service-feature-card/graphics-design-hover3.svg",
+    title: "Social Media Graphic Design",
+    description:
+      "Polished, on-brand graphics for posts, stories, carousels, and promos — delivered in editable Canva or Adobe templates.",
+    features: [
+      "Instagram, Facebook, LinkedInposts",
+      "Story & Reel covers",
+      "Carousel & promotional graphics",
+      "Quote & testimonial templates",
+      "Event & launch designs",
+    ],
+    bestFor:
+      "Small businesses and startups wanting a consistent.",
+  },
+  {
+    icon: "/assets/service-feature-card/graphics-design4.svg",
+    hoverIcon: "/assets/service-feature-card/graphics-design-hover4.svg",
+    title: "Infographic Design",
+    description:
+      "Turn complex information into clear, shareable visuals. Perfect for content marketing, social media, and building authority.",
+    features: [
+      "Data & statistical visualizations",
+      "Process & how-to guides",
+      "Comparisons & timelines",
+      "Educational explainers",
+      "Social & blog-optimized designs",
+    ],
+    bestFor:
+      "Businesses looking to showcase data, processes, or expertise visually.",
+  },
+  {
+    icon: "/assets/service-feature-card/graphics-design5.svg",
+    hoverIcon: "/assets/service-feature-card/graphics-design-hover5.svg",
+    title: "Pitch Deck & Presentation Design",
+    description:
+      "Professional, visually compelling decks that support your story and impress any audience.",
+    features: [
+      "Investor pitch decks",
+      "Proposals & presentations",
+      "Overviews & decks",
+      "Slide templates for internal use",
+      "Animated transitions",
+    ],
+    bestFor:
+      "Startups, small businesses, and professionals presenting to investors or clients.",
+  },
+  {
+    icon: "/assets/service-feature-card/graphics-design6.svg",
+    hoverIcon: "/assets/service-feature-card/graphics-design-hover6.svg",
+    title: "Packaging & Label Design",
+    description:
+      "Create packaging that sells. Eye-catching, on-brand, and print-ready designs that make your product stand out.",
+    features: [
+      "Boxes, bags, bottles, stickers",
+      "Flexible & wrap-around packaging",
+      "Unboxing experience design",
+      "Compliance & legal text integration",
+      "Print-ready artwork",
+    ],
+    bestFor:
+      "Product businesses launching new items or refreshing packaging, including e-commerce brands.",
+  },
+];
