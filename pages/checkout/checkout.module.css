@@ -1,0 +1,266 @@
+.mainBg {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.videoBg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.pageOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.pageInner {
+  position: relative;
+  z-index: 1;
+  padding: 50px;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+}
+
+.checkoutShell {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.summaryCard,
+.formCard {
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(180deg, #1941bf, #c861fe);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+}
+
+.summaryCard {
+  position: sticky;
+  top: 24px;
+}
+
+.summaryCardInner,
+.formCardInner {
+  border-radius: 17px;
+  background: #101010;
+}
+
+.summaryCardInner {
+  padding: 28px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formCardInner {
+  padding: 28px;
+  min-height: 720px;
+}
+
+.secureBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-family: "Archivo", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.summaryTitle {
+  margin: 18px 0 10px;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 24px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.summaryLabel {
+  margin: 0 0 8px;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.summaryService {
+  margin: 0;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.summaryDesc {
+  margin: 12px 0 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.summaryPrice {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: "FontspringBD", sans-serif;
+  font-size: 30px;
+  color: #fff;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  width: 150px;
+  height: 40px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: #fff;
+  color: #2042c2;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.formHeader {
+  margin-bottom: 22px;
+}
+
+.formTitle {
+  margin: 0;
+  font-family: "FontspringBD", sans-serif;
+  font-size: 34px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.formSubheading {
+  margin: 10px 0 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.paymentElementWrap {
+  border-radius: 16px;
+  padding: 16px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.payButton {
+  margin-top: 18px;
+  width: 180px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #1941bf, #c861fe);
+  color: #fff;
+  font-family: "Archivo", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.payButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  margin-top: 14px;
+  color: #ff8f8f;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+}
+
+.successMessage {
+  margin-top: 14px;
+  color: #6ee7b7;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+}
+
+.stateBox,
+.stateBoxError {
+  width: min(780px, 100%);
+  margin: 80px auto 0;
+  border-radius: 18px;
+  padding: 28px;
+  text-align: center;
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  background: #101010;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.stateBoxError {
+  color: #ff9b9b;
+}
+
+@media (max-width: 980px) {
+  .checkoutShell {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryCard {
+    position: static;
+  }
+
+  .formCardInner {
+    min-height: auto;
+  }
+
+  .summaryCardInner {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageInner {
+    padding: 20px 14px;
+  }
+
+  .summaryTitle {
+    font-size: 20px;
+  }
+
+  .formTitle {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .formCardInner,
+  .summaryCardInner {
+    padding: 20px;
+  }
+
+  .payButton,
+  .backButton {
+    width: 100%;
+  }
+}

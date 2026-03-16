@@ -24,6 +24,7 @@ import AwardsSection from "@/components/award-section/AwardsSection";
 import VideoTestimonial from "@/components/video-testimonial/VideoTestimonial";
 import ServicesGrid from "@/components/service-cards/services-grid";
 import PricingStripe from "@/components/pricing-stripe/pricing-stripe";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
