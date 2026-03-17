@@ -31,7 +31,7 @@ const logoPortfolio =[
       { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 8" },
       { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 9" },
       { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 10" },
-       { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 11" },
+      { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 11" },
       { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },
       { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },
       { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },

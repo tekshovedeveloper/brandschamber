@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import styles from "./Servicing-pricing-stripe.module.css";
 import {
   SERVICE_CATEGORIES,
@@ -8,15 +9,9 @@ import {
 } from "../service-pricing-name/servicePricingData";
 import MeetingModal from "../MeetingModal/MeetingModal";
 
-/**
- * ServicePricingStripe
- *
- * Props:
- * - id?: string
- * - service?: string
- * - currentService?: string
- */
 export default function ServicePricingStripe({ id, service, currentService }) {
+  const router = useRouter();
+
   const serviceSpecific = !!service;
   const initialCategory = service || "Logo";
 
@@ -65,32 +60,17 @@ export default function ServicePricingStripe({ id, service, currentService }) {
     try {
       setLoadingPackage(pkg.title);
 
-      const response = await fetch("/api/create-service-checkout-session", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      await router.push({
+        pathname: "/checkout",
+        query: {
+          type: "service-package",
           category: activeCategory,
           packageTitle: pkg.title,
-        }),
+        },
       });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        alert(data?.error || "Unable to start Stripe checkout.");
-        return;
-      }
-
-      if (data?.url) {
-        window.location.href = data.url;
-      } else {
-        alert("Stripe checkout URL not received.");
-      }
     } catch (error) {
-      console.error("Stripe checkout error:", error);
-      alert("Something went wrong while starting payment.");
+      console.error("Checkout navigation error:", error);
+      alert("Something went wrong while opening checkout.");
     } finally {
       setLoadingPackage("");
     }
