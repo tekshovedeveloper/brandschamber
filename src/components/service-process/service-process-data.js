@@ -222,4 +222,36 @@ export const SERVICE_PROCESS_DATA = {
       },
     ],
   },
+
+    seo: {
+    title: "How We Manage Your Digital Marketing",
+    subtitle:
+      "A structured, transparent process — from audit to results.",
+    steps: [
+      {
+        title: "Discovery & Audit",
+        description:
+          "We start with a free consultation and a thorough audit of your current digital presence — website, search rankings, social channels, ad accounts, and email list. This gives us a clear picture of where you are, what's working, and where the biggest growth opportunities lie.",
+        icon: "/assets/process/seo-and-marketing-step-1.svg",
+      },
+      {
+        title: "Strategy Development",
+        description:
+          "Based on the audit, we build a digital marketing strategy tailored to your business goals and budget. We define the right channels, the right objectives, and the right metrics — so everything we do is aligned to outcomes that matter to your business.",
+        icon: "/assets/process/seo-and-marketing-step-2.svg",
+      },
+      {
+        title: "Campaign Setup & Launch",
+        description:
+          "We build your campaigns from scratch — keyword research, audience setup, ad creative, email sequences, content calendars — everything configured correctly from day one. No cutting corners in setup, because the foundation determines the results.",
+        icon: "/assets/process/seo-and-marketing-step-3.svg",
+      },
+      {
+        title: "Strategy Review & Scaling",
+        description:
+          "As your campaigns mature and data accumulates, we review the overall strategy — identifying new opportunities, scaling what's working, and evolving your approach as your business grows. Digital marketing is a compounding investment, and we manage it with that long-term view.",
+        icon: "/assets/process/seo-and-marketing-step-4.svg",
+      },
+    ],
+  },
 };

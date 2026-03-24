@@ -40,7 +40,7 @@ const logoPortfolio =[
 ]
 
 
-export default function LogoService() {
+export default function AppService() {
 
  const handleChatClick = () => {
     // open your chat widget / scroll to contact / etc.

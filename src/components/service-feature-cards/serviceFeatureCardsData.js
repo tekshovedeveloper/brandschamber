@@ -573,3 +573,102 @@ export const GRAPHICS_DESIGN_SERVICE_CARDS = [
       "Product businesses launching new items or refreshing packaging, including e-commerce brands.",
   },
 ];
+
+export const SEO_AND_MARKETING_SERVICE_CARDS = [
+  {
+    icon: "/assets/service-feature-card/seo-and-marketing1.svg",
+    hoverIcon: "/assets/service-feature-card/seo-and-marketing-hover1.svg",
+    title: "Search Engine Optimization (SEO)",
+    description:
+      "Rank higher. Get found.We boost your visibility on Google with a long-term strategy that drives consistent organic traffic.",
+    features: [
+      "SEO audit & keyword research",
+      "On-page & technical optimisation",
+      "Local SEO (Google Business Profile)",
+      "Content strategy & link building",
+      "Monthly performance reporting",
+    ],
+    bestFor:
+      "Growing traffic and reducing reliance on paid ads",
+  },
+  {
+    icon: "/assets/service-feature-card/seo-and-marketing2.svg",
+    hoverIcon: "/assets/service-feature-card/seo-and-marketing-hover2.svg",
+    title: "Social Media Marketing",
+    description:
+      "Build an audience. Build trust. We turn your social media into a consistent growth channel with strategic, high-quality content.",
+    features: [
+      "Strategy & content planning",
+      "Content: Posts, graphics, video",
+      "Community management",
+      "Hashtag & reach optimisation",
+      "Analytics & monthly reporting",
+    ],
+    bestFor:
+      "Consistent growth without in-house effort",
+  },
+  {
+    icon: "/assets/service-feature-card/seo-and-marketing3.svg",
+    hoverIcon: "/assets/service-feature-card/seo-and-marketing-hover3.svg",
+    title: "Pay-Per-Click Advertising (PPC / Google Ads)",
+    description:
+      "We create and manage targeted Google Ads campaigns that drive qualified traffic and maximise your ad spend.",
+    features: [
+      "Campaign setup & keywords",
+      "Ad copywriting & A/B testing",
+      "Audience targeting & bid strategy",
+      "Performance tracking & reporting",
+      "Event & launch designs",
+    ],
+    bestFor:
+      "Businesses wanting fast visibility and measurable results from paid search.",
+  },
+  {
+    icon: "/assets/service-feature-card/seo-and-marketing4.svg",
+    hoverIcon: "/assets/service-feature-card/seo-and-marketing-hover4.svg",
+    title: "Meta Ads (Facebook & Instagram)",
+    description:
+      "We create and manage targeted Meta campaigns to drive awareness, traffic, leads, or sales.",
+    features: [
+      "Campaign setup & pixel",
+      "Audience targeting & research",
+      "Ad creative (copy, images, video)",
+      "A/B testing & retargeting",
+      "Budget management & reporting",
+    ],
+    bestFor:
+      "Businesses wanting precise, high-impact Facebook & Instagram advertising.",
+  },
+  {
+    icon: "/assets/service-feature-card/seo-and-marketing5.svg",
+    hoverIcon: "/assets/service-feature-card/seo-and-marketing-hover5.svg",
+    title: "Email Marketing",
+    description:
+      "We create and manage campaigns that nurture leads, drive sales, and keep your brand top of mind.",
+    features: [
+      "Platform setup & list management",
+      "Segmentation & automation",
+      "Campaign design & copywriting",
+      "Abandoned cart & post-purchase",
+      "A/B testing & reporting",
+    ],
+    bestFor:
+      "Businesses wanting to engage customers, boost repeat purchases, and build lasting relationships.",
+  },
+  {
+    icon: "/assets/service-feature-card/seo-and-marketing6.svg",
+    hoverIcon: "/assets/service-feature-card/seo-and-marketing-hover6.svg",
+    title: "Content Marketing",
+    description:
+      "Build authority, earn trust, and attract customers with valuable content.",
+    features: [
+      "Strategy & keyword mapping",
+      "Blogs & guides",
+      "Pillar pages & clusters",
+      "Lead magnets",
+      "Distribution & reporting",
+    ],
+    bestFor:
+      "Businesses aiming for long-term organic growth and industry authority.",
+  },
+];

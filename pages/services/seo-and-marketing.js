@@ -13,13 +13,14 @@ import RunningSlider from "@/components/running-slider/running-slider";
 import ServiceProcess from "@/components/service-process/service-process";
 import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
-import { WEBSITE_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
+import { SEO_AND_MARKETING_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-const logoPortfolio =[
+const SeoAndGraphicsPortfolio =[
       { id: 1, image: "/assets/app-service/App 1.png", alt: "Logo 1" },
       { id: 2, image: "/assets/app-service/App 2.png", alt: "Logo 2" },
       { id: 3, image: "/assets/app-service/App 3.png", alt: "Logo 3" },
@@ -39,7 +40,7 @@ const logoPortfolio =[
 ]
 
 
-export default function WebsiteService() {
+export default function SeoAndMarketingService() {
 
  const handleChatClick = () => {
     // open your chat widget / scroll to contact / etc.
@@ -50,7 +51,7 @@ export default function WebsiteService() {
   return (
     <main className={`${styles.mainBg} min-h-screen ${inter.className}`}>
 
-   <video
+  <video
         className={styles.videoBg}
         autoPlay
         muted
@@ -62,35 +63,36 @@ export default function WebsiteService() {
       </video>
 
 
+
       <MainNavbar />
            <BrandSection
          id="service-banner"
-         title={`Your Website Should Work as Hard as You Do`}
-         highlightText="Tell us what you need — we'll tell you exactly how to build it. "
-         description={`Your website is open 24 hours a day, 7 days a week. It's your best salesperson, your most patient customer service rep, and your most visible storefront — all in one. At Brands Chamber, we build websites that don't just look good. They perform.
-Custom code. Clean architecture. Built for speed, search engines, and real business results. `}
+         title={`Get Found. Get Clicks. Get Customers.`}
+         highlightText="Let's talk about where your business is and how digital marketing can grow it."
+         description={`Having a great brand and a great website means nothing if the right people can't find you. Digital marketing is how small businesses and startups cut through the noise, reach their ideal customers, and turn online visibility into real, measurable revenue.`}
          image="/assets/logo-service/logo-banner.gif"
          imageAlt="Logo design showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
-         defaultService="WEB DEVELOPMENT"
+         defaultService="SEO & MARKETING"
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
          />
-         <SinglePortfolio 
-         title="Website" 
-         heading="WEBSITES That Work in the Real World"
-         subheading="Every logo in our portfolio was built for a real business with a real goal. Browse our work and see how we've helped small businesses across industries establish identities that stand out, scale up, and stick. "
-         items={logoPortfolio} />
-        <ServiceFeatureCards
-          title="EVERYTHING YOU NEED TO BUILD, LAUNCH, AND GROW ONLINE."
-          subtitle="We offer a complete range of website development services — each one designed to meet a specific business need. Whether you're starting from scratch or levelling up what you have, there's a solution built for you."
-          cards={WEBSITE_SERVICE_CARDS}
-        />
          
-        <ServiceProcess {...SERVICE_PROCESS_DATA.website} />
-         <ServicePricingStripe id="website-pricing" service="Website" currentService="WEB DEVELOPMENT" />
+         {/* <SinglePortfolio 
+         title="Graphics Design" 
+         heading="Our Graphic Design Creations"
+         subheading="We bring stories to life through professional Graphic Design. Every cut, effect, and transition is crafted to engage audiences, convey your message, and leave a lasting impression."
+         items={SeoAndGraphicsPortfolio} /> */}
+           <ServiceFeatureCards
+                            title="Our SEO & Digital Marketing Services"
+                            subtitle="We offer a complete range of digital marketing services — each one designed to drive measurable growth for small businesses and startups. Whether you need to be found on Google, reach new audiences on social media, or build a pipeline through email — we have the strategy and the execution capability to deliver it."
+                            cards={SEO_AND_MARKETING_SERVICE_CARDS}
+                          />
+         
+        <ServiceProcess {...SERVICE_PROCESS_DATA.seo} />
+         <ServicePricingStripe id="seo-pricing" service="SEO" currentService="SEO & MARKETING" />
           <Testimonial />
          
           <LiveChatBanner />

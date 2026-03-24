@@ -192,7 +192,7 @@ const services: Service[] = [
     buttonText: "Explore Service",
     icon: "/assets/home/service-icon6.svg",
     hoverIcon: "/assets/home/service-icon-hover6.svg",
-    href: "/",
+    href: "/services/seo-and-marketing",
   },
   {
     title: "GRAPHIC DESIGN",

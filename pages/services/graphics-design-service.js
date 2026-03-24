@@ -40,7 +40,7 @@ const GraphicsDesginPortfolio =[
 ]
 
 
-export default function VideoCreationService() {
+export default function GraphicsDesignService() {
 
  const handleChatClick = () => {
     // open your chat widget / scroll to contact / etc.

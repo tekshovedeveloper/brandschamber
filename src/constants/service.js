@@ -24,6 +24,7 @@ export const SERVICES = [
   { label: "UI/UX", href: "/services/ui-ux-service" },
   { label: "Video Creation", href: "/services/video-creation-service" },
   { label: "Graphics Design", href: "/services/graphics-design-service" },
+  { label: "SEO And Marketing", href: "/services/seo-and-marketing" },
   {
     label: "Web Development",
     href: "/services/website-service",

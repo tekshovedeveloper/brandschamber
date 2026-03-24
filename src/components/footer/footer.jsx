@@ -235,7 +235,7 @@ export default function Footer() {
                 <a href="#">Privacy Policy</a>
               </li>
               <li>
-                <a href="#">FAQ&apos;s</a>
+                <a href="/faq/faq">FAQ&apos;s</a>
               </li>
             </ul>
           </div>
