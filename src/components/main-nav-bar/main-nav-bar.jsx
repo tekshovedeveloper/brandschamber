@@ -540,7 +540,7 @@ export default function MainNavbar() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/13853911875"
+        href="https://wa.me/13462790995"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.whatsappButton}

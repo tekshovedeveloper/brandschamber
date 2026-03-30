@@ -265,8 +265,8 @@ export default function Contact({ id }) {
       />
     </div>
     <h3 className={styles.infoTitle}>PHONE</h3>
-    <a href="tel:+13853911875" className={styles.infoLink}>
-      (385) 391-1875
+    <a href="tel:+13462790995" className={styles.infoLink}>
+      +1 (346) 279-0995
     </a>
   </div>
 

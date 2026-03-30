@@ -270,11 +270,119 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import styles from "./checkout.module.css";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
+
+// function CheckoutForm({ service, product }) {
+//   const stripe = useStripe();
+//   const elements = useElements();
+//   const router = useRouter();
+
+//   const [loading, setLoading] = useState(false);
+//   const [errorMessage, setErrorMessage] = useState("");
+//   const [successMessage, setSuccessMessage] = useState("");
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     if (!stripe || !elements) return;
+
+//     setLoading(true);
+//     setErrorMessage("");
+//     setSuccessMessage("");
+
+//     const { error, paymentIntent } = await stripe.confirmPayment({
+//       elements,
+//       confirmParams: {
+//         return_url: `${window.location.origin}/payment/payment-success`,
+//       },
+//       redirect: "if_required",
+//     });
+
+//     if (error) {
+//       setErrorMessage(error.message || "Payment failed.");
+//       setLoading(false);
+//       return;
+//     }
+
+//     if (paymentIntent && paymentIntent.status === "succeeded") {
+//       setSuccessMessage("Payment successful.");
+//       setTimeout(() => {
+//         router.push("/payment/payment-success");
+//       }, 800);
+//       return;
+//     }
+
+//     setLoading(false);
+//   };
+
+//   return (
+//     <div className={styles.checkoutShell}>
+//       <div className={styles.summaryCard}>
+//         <div className={styles.summaryCardInner}>
+//           <span className={styles.secureBadge}>Secure Payment</span>
+
+//           <h1 className={styles.summaryTitle}>Complete Your Order</h1>
+
+//           <p className={styles.summaryLabel}>You are purchasing:</p>
+
+//           <h2 className={styles.summaryService}>{service}</h2>
+
+//           {product?.description ? (
+//             <p className={styles.summaryDesc}>{product.description}</p>
+//           ) : null}
+
+//           {product?.amount ? (
+//             <div className={styles.summaryPrice}>
+//               ${(product.amount / 100).toFixed(2)}
+//             </div>
+//           ) : null}
+
+//           <Link href="/" className={styles.backButton}>
+//             Back to Pricing
+//           </Link>
+//         </div>
+//       </div>
+
+//       <div className={styles.formCard}>
+//         <div className={styles.formCardInner}>
+//           <div className={styles.formHeader}>
+//             <h2 className={styles.formTitle}>Checkout</h2>
+//             <p className={styles.formSubheading}>
+//               Pay securely without leaving your website.
+//             </p>
+//           </div>
+
+//           <form onSubmit={handleSubmit} className={styles.paymentForm}>
+//             <div className={styles.paymentElementWrap}>
+//               <PaymentElement />
+//             </div>
+
+//             {errorMessage ? (
+//               <p className={styles.errorMessage}>{errorMessage}</p>
+//             ) : null}
+
+//             {successMessage ? (
+//               <p className={styles.successMessage}>{successMessage}</p>
+//             ) : null}
+
+//             <button
+//               type="submit"
+//               className={styles.payButton}
+//               disabled={!stripe || loading}
+//             >
+//               {loading ? "Processing..." : "Pay Now"}
+//             </button>
+//           </form>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 function CheckoutForm({ service, product }) {
   const stripe = useStripe();
@@ -284,6 +392,15 @@ function CheckoutForm({ service, product }) {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
+  // PayPal-specific state
+  const [paypalError, setPaypalError] = useState("");
+  const [paypalSuccess, setPaypalSuccess] = useState("");
+
+  const amountForPaypal = useMemo(() => {
+    if (!product?.amount) return null;
+    return (product.amount / 100).toFixed(2); // Stripe cents -> PayPal dollars
+  }, [product]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -356,6 +473,7 @@ function CheckoutForm({ service, product }) {
             </p>
           </div>
 
+          {/* Stripe (card) checkout */}
           <form onSubmit={handleSubmit} className={styles.paymentForm}>
             <div className={styles.paymentElementWrap}>
               <PaymentElement />
@@ -374,14 +492,73 @@ function CheckoutForm({ service, product }) {
               className={styles.payButton}
               disabled={!stripe || loading}
             >
-              {loading ? "Processing..." : "Pay Now"}
+              {loading ? "Processing..." : "Pay with Card"}
             </button>
           </form>
+
+          {/* Divider */}
+          <div className={styles.dividerOr}>
+            <span>OR</span>
+          </div>
+
+          {/* PayPal checkout */}
+          <div className={styles.paypalSection}>
+            <h3 className={styles.paypalTitle}>Pay with PayPal</h3>
+
+            {amountForPaypal && (
+              <PayPalButtons
+                style={{ layout: "horizontal" }}
+                createOrder={(data, actions) => {
+                  setPaypalError("");
+                  setPaypalSuccess("");
+                  if (!amountForPaypal) {
+                    setPaypalError("Invalid amount for PayPal payment.");
+                    return;
+                  }
+                  return actions.order.create({
+                    purchase_units: [
+                      {
+                        amount: { value: amountForPaypal },
+                        description: product?.description || service,
+                      },
+                    ],
+                  });
+                }}
+                onApprove={(data, actions) => {
+                  return actions.order
+                    .capture()
+                    .then(() => {
+                      setPaypalSuccess("Payment successful.");
+                      setTimeout(
+                        () => router.push("/payment/payment-success"),
+                        800
+                      );
+                    })
+                    .catch((err) => {
+                      setPaypalError(
+                        err?.message || "PayPal payment failed."
+                      );
+                    });
+                }}
+                onError={(err) => {
+                  setPaypalError(err?.message || "PayPal payment failed.");
+                }}
+              />
+            )}
+
+            {paypalError ? (
+              <p className={styles.errorMessage}>{paypalError}</p>
+            ) : null}
+            {paypalSuccess ? (
+              <p className={styles.successMessage}>{paypalSuccess}</p>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -513,7 +690,11 @@ export default function CheckoutPage() {
       paymentMethodOrder: ["card"],
     };
   }, [clientSecret]);
-
+  
+  const paypalOptions = {
+  "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "",
+  currency: "USD",
+};
   const displayTitle = product?.displayService || service || packageTitle || "";
 
   return (
@@ -525,7 +706,7 @@ export default function CheckoutPage() {
       <div className={styles.pageOverlay} />
 
       <div className={styles.pageInner}>
-        {loading ? (
+        {/* {loading ? (
           <div className={styles.stateBox}>Loading checkout…</div>
         ) : pageError ? (
           <div className={styles.stateBoxError}>{pageError}</div>
@@ -537,6 +718,19 @@ export default function CheckoutPage() {
           <div className={styles.stateBoxError}>
             Unable to load checkout.
           </div>
+        )} */}
+        {loading ? (
+          <div className={styles.stateBox}>Loading checkout…</div>
+        ) : pageError ? (
+          <div className={styles.stateBoxError}>{pageError}</div>
+        ) : clientSecret && options ? (
+          <PayPalScriptProvider options={paypalOptions}>
+            <Elements stripe={stripePromise} options={options}>
+              <CheckoutForm service={displayTitle} product={product} />
+            </Elements>
+          </PayPalScriptProvider>
+        ) : (
+          <div className={styles.stateBoxError}>Unable to load checkout.</div>
         )}
       </div>
     </main>
