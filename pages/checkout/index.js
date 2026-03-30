@@ -497,12 +497,12 @@ function CheckoutForm({ service, product }) {
           </form>
 
           {/* Divider */}
-          <div className={styles.dividerOr}>
+          {/* <div className={styles.dividerOr}>
             <span>OR</span>
-          </div>
+          </div> */}
 
           {/* PayPal checkout */}
-          <div className={styles.paypalSection}>
+          {/* <div className={styles.paypalSection}>
             <h3 className={styles.paypalTitle}>Pay with PayPal</h3>
 
             {amountForPaypal && (
@@ -552,7 +552,7 @@ function CheckoutForm({ service, product }) {
             {paypalSuccess ? (
               <p className={styles.successMessage}>{paypalSuccess}</p>
             ) : null}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
