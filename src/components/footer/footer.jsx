@@ -247,8 +247,8 @@ export default function Footer() {
             <ul className={styles.contactList}>
               <li className={styles.contactRow}>
                 <img src="/assets/home/mail.svg" alt="email" />
-                <a href="mailto:support@brandschamber.com">
-                  support@brandschamber.com
+                <a href="mailto:contact@brandschamber.com">
+                  contact@brandschamber.com
                 </a>
               </li>
               <li className={styles.contactRow}>
