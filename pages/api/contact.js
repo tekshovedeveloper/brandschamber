@@ -59,8 +59,13 @@ export const config = {
 };
 
 export default async function handler(req, res) {
+  // Health check
   if (req.method === "GET") {
-    return res.status(200).json({ ok: true, where: "pages/api/contact.js", hint: "POST JSON to send email" });
+    return res.status(200).json({
+      ok: true,
+      where: "pages/api/contact.js",
+      hint: "POST JSON to send email",
+    });
   }
 
   if (req.method !== "POST") {
@@ -71,6 +76,7 @@ export default async function handler(req, res) {
   try {
     const { firstName, email, message } = req.body || {};
 
+    // Validate form fields
     if (!firstName || !email || !message) {
       return res.status(400).json({ ok: false, error: "Missing required fields." });
     }
@@ -80,34 +86,47 @@ export default async function handler(req, res) {
       return res.status(400).json({ ok: false, error: "Invalid email." });
     }
 
+    // Load environment variables
     const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL } = process.env;
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !CONTACT_TO_EMAIL || !CONTACT_FROM_EMAIL) {
       return res.status(500).json({ ok: false, error: "Missing SMTP env vars." });
     }
 
-    // Configure SMTP transporter
+    // Configure SMTP transporter with STARTTLS for secure sending
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
-      port: parseInt(SMTP_PORT),
-      secure: parseInt(SMTP_PORT) === 465, // true for port 465, false for 587
+      port: parseInt(SMTP_PORT), // 587 recommended
+      secure: false,             // false for STARTTLS
+      requireTLS: true,          // enforce TLS
       auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
       },
     });
 
-    // Send email
-    const info = await transporter.sendMail({
-      from: CONTACT_FROM_EMAIL,       // e.g., noreply@yourdomain.com
-      to: CONTACT_TO_EMAIL,           // your contact email
-      replyTo: email,                 // user email for replies
+    // Prepare email content
+    const mailOptions = {
+      from: CONTACT_FROM_EMAIL,   // e.g., noreply@brandschamber.com
+      to: CONTACT_TO_EMAIL,       // recipient
+      replyTo: email,             // user email
       subject: `New contact form message from ${firstName}`,
       text: `Name: ${firstName}\nEmail: ${email}\n\nMessage:\n${message}`,
-    });
+    };
 
-    return res.status(200).json({ ok: true, info });
-  } catch (e) {
-    return res.status(500).json({ ok: false, error: e.message || "Unexpected server error." });
+    // Send email
+    const info = await transporter.sendMail(mailOptions);
+
+    return res.status(200).json({
+      ok: true,
+      message: "Email sent successfully",
+      info,
+    });
+  } catch (error) {
+    console.error("Contact form error:", error);
+    return res.status(500).json({
+      ok: false,
+      error: error.message || "Unexpected server error.",
+    });
   }
 }
