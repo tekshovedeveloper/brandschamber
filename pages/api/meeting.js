@@ -114,7 +114,7 @@ export default async function handler(req, res) {
     const { fullName, email, phone, service, date, time, message } = req.body || {};
 
     // Validate required fields
-    if (!fullName || !email || !service || !date || !time) {
+    if (!fullName || !email || !service) {
       return res.status(400).json({ ok: false, error: "Missing required fields." });
     }
 
