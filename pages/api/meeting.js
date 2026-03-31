@@ -149,8 +149,6 @@ export default async function handler(req, res) {
       `Email: ${email}\n` +
       (phone ? `Phone: ${phone}\n` : "") +
       `Service: ${service}\n` +
-      `Preferred date: ${date}\n` +
-      `Preferred time: ${time}\n\n` +
       `Message:\n${message || "(no message)"}`;
 
     // Send email
