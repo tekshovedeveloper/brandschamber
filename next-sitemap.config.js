@@ -1,2 +1,4 @@
-export const siteUrl = "https://brandschamber.com";
-export const generateRobotsTxt = true;
+module.exports = {
+  siteUrl: "https://brandschamber.com",
+  generateRobotsTxt: true,
+};
