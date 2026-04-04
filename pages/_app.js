@@ -16,11 +16,7 @@ import Script from "next/script";
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Script
-        src="https://analytics.ahrefs.com/analytics.js"
-        data-key="Ghi1WGCge8Rt2PL4cschnA"
-        strategy="afterInteractive"
-      />
+      <script src="https://analytics.ahrefs.com/analytics.js" data-key="Ghi1WGCge8Rt2PL4cschnA" async></script>
       
       <Component {...pageProps} />
     </>
