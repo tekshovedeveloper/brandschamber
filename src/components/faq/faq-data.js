@@ -2,7 +2,7 @@
 // const faqData = {
 //   title: "Frequently Asked Questions",
 //   subtitle:
-//     "Everything you need to know about working with Brands Chamber — from getting started to what happens after delivery. If your question isn't answered here, book a free consultation or email us at hello@brandschamber.com.",
+//     "Everything you need to know about working with Brands Chamber — from getting started to what happens after delivery. If your question isn't answered here, book a free consultation or email us at contact@brandschamber.com.",
 
 //   groups: [
 //     {
@@ -116,7 +116,7 @@
 const faqData = {
   title: "FREQUENTLY ASKED QUESTIONS",
   subtitle:
-    "Everything you need to know about working with Brands Chamber — from getting started to what happens after delivery. If your question isn't answered here, book a free consultation or email us at hello@brandschamber.com.",
+    "Everything you need to know about working with Brands Chamber — from getting started to what happens after delivery. If your question isn't answered here, book a free consultation or email us at contact@brandschamber.com.",
 
   groups: [
     /* =========================
@@ -305,7 +305,7 @@ const faqData = {
           id: "wt-3",
           question: "Do you sign non-disclosure agreements (NDAs)?",
           answer:
-            "Yes — we're happy to sign an NDA before any project discussions if your business requires it. Contact us at hello@brandschamber.com and we'll arrange this before any sensitive information is shared.",
+            "Yes — we're happy to sign an NDA before any project discussions if your business requires it. Contact us at contact@brandschamber.com and we'll arrange this before any sensitive information is shared.",
         },
       ],
     },
@@ -313,7 +313,7 @@ const faqData = {
 
   footerTitle: "Still Have Questions?",
   footerText:
-    "If you didn't find the answer you were looking for, we'd love to hear from you. Reach out through any of the following:\n\n• Email: hello@brandschamber.com — we aim to respond within 1 business day.\n• Free Consultation: Book a no-obligation call directly through our website.\n• Website: www.brandschamber.com\n\nBrands Chamber  ·  www.brandschamber.com  ·  hello@brandschamber.com",
+    "If you didn't find the answer you were looking for, we'd love to hear from you. Reach out through any of the following:\n\n• Email: contact@brandschamber.com — we aim to respond within 1 business day.\n• Free Consultation: Book a no-obligation call directly through our website.\n• Website: www.brandschamber.com\n\nBrands Chamber  ·  www.brandschamber.com  ·  contact@brandschamber.com",
 };
 
 export default faqData;
