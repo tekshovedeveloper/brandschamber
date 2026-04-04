@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 
-export default function LogoService() {
+export default function Contacts() {
 
  
 

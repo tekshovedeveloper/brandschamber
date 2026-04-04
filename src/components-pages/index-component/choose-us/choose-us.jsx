@@ -258,7 +258,7 @@ export default function ChooseUs({ id }) {
           </p>
 
           <div className={styles.ctaRow}>
-            <Link href="/contact/contact" className={styles.ctaLink}>
+            <Link href="/contact/" className={styles.ctaLink}>
               <button className={styles.chooseUsGetStarted}>
                 Lets Get Started
               </button>
