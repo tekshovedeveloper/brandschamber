@@ -21,7 +21,7 @@ export const LOGO_PACKAGES = [
     title: "Logo Basic",
     price: "$49",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "4 Original Logo Concepts",
       "2 Dedicated Logo Designer",
@@ -41,7 +41,7 @@ export const LOGO_PACKAGES = [
     title: "Logo Professional",
     price: "$199",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "12 Original Logo Concepts",
       "4 Dedicated Logo Designer (Industry Specific)",
@@ -64,7 +64,7 @@ export const LOGO_PACKAGES = [
     title: "Logo Elite",
     price: "$399",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "Unlimited Original Logo Concepts",
       "8 Dedicated Logo Designer (Industry Specific)",
@@ -91,7 +91,7 @@ export const WEBSITE_PACKAGES = [
     title: "Basic Website",
     price: "$499",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "3 Page Website",
       "Custom Layout Design",
@@ -118,7 +118,7 @@ export const WEBSITE_PACKAGES = [
     title: "Startup Website",
     price: "$899",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "5 Page Website",
       "Custom Layout Design",
@@ -146,7 +146,7 @@ export const WEBSITE_PACKAGES = [
     title: "Proffesional Website",
     price: "$1499",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "Up to 10 Unique Pages Website",
       "CMS /Admin Panel Integration",
@@ -176,7 +176,7 @@ export const WEBSITE_PACKAGES = [
     title: "E-Commerce Website",
     price: "$1799",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "Custom Ecommerce Website",
       "Up to 200 Products",
@@ -206,7 +206,7 @@ export const WEBSITE_PACKAGES = [
     title: "Corporate Website",
     price: "$3999",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "Up to 15 Unique Pages Website",
       "Custom Made, Interactive & Dynamic Design",
@@ -238,7 +238,7 @@ export const WEBSITE_PACKAGES = [
     title: "Platinum Website",
     price: "$6999",
     desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+      "",
     features: [
       "Up to 20 Unique Pages Website",
       "Custom Made, Interactive & Dynamic & High-End Design",
@@ -277,7 +277,7 @@ export const MOBILE_APP_PACKAGES = [
   {
     title: "App Starter",
     price: "$999",
-    desc: "Perfect for MVPs and small apps that need to get to market quickly.",
+    desc: "",
     features: [
       "iOS or Android (1 platform)",
       "Up to 5 Screens",
@@ -294,7 +294,7 @@ export const MOBILE_APP_PACKAGES = [
   {
     title: "App Growth",
     price: "$2499",
-    desc: "Feature-rich mobile app for growing businesses and startups.",
+    desc: "",
     features: [
       "iOS or Android (1 platform)",
       "Up to 12 Screens",
@@ -313,7 +313,7 @@ export const MOBILE_APP_PACKAGES = [
   {
     title: "App Premium",
     price: "$3999",
-    desc: "Professional grade mobile app with advanced features and scalability.",
+    desc: "",
     features: [
       "iOS and Android (Cross-platform)",
       "Up to 20 Screens",
@@ -333,7 +333,7 @@ export const MOBILE_APP_PACKAGES = [
   {
     title: "App Enterprise",
     price: "$6999",
-    desc: "Enterprise-level mobile solution tailored for complex business needs.",
+    desc: "",
     features: [
       "Custom Strategy & Roadmap",
       "iOS and Android (Native or Cross-platform)",
@@ -527,7 +527,7 @@ export const SEO_PACKAGES = [
   {
     title: "SEO Basic",
     price: "$199/mo",
-    desc: "Foundation SEO for visibility and indexing.",
+    desc: "",
     features: [
       "Technical Audit",
       "Keyword Research (Basic)",
@@ -541,7 +541,7 @@ export const SEO_PACKAGES = [
   {
     title: "SEO Growth",
     price: "$499/mo",
-    desc: "Ongoing SEO to improve rankings and traffic.",
+    desc: "",
     features: [
       "Technical + On-page SEO",
       "Keyword Research (Advanced)",
@@ -555,7 +555,7 @@ export const SEO_PACKAGES = [
   {
     title: "SEO Pro",
     price: "$999/mo",
-    desc: "Aggressive SEO campaign for competitive niches.",
+    desc: "",
     features: [
       "Full SEO Strategy",
       "Content Plan",
@@ -655,7 +655,7 @@ export const LABEL_PACKAGES = [
   {
     title: "Label Starter",
     price: "$99",
-    desc: "Clean label design for one product.",
+    desc: "",
     features: [
       "1 Label Concept",
       "2 Revisions",
@@ -668,7 +668,7 @@ export const LABEL_PACKAGES = [
   {
     title: "Label Pro",
     price: "$249",
-    desc: "Professional label design with variants.",
+    desc: "",
     features: [
       "2 Concepts",
       "Unlimited Revisions",
@@ -682,7 +682,7 @@ export const LABEL_PACKAGES = [
   {
     title: "Packaging Suite",
     price: "$499",
-    desc: "Full packaging/label suite for your brand.",
+    desc: "",
     features: [
       "3 Concepts",
       "Unlimited Revisions",
@@ -700,7 +700,7 @@ export const BOOK_COVER_PACKAGES = [
   {
     title: "Book Cover Basic",
     price: "$149",
-    desc: "A clean, professional front cover for digital platforms.",
+    desc: "",
     features: [
       "1 Book Cover Concept",
       "2 Rounds of Revisions",
@@ -717,7 +717,7 @@ export const BOOK_COVER_PACKAGES = [
   {
     title: "Book Cover Standard",
     price: "$299",
-    desc: "Full cover set for print and digital publication.",
+    desc: "",
     features: [
       "2 Custom Cover Concepts",
       "Unlimited Revisions",
@@ -736,7 +736,7 @@ export const BOOK_COVER_PACKAGES = [
   {
     title: "Book Cover Premium",
     price: "$499",
-    desc: "High-impact cover design with branding for authors and publishers.",
+    desc: "",
     features: [
       "3 Bespoke Cover Concepts",
       "Unlimited Revisions",
@@ -760,7 +760,7 @@ export const UI_UX_PACKAGES = [
   {
     title: "UI/UX Starter",
     price: "$299",
-    desc: "Essential UI/UX package for landing pages and small digital products.",
+    desc: "",
     features: [
       "Up to 5 Screens",
       "Wireframes Included",
@@ -776,7 +776,7 @@ export const UI_UX_PACKAGES = [
   {
     title: "UI/UX Growth",
     price: "$699",
-    desc: "A complete design solution for startups and growing apps.",
+    desc: "",
     features: [
       "Up to 12 Screens",
       "Low + High Fidelity Wireframes",
@@ -793,7 +793,7 @@ export const UI_UX_PACKAGES = [
   {
     title: "UI/UX Premium",
     price: "$1299",
-    desc: "Advanced product design for SaaS, mobile apps, and complex platforms.",
+    desc: "",
     features: [
       "Up to 25 Screens",
       "UX Research & Competitor Review",
@@ -814,7 +814,7 @@ export const VIDEO_CREATION_PACKAGES = [
   {
     title: "Video Starter",
     price: "$399",
-    desc: "A polished short-form video package for promotions and social media.",
+    desc: "",
     features: [
       "Up to 30 Seconds Duration",
       "Basic Editing",
@@ -830,7 +830,7 @@ export const VIDEO_CREATION_PACKAGES = [
   {
     title: "Video Growth",
     price: "$799",
-    desc: "Professional brand video with stronger storytelling and motion design.",
+    desc: "",
     features: [
       "Up to 60 Seconds Duration",
       "Professional Editing",
@@ -847,7 +847,7 @@ export const VIDEO_CREATION_PACKAGES = [
   {
     title: "Video Premium",
     price: "$1499",
-    desc: "High-end commercial quality video content for campaigns and brands.",
+    desc: "",
     features: [
       "Up to 90 Seconds Duration",
       "Advanced Editing & Transitions",
@@ -869,7 +869,7 @@ export const GRAPHICS_DESIGNING_PACKAGES = [
   {
     title: "Graphics Starter",
     price: "$249",
-    desc: "Perfect for small businesses needing quick branded visuals.",
+    desc: "",
     features: [
       "3 Design Concepts",
       "Social Media Post Design Set",
@@ -885,7 +885,7 @@ export const GRAPHICS_DESIGNING_PACKAGES = [
   {
     title: "Graphics Growth",
     price: "$599",
-    desc: "A complete graphics package for marketing and daily content needs.",
+    desc: "",
     features: [
       "6 Design Concepts",
       "Social Media Creatives Bundle",
@@ -901,7 +901,7 @@ export const GRAPHICS_DESIGNING_PACKAGES = [
   {
     title: "Graphics Premium",
     price: "$1099",
-    desc: "A premium graphics solution for campaigns, launches, and ongoing branding.",
+    desc: "",
     features: [
       "10 Custom Design Concepts",
       "Full Marketing Collateral Set",
