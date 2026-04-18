@@ -174,7 +174,7 @@ export default function Footer() {
                 src="/assets/home/platform1.svg"
                 alt="DMCA Protected"
               /> */}
-              <a href="//www.dmca.com/Protection/Status.aspx?ID=a8ea8bb6-f660-4766-8487-6f83b1ace9cf" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w250-2x1-01.png?ID=a8ea8bb6-f660-4766-8487-6f83b1ace9cf"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+              <a href="//www.dmca.com/Protection/Status.aspx?ID=a8ea8bb6-f660-4766-8487-6f83b1ace9cf" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w250-2x1-01.png?ID=a8ea8bb6-f660-4766-8487-6f83b1ace9cf"  alt="DMCA.com Protection Status" style={{height:"65px"}}/></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
             </div>
 
             <div className={styles.badgesBottomRow}>
