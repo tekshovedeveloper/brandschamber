@@ -303,8 +303,8 @@ export default function Contact({ id }) {
       />
     </div>
     <h3 className={styles.infoTitle}>LOCATION</h3>
-    <a href="#" className={styles.infoLink}>
-      220 S Almaden Ave, San Jose, CA 95113, USA
+    <a href="#" className={styles.infoLink}>    
+         12510 W. Airport Blvd. UNIT C01-B Sugar Land, TX 77478
     </a>
   </div>
 </div>

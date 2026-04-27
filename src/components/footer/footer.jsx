@@ -257,9 +257,9 @@ export default function Footer() {
               <li className={styles.contactRow}>
                 <img src="/assets/home/location.svg" alt="location" />
                 <div>
-                  <p>10795 hammerly blvd,</p>
-                  <p>unit B06 Houston,</p>
-                  <p>TX 77043</p>
+                  <p>12510 W. Airport Blvd,</p>
+                  <p>UNIT C01-B Sugar Land,</p>
+                  <p>TX 77478</p>
                 </div>
               </li>
 
