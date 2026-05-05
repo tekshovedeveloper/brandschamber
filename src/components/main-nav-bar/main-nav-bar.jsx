@@ -539,7 +539,7 @@ export default function MainNavbar() {
       </div>
 
       {/* Floating WhatsApp Button */}
-      <a
+      {/* <a
         href="https://wa.me/+13853911875"
         target="_blank"
         rel="noopener noreferrer"
@@ -547,7 +547,7 @@ export default function MainNavbar() {
         aria-label="Chat with us on WhatsApp"
       >
         <img src="/assets/home/whatsapp.svg" alt="WhatsApp" className={styles.whatsappIcon} />
-      </a>
+      </a> */}
     </>
   );
 }
