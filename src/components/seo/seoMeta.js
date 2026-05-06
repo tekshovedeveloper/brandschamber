@@ -24,16 +24,19 @@ const localBusinessSchema = {
     postalCode: "77478",
     addressCountry: "US",
   },
-  areaServed: ["Sugar Land", "Houston", "Texas", "United States"],
-  serviceType: [
-    "Web Development",
-    "SEO Services",
-    "Digital Marketing",
-    "Branding",
-    "Mobile App Development",
-    "UI/UX Design",
-    "Graphic Design",
-    "Video Creation",
+  areaServed: [
+    {
+      "@type": "Place",
+      name: "Sugar Land, TX",
+    },
+    {
+      "@type": "Place",
+      name: "Houston, TX",
+    },
+    {
+      "@type": "Country",
+      name: "United States",
+    },
   ],
 };
 
@@ -67,7 +70,17 @@ export const seoMeta = {
       "Grow your business with Brands Chamber’s web development, SEO, branding, mobile app development, UI/UX design, and digital marketing services.",
     schema: [organizationSchema, localBusinessSchema, websiteSchema],
   },
-
+"/services": {
+  path: "/services",
+  title: "Digital Services for Business Growth | Brands Chamber",
+  description:
+    "Explore Brands Chamber’s website development, SEO, branding, logo design, app development, UI/UX design, graphic design, video creation, and digital marketing services.",
+  schema: serviceSchema(
+    "Digital Services",
+    "Website development, SEO, branding, logo design, app development, UI/UX design, graphic design, video creation, and digital marketing services.",
+    "/services"
+  ),
+},
   "/contact": {
     path: "/contact",
     title: "Contact Brands Chamber | Web Design & SEO Agency in Sugar Land, TX",

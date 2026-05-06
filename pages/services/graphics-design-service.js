@@ -15,7 +15,7 @@ import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-proce
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { GRAPHICS_DESIGN_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
-
+import RelatedServices from "@/components/related-services/RelatedServices";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -96,6 +96,7 @@ export default function GraphicsDesignService() {
           <Testimonial />
          
           <LiveChatBanner />
+<RelatedServices type="graphics" />
       <Footer /> 
     </main>
   );

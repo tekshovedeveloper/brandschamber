@@ -14,7 +14,7 @@ import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-proce
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { APP_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
-
+import RelatedServices from "@/components/related-services/RelatedServices";
 
 
 import Testimonial from "@/components/testimonial/testimonial";
@@ -98,6 +98,7 @@ From idea to App Store — we handle everything. `}
          
         
          <LiveChatBanner />
+<RelatedServices type="app" />
       <Footer /> 
     </main>
   );

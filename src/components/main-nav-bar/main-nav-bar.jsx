@@ -359,7 +359,7 @@ export default function MainNavbar() {
                 Services <span className={styles.caret}>▾</span>
               </button>
 
-              {servicesOpen && (
+              {/* {servicesOpen && (
                 <div className={styles.dropdownMenu} role="menu">
                   {SERVICES.map((s) => {
                     const hasChildren = Array.isArray(s.children) && s.children.length > 0;
@@ -375,7 +375,6 @@ export default function MainNavbar() {
                           {s.label}
                         </Link>
 
-                        {/* Sub-services (future) */}
                         {hasChildren && (
                           <div className={styles.subMenu}>
                             {s.children.map((c) => (
@@ -394,7 +393,53 @@ export default function MainNavbar() {
                     );
                   })}
                 </div>
-              )}
+              )} */}
+              {servicesOpen && (
+  <div className={styles.dropdownMenu} role="menu">
+    {SERVICES.map((s) => {
+      const hasChildren = Array.isArray(s.children) && s.children.length > 0;
+
+      return (
+        <div className={styles.dropdownItemWrap} key={s.href || s.label}>
+          <Link
+            href={s.href}
+            className={styles.dropdownItem}
+            role="menuitem"
+            onClick={() => setServicesOpen(false)}
+          >
+            {s.label}
+          </Link>
+
+          {hasChildren && (
+            <div className={styles.subMenu}>
+              {s.children.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className={styles.subMenuItem}
+                  onClick={() => setServicesOpen(false)}
+                >
+                  {c.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    })}
+
+    <div className={styles.dropdownItemWrap}>
+      <Link
+        href="/services"
+        className={styles.dropdownItem}
+        role="menuitem"
+        onClick={() => setServicesOpen(false)}
+      >
+        View All Services
+      </Link>
+    </div>
+  </div>
+)}
             </div>
 
             <Link href="/#testimonial">
@@ -406,14 +451,14 @@ export default function MainNavbar() {
             <Link href="/#pricing">
               <button type="button">Pricing</button>
             </Link>
-            <Link href="/contact/">
+            <Link href="/contact">
               <button type="button">Contact Us</button>
             </Link>
           </nav>
 
           {/* Right-side CTA */}
           <div>
-            <Link href="/contact/">
+            <Link href="/contact">
               <button className={styles.numberButton} type="button">
                 Let&apos;s Talk
               </button>
@@ -472,7 +517,7 @@ export default function MainNavbar() {
               Services <span className={styles.caret}>▾</span>
             </button>
 
-            {mobileServicesOpen && (
+            {/* {mobileServicesOpen && (
               <div className={styles.drawerSubList}>
                 {SERVICES.map((s) => {
                   const hasChildren = Array.isArray(s.children) && s.children.length > 0;
@@ -520,7 +565,66 @@ export default function MainNavbar() {
                   );
                 })}
               </div>
+            )} */}
+            {mobileServicesOpen && (
+  <div className={styles.drawerSubList}>
+    {SERVICES.map((s) => {
+      const hasChildren = Array.isArray(s.children) && s.children.length > 0;
+      const isOpen = mobileActiveParent === s.label;
+
+      return (
+        <div key={s.href || s.label} className={styles.drawerSubItemWrap}>
+          <div className={styles.drawerSubRow}>
+            <Link
+              href={s.href}
+              className={styles.drawerSubLink}
+              onClick={close}
+            >
+              {s.label}
+            </Link>
+
+            {hasChildren && (
+              <button
+                type="button"
+                className={styles.drawerMiniToggle}
+                onClick={() => onMobileParentClick(s.label)}
+                aria-expanded={isOpen}
+                aria-label={`Toggle ${s.label} sub services`}
+              >
+                ▸
+              </button>
             )}
+          </div>
+
+          {hasChildren && isOpen && (
+            <div className={styles.drawerSubChildren}>
+              {s.children.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className={styles.drawerChildLink}
+                  onClick={close}
+                >
+                  {c.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    })}
+
+    <div className={styles.drawerSubItemWrap}>
+      <Link
+        href="/services"
+        className={styles.drawerSubLink}
+        onClick={close}
+      >
+        View All Services
+      </Link>
+    </div>
+  </div>
+)}
 
             <Link className={styles.drawerLink} href="/#testimonial" onClick={close}>
               Clients Testimonials
@@ -531,7 +635,7 @@ export default function MainNavbar() {
             <Link className={styles.drawerLink} href="/#pricing" onClick={close}>
               Pricing
             </Link>
-            <Link className={styles.drawerLink} href="/contact/" onClick={close}>
+            <Link className={styles.drawerLink} href="/contact" onClick={close}>
               Contact Us
             </Link>
           </div>
@@ -540,7 +644,7 @@ export default function MainNavbar() {
 
       {/* Floating WhatsApp Button */}
       {/* <a
-        href="https://wa.me/+13853911875"
+        href="https://wa.me/13853911875"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.whatsappButton}

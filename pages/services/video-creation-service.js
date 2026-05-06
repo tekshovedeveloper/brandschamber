@@ -15,7 +15,7 @@ import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-proce
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { VIDEO_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
-
+import RelatedServices from "@/components/related-services/RelatedServices";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -96,6 +96,7 @@ export default function VideoCreationService() {
           <Testimonial />
          
           <LiveChatBanner />
+<RelatedServices type="video" />
       <Footer /> 
     </main>
   );

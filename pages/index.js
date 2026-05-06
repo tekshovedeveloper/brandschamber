@@ -13,6 +13,7 @@ import RevealBanner from "@/components/live-chat-banner/live-chat-banner";
 import AwardsSection from "@/components/award-section/AwardsSection";
 import ServicesGrid from "@/components/service-cards/services-grid";
 import PricingStripe from "@/components/pricing-stripe/pricing-stripe";
+import HomeSeoContent from "@/components-pages/index-component/home-seo-content/HomeSeoContent";
 
  
 
@@ -61,6 +62,7 @@ export default function Home() {
 <ServicesGrid />
 <AwardsSection />
 <ChooseUs id="about" />
+<HomeSeoContent />
 <Testimonial id="testimonial" />
 <PricingStripe id="pricing" />
 <RevealBanner />

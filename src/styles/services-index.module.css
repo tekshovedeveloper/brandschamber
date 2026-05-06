@@ -1,0 +1,89 @@
+.page {
+  min-height: 100vh;
+  background: #08080c;
+  color: #ffffff;
+}
+
+.hero {
+  padding: 150px 20px 70px;
+  background:
+    radial-gradient(circle at top right, rgba(137, 80, 255, 0.22), transparent 35%),
+    #08080c;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0 0 20px;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.hero p {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.servicesSection {
+  padding: 70px 20px 100px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.card p {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 16px;
+  color: #bfa7ff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+}

@@ -15,7 +15,7 @@ import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-proce
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { BRAND_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
-
+import RelatedServices from "@/components/related-services/RelatedServices";
 const inter = Inter({ subsets: ["latin"] });
 
 const BrandingPortfolio =[
@@ -94,6 +94,7 @@ We don't start with aesthetics. We start with thinking. Because a brand that
           <Testimonial />
          
           <LiveChatBanner />
+<RelatedServices type="branding" />
       <Footer /> 
     </main>
   );

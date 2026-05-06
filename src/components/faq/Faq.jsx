@@ -16,7 +16,7 @@ export default function Faq() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <header className={styles.header}>
-          <h2 className={styles.title}>{title}</h2>
+          <h1 className={styles.title}>{title}</h1>
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </header>
 

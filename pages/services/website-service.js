@@ -15,7 +15,7 @@ import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-proce
 import ServiceFeatureCards from "@/components/service-feature-cards/service-feature-cards";
 import { WEBSITE_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
-
+import RelatedServices from "@/components/related-services/RelatedServices";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -94,6 +94,7 @@ Custom code. Clean architecture. Built for speed, search engines, and real busin
           <Testimonial />
          
           <LiveChatBanner />
+<RelatedServices type="website" />
       <Footer /> 
     </main>
   );

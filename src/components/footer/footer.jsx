@@ -211,10 +211,13 @@ export default function Footer() {
                 <a href="/#portfolio">Our Work</a>
               </li>
               <li>
+                <a href="/services">Services</a>
+              </li>
+              <li>
                 <a href="/#testimonial">Testimonials</a>
               </li>
               <li>
-                <a href="/contact/">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </li>
               {/* <li>
                 <a href="#blogs">Blogs</a>
@@ -227,13 +230,13 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>USEFUL LINKS</h4>
             <ul className={styles.linkList}>
               <li>
-                <a href="/terms-and-conditions/">Terms &amp; Condition</a>
+                <a href="/terms-and-conditions">Terms &amp; Condition</a>
               </li>
               {/* <li>
                 <a href="#">Privacy Policy</a>
               </li> */}
               <li>
-                <a href="/faq/">FAQ&apos;s</a>
+                <a href="/faq">FAQ&apos;s</a>
               </li>
             </ul>
           </div>

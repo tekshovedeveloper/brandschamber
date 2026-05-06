@@ -1,0 +1,43 @@
+.section {
+  padding: 70px 20px;
+  background: #08080c;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.container h2 {
+  margin-bottom: 24px;
+  font-size: clamp(28px, 4vw, 42px);
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 24px;
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  border-radius: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.035);
+  font-weight: 700;
+}
+
+.card:hover {
+  border-color: rgba(191, 167, 255, 0.9);
+  color: #bfa7ff;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
