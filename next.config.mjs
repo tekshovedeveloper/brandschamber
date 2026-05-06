@@ -25,11 +25,11 @@ const nextConfig = {
         destination: "/#pricing",
         permanent: false,
       },
-      {
-        source: "/services",
-        destination: "/#services",
-        permanent: false,
-      },
+      // {
+      //   source: "/services",
+      //   destination: "/#services",
+      //   permanent: false,
+      // },
     ];
   },
 };
