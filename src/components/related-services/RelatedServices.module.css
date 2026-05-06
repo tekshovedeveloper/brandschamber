@@ -1,6 +1,6 @@
 .section {
   padding: 70px 20px;
-  background: #08080c;
+  background: #151515;
   color: #ffffff;
 }
 
@@ -9,10 +9,23 @@
   margin: 0 auto;
 }
 
-.container h2 {
-  margin-bottom: 24px;
-  font-size: clamp(28px, 4vw, 42px);
+
+.testimonialHeading {
+  text-align: center;
+  color: #fff;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.testimonialHeading h3 {
+  font-family: "FontspringBD";
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  line-height: 50px;
   text-transform: uppercase;
+  margin: 0 0 12px;
 }
 
 .grid {
@@ -36,7 +49,20 @@
   color: #bfa7ff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+   .testimonialHeading h3 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 600px) {
+    .testimonialHeading h3 {
+    font-size: 34px;
+    line-height: normal;
+  }
   .grid {
     grid-template-columns: 1fr;
   }

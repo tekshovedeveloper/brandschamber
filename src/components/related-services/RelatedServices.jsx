@@ -22,9 +22,9 @@ const relatedMap = {
       title: "Branding Services",
       href: "/services/branding-service",
     },
-    {
-      title: "Logo Animation Services",
-      href: "/services/logo-animation-service",
+     {
+      title: "Website Development Services",
+      href: "/services/website-service",
     },
     {
       title: "Graphic Design Services",
@@ -68,8 +68,8 @@ const relatedMap = {
       href: "/services/graphics-design-service",
     },
     {
-      title: "Logo Animation Services",
-      href: "/services/logo-animation-service",
+      title: "Logo Design Services",
+      href: "/services/logo-service",
     },
     {
       title: "Branding Services",
@@ -94,8 +94,8 @@ const relatedMap = {
 
   marketing: [
     {
-      title: "Search Engine Optimization",
-      href: "/services/search-engine-optimization",
+      title: "App Development Services",
+      href: "/services/app-service",
     },
     {
       title: "Website Development Services",
@@ -117,8 +117,8 @@ const relatedMap = {
       href: "/services/ui-ux-service",
     },
     {
-      title: "Search Engine Optimization",
-      href: "/services/search-engine-optimization",
+      title: "App Development Services",
+      href: "/services/app-service",
     },
   ],
 
@@ -144,7 +144,10 @@ export default function RelatedServices({ type = "creative" }) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2>Related Services</h2>
+        <div className={styles.testimonialHeading}>
+
+        <h3>Related Services</h3>
+        </div>
         <div className={styles.grid}>
           {services.map((service) => (
             <Link key={service.href} href={service.href} className={styles.card}>

@@ -62,7 +62,7 @@ export default function Home() {
 <ServicesGrid />
 <AwardsSection />
 <ChooseUs id="about" />
-<HomeSeoContent />
+{/* <HomeSeoContent /> */}
 <Testimonial id="testimonial" />
 <PricingStripe id="pricing" />
 <RevealBanner />
