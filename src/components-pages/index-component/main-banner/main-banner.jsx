@@ -97,7 +97,7 @@ export default function MainBanner({ id }) {
       <div className={styles.mainBannerFirstContainer}>
         <div className={styles.rightSideDiv}>
           <h1 className={styles.mainHeading}>
-            YOUR BRAND’S CREATIVES
+            YOUR BRAND’S CREATIVE
             <br />
             POWERHOUSE
           </h1>
