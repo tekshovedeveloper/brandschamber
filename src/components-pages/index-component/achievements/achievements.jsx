@@ -75,7 +75,7 @@ export default function Achievements({id}) {
             alt="Websites Created"
           />
           <div className={styles.portfolioContent}>
-            <h6 className={styles.portfolioHeading}>15k+</h6>
+            <h6 className={styles.portfolioHeading}>100+</h6>
             <p className={styles.portfolioText}>Websites Created</p>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function Achievements({id}) {
             alt="Custom Web Portal/Applications"
           />
           <div className={styles.portfolioContent}>
-            <h6 className={styles.portfolioHeading}>8k+</h6>
+            <h6 className={styles.portfolioHeading}>30+</h6>
             <p className={styles.portfolioText}>
               Custom Web Portal/Applications
             </p>
@@ -101,7 +101,7 @@ export default function Achievements({id}) {
             alt="Apps Created"
           />
           <div className={styles.portfolioContent}>
-            <h6 className={styles.portfolioHeading}>2k+</h6>
+            <h6 className={styles.portfolioHeading}>20+</h6>
             <p className={styles.portfolioText}>Apps Created</p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function Achievements({id}) {
             alt="Revenue Generated"
           />
           <div className={styles.portfolioContent}>
-            <h6 className={styles.portfolioHeading}>120M</h6>
+            <h6 className={styles.portfolioHeading}>1M+</h6>
             <p className={styles.portfolioText}>Revenue Generated</p>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function Achievements({id}) {
                 alt="Website Created"
               />
               <div className={styles.portfolioContent}>
-                <h6 className={styles.portfolioHeading}>15K+</h6>
+                <h6 className={styles.portfolioHeading}>100+</h6>
                 <p className={styles.portfolioText}>Website Created</p>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function Achievements({id}) {
                 alt="Custom Web Portal/Applications"
               />
               <div className={styles.portfolioContent}>
-                <h6 className={styles.portfolioHeading}>8K+</h6>
+                <h6 className={styles.portfolioHeading}>30+</h6>
                 <p className={styles.portfolioText}>
                   Custom Web Portal/Applications
                 </p>
@@ -186,7 +186,7 @@ export default function Achievements({id}) {
                 alt="Apps Created"
               />
               <div className={styles.portfolioContent}>
-                <h6 className={styles.portfolioHeading}>2K+</h6>
+                <h6 className={styles.portfolioHeading}>20+</h6>
                 <p className={styles.portfolioText}>Apps Created</p>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function Achievements({id}) {
                 alt="Revenue Generated"
               />
               <div className={styles.portfolioContent}>
-                <h6 className={styles.portfolioHeading}>120M</h6>
+                <h6 className={styles.portfolioHeading}>1M</h6>
                 <p className={styles.portfolioText}>Revenue Generated</p>
               </div>
             </div>

@@ -16,25 +16,44 @@ import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePri
 import RelatedServices from "@/components/related-services/RelatedServices";
 const inter = Inter({ subsets: ["latin"] });
 
+// const logoPortfolio =[
+//       { id: 1, image: "/assets/logo-service/logo 1.png", alt: "Logo 1" },
+//       { id: 2, image: "/assets/logo-service/logo 2.png", alt: "Logo 2" },
+//       { id: 3, image: "/assets/logo-service/logo 3.png", alt: "Logo 3" },
+//       { id: 4, image: "/assets/logo-service/logo 4.png", alt: "Logo 4" },
+//       { id: 5, image: "/assets/logo-service/logo 5.png", alt: "Logo 5" },
+//       { id: 6, image: "/assets/logo-service/logo 6.png", alt: "Logo 6" },
+//       { id: 5, image: "/assets/logo-service/logo 7.png", alt: "Logo 7" },
+//       { id: 6, image: "/assets/logo-service/logo 1.png", alt: "Logo 8" },
+//       { id: 5, image: "/assets/logo-service/logo 2.png", alt: "Logo 9" },
+//       { id: 6, image: "/assets/logo-service/logo 3.png", alt: "Logo 10" },
+//        { id: 5, image: "/assets/logo-service/logo 4.png", alt: "Logo 11" },
+//       { id: 6, image: "/assets/logo-service/logo 5.png", alt: "Logo 12" },
+//       { id: 6, image: "/assets/logo-service/logo 6.png", alt: "Logo 13" },
+//       { id: 6, image: "/assets/logo-service/logo 7.png", alt: "Logo 14" },
+
+  
+// ]
+
+
 const logoPortfolio =[
-      { id: 1, image: "/assets/logo-service/logo 1.png", alt: "Logo 1" },
-      { id: 2, image: "/assets/logo-service/logo 2.png", alt: "Logo 2" },
-      { id: 3, image: "/assets/logo-service/logo 3.png", alt: "Logo 3" },
-      { id: 4, image: "/assets/logo-service/logo 4.png", alt: "Logo 4" },
-      { id: 5, image: "/assets/logo-service/logo 5.png", alt: "Logo 5" },
-      { id: 6, image: "/assets/logo-service/logo 6.png", alt: "Logo 6" },
-      { id: 5, image: "/assets/logo-service/logo 7.png", alt: "Logo 7" },
-      { id: 6, image: "/assets/logo-service/logo 1.png", alt: "Logo 8" },
-      { id: 5, image: "/assets/logo-service/logo 2.png", alt: "Logo 9" },
-      { id: 6, image: "/assets/logo-service/logo 3.png", alt: "Logo 10" },
-       { id: 5, image: "/assets/logo-service/logo 4.png", alt: "Logo 11" },
-      { id: 6, image: "/assets/logo-service/logo 5.png", alt: "Logo 12" },
-      { id: 6, image: "/assets/logo-service/logo 6.png", alt: "Logo 13" },
-      { id: 6, image: "/assets/logo-service/logo 7.png", alt: "Logo 14" },
+      { id: 1, image: "/assets/app-service/App 1.png", alt: "Logo 1" },
+      { id: 2, image: "/assets/app-service/App 2.png", alt: "Logo 2" },
+      { id: 3, image: "/assets/app-service/App 3.png", alt: "Logo 3" },
+      { id: 4, image: "/assets/app-service/App 4.png", alt: "Logo 4" },
+      { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 5" },
+      { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 6" },
+      { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 7" },
+      { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 8" },
+      { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 9" },
+      { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 10" },
+      { id: 5, image: "/assets/app-service/App 5.png", alt: "Logo 11" },
+      { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },
+      { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },
+      { id: 6, image: "/assets/app-service/App 6.png", alt: "Logo 12" },
 
   
 ]
-
 
 export default function LogoService() {
 
