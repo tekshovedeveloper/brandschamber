@@ -45,7 +45,8 @@ import Script from "next/script";
 import SeoHead from "@/components/seo/SeoHead";
 import { seoMeta, defaultSeoMeta } from "@/components/seo/seoMeta";
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+// const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_MEASUREMENT_ID =  'G-31350X9N61'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
