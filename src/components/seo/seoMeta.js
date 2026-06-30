@@ -65,7 +65,7 @@ const serviceSchema = (name, description, path) => ({
 export const seoMeta = {
   "/": {
     path: "/",
-    title: "Web Development, SEO & Digital Marketing in Sugar Land, TX | Brands Chamber",
+    title: "Web Development, SEO & Digital Marketing Agency in Sugar Land, TX | Brands Chamber",
     description:
       "Grow your business in Sugar Land, TX with Brands Chamber’s web development, SEO, branding, mobile app development, UI/UX design, and digital marketing services.",
     schema: [organizationSchema, localBusinessSchema, websiteSchema],
@@ -85,7 +85,7 @@ export const seoMeta = {
     path: "/contact",
     title: "Contact Brands Chamber | Web Design & SEO Agency in Sugar Land, TX",
     description:
-      "Contact Brands Chamber for web development, SEO, branding, app development, UI/UX design, and digital marketing services.",
+      "Talk to Brands Chamber's Sugar Land team about your web design, SEO or branding project. Free 30-minute consultation. Call, email or book online.",
     schema: [organizationSchema, localBusinessSchema],
   },
 
@@ -107,7 +107,7 @@ export const seoMeta = {
 
   "/services/website-service": {
     path: "/services/website-service",
-    title: "Website Development Services for Small Businesses in Sugar Land, TX | Brands Chamber",
+    title: "Website Development Services for Small Businesses in Sugar Land, TX | Custom Sites | Brands Chamber",
     description:
     "Custom websites, CMS websites, e-commerce stores, Shopify websites, and progressive web apps built for small businesses in Sugar Land, TX and the Houston area.",
     schema: serviceSchema(
@@ -145,7 +145,7 @@ export const seoMeta = {
     path: "/services/branding-service",
     title: "Branding Services for Startups & Businesses | Brands Chamber",
     description:
-      "Build a strong brand identity with logo design, brand guidelines, visual identity, messaging, and complete branding services.",
+      "Custom logo design & full brand identity for Sugar Land & US businesses. Strategy, visual identity, guidelines & stationery. 100% original, no templates.",
     schema: serviceSchema(
       "Branding Services",
       "Logo design, brand guidelines, visual identity, messaging, and complete branding services for startups and growing businesses.",
@@ -169,10 +169,10 @@ export const seoMeta = {
     path: "/services/app-service",
     title: "Mobile App Development Services | Brands Chamber",
     description:
-      "Custom iOS, Android, and cross-platform mobile app development services for startups, businesses, and digital products.",
+      "Custom iOS, Android & React Native app development in Sugar Land, TX. Idea-to-launch builds for US startups & SMBs. Free 30-min consultation.",
     schema: serviceSchema(
       "Mobile App Development Services",
-      "Custom iOS, Android, and cross-platform mobile app development services for startups, businesses, and digital products.",
+      "Custom iOS, Android & React Native app development in Sugar Land, TX. Idea-to-launch builds for US startups & SMBs. Free 30-min consultation.",
       "/services/app-service"
     ),
   },
@@ -181,10 +181,10 @@ export const seoMeta = {
     path: "/services/ui-ux-service",
     title: "UI/UX Design Services for Websites & Apps | Brands Chamber",
     description:
-      "User-focused UI/UX design services for websites, mobile apps, dashboards, SaaS products, and digital platforms.",
+      "Research-driven UI/UX design for websites & mobile apps. Figma prototypes, user testing, dev-ready handoff. Sugar Land & Houston-area UX experts",
     schema: serviceSchema(
       "UI/UX Design Services",
-      "User-focused UI/UX design services for websites, mobile apps, dashboards, SaaS products, and digital platforms.",
+      "Research-driven UI/UX design for websites & mobile apps. Figma prototypes, user testing, dev-ready handoff. Sugar Land & Houston-area UX experts",
       "/services/ui-ux-service"
     ),
   },

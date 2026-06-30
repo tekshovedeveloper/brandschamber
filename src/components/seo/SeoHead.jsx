@@ -1,12 +1,12 @@
 import Head from "next/head";
 
 const SITE_URL = "https://brandschamber.com";
-const DEFAULT_IMAGE = "/og-image.jpg";
+const DEFAULT_IMAGE = "/og-image.png";
 
 export default function SeoHead({
   path = "/",
-  title = "Web Development, SEO & Digital Marketing Services | Brands Chamber",
-  description = "Brands Chamber provides web development, SEO, branding, mobile app development, UI/UX design, and digital marketing services for business growth.",
+  title = "Web Development, SEO & Digital Marketing Agency in Sugar Land, TX | Brands Chamber",
+  description = "Grow your business in Sugar Land, TX with Brands Chamber’s web development, SEO, branding, mobile app development, UI/UX design, and digital marketing services.",
   image = DEFAULT_IMAGE,
   type = "website",
   noindex = false,
