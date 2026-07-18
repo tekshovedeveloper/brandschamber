@@ -10,7 +10,7 @@ export default function BrandSection({
   title = "YOUR BUSINESS DESERVES ITS OWN APP",
   description = `Your customers are on their phones — all day, every day. A well-built mobile app puts your business in their pocket, keeps them engaged, and gives you a direct line to the people who matter most. At Brands Chamber, we build mobile apps that are fast, functional, and built for real business results. From idea to App Store — we handle everything.`,
   image = "/assets/logo-service/logo-banner.gif",
-  imageAlt = "Service banner image",
+  imageAlt = "Brands Chamber service banner showcase",
   buttonText = "Book Your Free Consultation",
   buttonHref = "#contact",
 }) {

@@ -16,6 +16,7 @@ import ServiceFeatureCards from "@/components/service-feature-cards/service-feat
 import { SEO_AND_MARKETING_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import RelatedServices from "@/components/related-services/RelatedServices";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -71,10 +72,11 @@ export default function SeoAndMarketingService() {
          highlightText="Let's talk about where your business is and how digital marketing can grow it."
          description={`Having a great brand and a great website means nothing if the right people can't find you. Digital marketing is how small businesses and startups cut through the noise, reach their ideal customers, and turn online visibility into real, measurable revenue.`}
          image="/assets/logo-service/logo-banner.gif"
-         imageAlt="Logo design showcase"
+         imageAlt="SEO and digital marketing service showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
          defaultService="SEO & MARKETING"
+         breadcrumbs={breadcrumbItemsByPath["/services/seo-and-marketing"]}
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -101,8 +103,5 @@ export default function SeoAndMarketingService() {
     </main>
   );
 }
-
-
-
 
 

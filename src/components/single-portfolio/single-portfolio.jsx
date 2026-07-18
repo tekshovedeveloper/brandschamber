@@ -63,6 +63,14 @@ export default function PortfolioGrid({
   if (!items.length) return null;
 
   const activeItem = activeIndex !== null ? visibleItems[activeIndex] : null;
+  const getPortfolioAlt = (item, index) => {
+    const providedAlt = typeof item?.alt === "string" ? item.alt.trim() : "";
+    const isPlaceholderAlt = /^logo\s+\d+$/i.test(providedAlt);
+
+    return providedAlt && !isPlaceholderAlt
+      ? providedAlt
+      : `${title} portfolio item ${index + 1}`;
+  };
   const tileClasses = [
     styles.a,
     styles.c,
@@ -117,7 +125,7 @@ export default function PortfolioGrid({
                           ) : (
                             <Image
                               src={item.image}
-                              alt={item.alt ?? `${title} ${globalIndex + 1}`}
+                              alt={getPortfolioAlt(item, globalIndex)}
                               fill
                               sizes="(max-width: 1200px) 100vw, 356px"
                               className={styles.media}
@@ -192,7 +200,7 @@ export default function PortfolioGrid({
               ) : (
                 <Image
                   src={activeItem.image}
-                  alt={activeItem.alt ?? `${title} ${activeIndex + 1}`}
+                  alt={getPortfolioAlt(activeItem, activeIndex)}
                   fill
                   sizes="90vw"
                   className={styles.modalImage}

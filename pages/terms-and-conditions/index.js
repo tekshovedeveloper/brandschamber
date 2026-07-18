@@ -11,6 +11,7 @@ import BrandSection from "@/components/brand-section/banner-section";
 import Testimonial from "@/components/testimonial/testimonial";
 import Contact from "@/components-pages/index-component/contact-us/contact-us";
 import TermsAndConditions from "@/components/terms-and-conditions/Terms-and-conditions";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -39,14 +40,15 @@ export default function TermAndConditions() {
 
 
         <MainNavbar />
-           <TermsAndConditions />
+           <TermsAndConditions
+             breadcrumbs={breadcrumbItemsByPath["/terms-and-conditions"]}
+           />
         
         {/* <LiveChatBanner /> */}
       <Footer /> 
     </main>
   );
 }
-
 
 
 

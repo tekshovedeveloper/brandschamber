@@ -16,6 +16,7 @@ import ServiceFeatureCards from "@/components/service-feature-cards/service-feat
 import { UIUX_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import Faq from "@/components/faq/Faq";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,7 +48,7 @@ export default function FaqAccordion() {
       
           
      
-         <Faq />
+         <Faq breadcrumbs={breadcrumbItemsByPath["/faq"]} />
          
        
          
@@ -56,7 +57,6 @@ export default function FaqAccordion() {
     </main>
   );
 }
-
 
 
 

@@ -52,7 +52,7 @@ export default function BrandSection({ id }) {
           <div className={styles.imageWrapper}>
             <Image
               src="/assets/logo-service/logo-banner.gif"   // public/assets/logo-banner.gif
-              alt="Meta Web Pro logo"
+              alt="Book cover animation service showcase"
               fill
               className={styles.image}
               sizes="(max-width: 900px) 60vw, 400px"

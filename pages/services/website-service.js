@@ -16,6 +16,7 @@ import ServiceFeatureCards from "@/components/service-feature-cards/service-feat
 import { WEBSITE_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import RelatedServices from "@/components/related-services/RelatedServices";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -70,10 +71,11 @@ export default function WebsiteService() {
          description={`Your website is open 24 hours a day, 7 days a week. It's your best salesperson, your most patient customer service rep, and your most visible storefront — all in one. At Brands Chamber, we build websites that don't just look good. They perform.
 Custom code. Clean architecture. Built for speed, search engines, and real business results. `}
          image="/assets/logo-service/logo-banner.gif"
-         imageAlt="Logo design showcase"
+         imageAlt="Custom web development service showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
          defaultService="WEB DEVELOPMENT"
+         breadcrumbs={breadcrumbItemsByPath["/services/website-service"]}
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -99,8 +101,5 @@ Custom code. Clean architecture. Built for speed, search engines, and real busin
     </main>
   );
 }
-
-
-
 
 

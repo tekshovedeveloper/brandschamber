@@ -271,6 +271,8 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 import styles from "./checkout.module.css";
 
 const stripePromise = loadStripe(
@@ -384,10 +386,11 @@ const stripePromise = loadStripe(
 //   );
 // }
 
-function CheckoutForm({ service, product }) {
+function CheckoutForm({ service, product, breadcrumbs = [] }) {
   const stripe = useStripe();
   const elements = useElements();
   const router = useRouter();
+  const hasBreadcrumbs = Array.isArray(breadcrumbs) && breadcrumbs.length > 0;
 
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -442,7 +445,19 @@ function CheckoutForm({ service, product }) {
         <div className={styles.summaryCardInner}>
           <span className={styles.secureBadge}>Secure Payment</span>
 
-          <h1 className={styles.summaryTitle}>Complete Your Order</h1>
+          {hasBreadcrumbs && (
+            <div className={styles.breadcrumbSlot}>
+              <Breadcrumbs items={breadcrumbs} variant="inline" />
+            </div>
+          )}
+
+          <h1
+            className={`${styles.summaryTitle} ${
+              hasBreadcrumbs ? styles.summaryTitleWithBreadcrumbs : ""
+            }`}
+          >
+            Complete Your Order
+          </h1>
 
           <p className={styles.summaryLabel}>You are purchasing:</p>
 
@@ -726,7 +741,11 @@ export default function CheckoutPage() {
         ) : clientSecret && options ? (
           <PayPalScriptProvider options={paypalOptions}>
             <Elements stripe={stripePromise} options={options}>
-              <CheckoutForm service={displayTitle} product={product} />
+              <CheckoutForm
+                service={displayTitle}
+                product={product}
+                breadcrumbs={breadcrumbItemsByPath["/checkout"]}
+              />
             </Elements>
           </PayPalScriptProvider>
         ) : (

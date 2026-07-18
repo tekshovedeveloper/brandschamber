@@ -313,6 +313,9 @@ const TABS = [
 const INITIAL_VISIBLE = 6;
 const LOAD_MORE_STEP = 3;
 
+const getPortfolioItemAlt = (tab, id) =>
+  tab === "All" ? `Portfolio item ${id}` : `${tab} portfolio item ${id}`;
+
 /**
  * Image that stays in the same box size, but scrolls its content on hover
  * using the existing CSS that reads var(--scroll-distance).
@@ -419,7 +422,7 @@ export default function ShowWorkIndex() {
           <ScrollingImage
             key={activeTab + "-" + img.id}
             src={img.url}
-            alt="Portfolio item"
+            alt={getPortfolioItemAlt(activeTab, img.id)}
             className={styles.portfolioImage}
           />
         ))}

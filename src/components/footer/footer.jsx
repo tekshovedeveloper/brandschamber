@@ -180,19 +180,19 @@ export default function Footer() {
             <div className={styles.badgesBottomRow}>
               <img
                 src="/assets/home/platform2.svg"
-                alt="Award 1"
+                alt="Brands Chamber trust badge"
               />
               <img
                 src="/assets/home/platform3.svg"
-                alt="Award 2"
+                alt="Brands Chamber platform badge"
               />
               <img
                 src="/assets/home/platform4.svg"
-                alt="Award 3"
+                alt="Brands Chamber review badge"
               />
               <img
                 src="/assets/home/platform5.svg"
-                alt="Award 4"
+                alt="Brands Chamber rating badge"
               />
             </div>
           </div>
@@ -247,18 +247,18 @@ export default function Footer() {
 
             <ul className={styles.contactList}>
               <li className={styles.contactRow}>
-                <img src="/assets/home/mail.svg" alt="email" />
+                <img src="/assets/home/mail.svg" alt="Brands Chamber email icon" />
                 <a href="mailto:contact@brandschamber.com">
                   contact@brandschamber.com
                 </a>
               </li>
               <li className={styles.contactRow}>
-                <img src="/assets/home/phone.svg" alt="phone" />
+                <img src="/assets/home/phone.svg" alt="Brands Chamber phone icon" />
                 <a href="tel:+13462790995">+1 (385) 215-0936</a>
               </li>
 
               <li className={styles.contactRow}>
-                <img src="/assets/home/location.svg" alt="location" />
+                <img src="/assets/home/location.svg" alt="Brands Chamber location icon" />
                 <div>
                   <p>12510 W. Airport Blvd,</p>
                   <p>UNIT C01-B Sugar Land,</p>
@@ -279,13 +279,13 @@ export default function Footer() {
               <a href="https://www.facebook.com/brandschamberofficial/" aria-label="Facebook">
                 <img
                   src="/assets/home/footer_facebook.svg"
-                  alt="Facebook"
+                  alt="Brands Chamber Facebook icon"
                 />
               </a>
               <a href="https://www.instagram.com/brandschamberofficial/" aria-label="Instagram">
                 <img
                   src="/assets/home/footer_instagram.svg"
-                  alt="Instagram"
+                  alt="Brands Chamber Instagram icon"
                 />
               </a>
             </div>

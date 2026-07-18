@@ -23,12 +23,12 @@ export default function ServiceFeatureCards({
               <div className={styles.iconWrap}>
                 <img
                   src={card.icon}
-                  alt={card.title}
+                  alt={`${card.title} feature icon`}
                   className={`${styles.icon} ${styles.defaultIcon}`}
                 />
                 <img
                   src={card.hoverIcon}
-                  alt=""
+                  alt={`${card.title} feature hover icon`}
                   className={`${styles.icon} ${styles.hoverIcon}`}
                 />
               </div>

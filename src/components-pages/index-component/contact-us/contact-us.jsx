@@ -255,12 +255,12 @@ export default function Contact({ id }) {
     <div className={styles.infoIconWrap}>
       <img
         src="/assets/contact/contact1.svg"
-        alt="phone"
+        alt="Phone contact icon"
         className={`${styles.infoIcon} ${styles.defaultInfoIcon}`}
       />
       <img
         src="/assets/contact/contact-hover1.svg"
-        alt="phone hover"
+        alt="Phone contact hover icon"
         className={`${styles.infoIcon} ${styles.hoverInfoIcon}`}
       />
     </div>
@@ -274,12 +274,12 @@ export default function Contact({ id }) {
     <div className={styles.infoIconWrap}>
       <img
         src="/assets/contact/contact2.svg"
-        alt="email"
+        alt="Email contact icon"
         className={`${styles.infoIcon} ${styles.defaultInfoIcon}`}
       />
       <img
         src="/assets/contact/contact-hover2.svg"
-        alt="email hover"
+        alt="Email contact hover icon"
         className={`${styles.infoIcon} ${styles.hoverInfoIcon}`}
       />
     </div>
@@ -293,12 +293,12 @@ export default function Contact({ id }) {
     <div className={styles.infoIconWrap}>
       <img
         src="/assets/contact/contact3.svg"
-        alt="location"
+        alt="Location contact icon"
         className={`${styles.infoIcon} ${styles.defaultInfoIcon}`}
       />
       <img
         src="/assets/contact/contact-hover3.svg"
-        alt="location hover"
+        alt="Location contact hover icon"
         className={`${styles.infoIcon} ${styles.hoverInfoIcon}`}
       />
     </div>

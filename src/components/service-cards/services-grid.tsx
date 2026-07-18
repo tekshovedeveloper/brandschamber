@@ -242,12 +242,12 @@ export default function ServicesGrid() {
               <div className={styles.iconWrap}>
                 <img
                   src={s.icon}
-                  alt={`${s.title} icon`}
+                  alt={`${s.title} service icon`}
                   className={`${styles.serviceIcon} ${styles.defaultIcon}`}
                 />
                 <img
                   src={s.hoverIcon}
-                  alt={`${s.title} hover icon`}
+                  alt={`${s.title} service hover icon`}
                   className={`${styles.serviceIcon} ${styles.hoverIcon}`}
                 />
               </div>

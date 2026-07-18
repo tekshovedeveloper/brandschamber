@@ -24,7 +24,7 @@ export default function ServiceProcess({
               <div className={styles.iconBox}>
                 <img
                   src={step.icon}
-                  alt={step.title}
+                  alt={`${step.title} process step icon`}
                   className={styles.icon}
                 />
               </div>
@@ -32,7 +32,7 @@ export default function ServiceProcess({
               {index !== steps.length - 1 && (
                 <img
                   src="/assets/process/dotted-line.svg"
-                  alt=""
+                  alt={`${step.title} to ${steps[index + 1].title} process connector`}
                   className={styles.connector}
                 />
               )}

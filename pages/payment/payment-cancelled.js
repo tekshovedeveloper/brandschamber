@@ -1,4 +1,6 @@
 import styles from '../../src/styles/index.module.css'
+import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 
 export default function PaymentCancelled() {
@@ -27,7 +29,13 @@ export default function PaymentCancelled() {
       </video>
 
       <div>
-        <h1 style={{ fontSize: "42px", marginBottom: "14px" }} className={styles.paymentHeading}>
+        <div className={styles.paymentBreadcrumb}>
+          <Breadcrumbs
+            items={breadcrumbItemsByPath["/payment/payment-cancelled"]}
+            variant="centered"
+          />
+        </div>
+        <h1 style={{ fontSize: "42px", marginBottom: "14px", marginTop: "0" }} className={styles.paymentHeading}>
           Payment Cancelled
         </h1>
         <p style={{ fontSize: "18px", opacity: 0.85 }}>

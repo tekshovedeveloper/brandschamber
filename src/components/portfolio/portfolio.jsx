@@ -5,6 +5,8 @@ import {LocationOn} from '@mui/icons-material';
 import styles from './portfolio.module.css';
 
 const Portfolio = ({images}) => {
+    const getImageAlt = (index) =>
+      images[index]?.alt || `Brands Chamber portfolio item ${index + 1}`;
     
     const portfolioRef = useRef(null);
 
@@ -68,7 +70,7 @@ const Portfolio = ({images}) => {
 
 <div className={styles.col2}>
         <a className={styles.portImg} href={images[0]?.url} data-fancybox="allportfolio">
-          <img alt="Portfolio Image 1" src={images[0]?.url} />
+          <img alt={getImageAlt(0)} src={images[0]?.url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -77,7 +79,7 @@ const Portfolio = ({images}) => {
           </div>
         </a>
         <a className={styles.portImg} href={images[1].url} data-fancybox="allportfolio">
-          <img alt="Portfolio Image 1" src={images[1].url} />
+          <img alt={getImageAlt(1)} src={images[1].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -87,7 +89,7 @@ const Portfolio = ({images}) => {
         </a>
 
         <a className={styles.portImg} href={images[2].url} data-fancybox="allportfolio">
-          <img alt="Portfolio Image 1" src={images[2].url} />
+          <img alt={getImageAlt(2)} src={images[2].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -99,7 +101,7 @@ const Portfolio = ({images}) => {
     
       <div className={styles.col2}>
       <a className={styles.portImg} href={images[3].url} data-fancybox="allportfolio">
-      <img alt="Portfolio Image 1" src={images[3].url} />
+      <img alt={getImageAlt(3)} src={images[3].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -108,7 +110,7 @@ const Portfolio = ({images}) => {
           </div>
         </a>
         <a className={styles.portImg} href={images[4].url} data-fancybox="allportfolio">
-          <img alt="Portfolio Image 1" src={images[4].url} />
+          <img alt={getImageAlt(4)} src={images[4].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -120,7 +122,7 @@ const Portfolio = ({images}) => {
 
       <div className={styles.col2}>
       <a className={styles.portImg} href={images[5].url} data-fancybox="allportfolio">
-          <img alt="Portfolio Image 1" src={images[5].url} />
+          <img alt={getImageAlt(5)} src={images[5].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -129,7 +131,7 @@ const Portfolio = ({images}) => {
           </div>
         </a>
         <a className={styles.portImg} href={images[6].url} data-fancybox="allportfolio">
-        <img alt="Portfolio Image 1" src={images[6].url} />
+        <img alt={getImageAlt(6)} src={images[6].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -142,7 +144,7 @@ const Portfolio = ({images}) => {
 
       <div className={styles.col2}>
       <a className={styles.portImg} href={images[7].url} data-fancybox="allportfolio">
-      <img alt="Portfolio Image 1" src={images[7].url} />
+      <img alt={getImageAlt(7)} src={images[7].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -151,7 +153,7 @@ const Portfolio = ({images}) => {
           </div>
         </a>
         <a className={styles.portImg} href={images[8].url} data-fancybox="allportfolio">
-        <img alt="Portfolio Image 1" src={images[8].url} />
+        <img alt={getImageAlt(8)} src={images[8].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -160,7 +162,7 @@ const Portfolio = ({images}) => {
           </div>
         </a>
         <a className={styles.portImg} href={images[9].url} data-fancybox="allportfolio">
-        <img alt="Portfolio Image 1" src={images[9].url} />
+        <img alt={getImageAlt(9)} src={images[9].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -173,7 +175,7 @@ const Portfolio = ({images}) => {
 
       <div className={styles.col2}>
       <a className={styles.portImg} href={images[10].url} data-fancybox="allportfolio">
-      <img alt="Portfolio Image 1" src={images[10].url} />
+      <img alt={getImageAlt(10)} src={images[10].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -182,7 +184,7 @@ const Portfolio = ({images}) => {
           </div>
         </a>
         <a className={styles.portImg} href={images[11].url} data-fancybox="allportfolio">
-        <img alt="Portfolio Image 1" src={images[11].url} />
+        <img alt={getImageAlt(11)} src={images[11].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -192,7 +194,7 @@ const Portfolio = ({images}) => {
         </a>
 
         <a className={styles.portImg} href={images[12].url} data-fancybox="allportfolio">
-        <img alt="Portfolio Image 1" src={images[12].url} />
+        <img alt={getImageAlt(12)} src={images[12].url} />
           <div className={styles.portfolioIcon}>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <line x1="12" y1="5" x2="12" y2="19"></line>

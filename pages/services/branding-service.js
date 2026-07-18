@@ -16,6 +16,7 @@ import ServiceFeatureCards from "@/components/service-feature-cards/service-feat
 import { BRAND_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import RelatedServices from "@/components/related-services/RelatedServices";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 const inter = Inter({ subsets: ["latin"] });
 
 const BrandingPortfolio =[
@@ -69,10 +70,11 @@ export default function BrandingService() {
          description={`A logo gets you noticed. A brand keeps you remembered. At Brands Chamber, we build complete brand identities for small businesses and startups — rooted in strategy, expressed through design, and built to grow with you from day one. 
 We don't start with aesthetics. We start with thinking. Because a brand that looks good but stands for nothing is just decoration.`}
          image="/assets/logo-service/logo-banner.gif"
-         imageAlt="Logo design showcase"
+         imageAlt="Brand identity design service showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
          defaultService="BRANDING"
+         breadcrumbs={breadcrumbItemsByPath["/services/branding-service"]}
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -99,8 +101,5 @@ We don't start with aesthetics. We start with thinking. Because a brand that
     </main>
   );
 }
-
-
-
 
 

@@ -10,6 +10,7 @@ import BrandSection from "@/components/brand-section/banner-section";
 
 import Testimonial from "@/components/testimonial/testimonial";
 import Contact from "@/components-pages/index-component/contact-us/contact-us";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -42,10 +43,11 @@ export default function Contacts() {
                      highlightText="Ready to help you move forward "
                      description={`Have a question, an idea, or ready to start your project? We’re here to help. At Brands Chamber, we believe great work starts with a simple conversation.`}
                      image="/assets/logo-service/logo-banner.gif"
-                     imageAlt="Logo design showcase"
+                     imageAlt="Brands Chamber contact page consultation banner"
                      buttonText="Book Your Free Consultation"
                      buttonHref="#contact"
                      defaultService=""
+                     breadcrumbs={breadcrumbItemsByPath["/contact"]}
                    />
        <RunningSlider
              text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -57,8 +59,5 @@ export default function Contacts() {
     </main>
   );
 }
-
-
-
 
 

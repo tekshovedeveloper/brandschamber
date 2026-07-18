@@ -16,6 +16,7 @@ import ServiceFeatureCards from "@/components/service-feature-cards/service-feat
 import { UIUX_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import RelatedServices from "@/components/related-services/RelatedServices";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,10 +69,11 @@ export default function UIUXService() {
          title={`Design That Feels Effortless — Built with Purpose.`}
          highlightText="Tell us what you're building — we'll show you how to design it properly."
          description={"The best interfaces are the ones users never have to think about. They click, tap, and scroll through your product intuitively — finding exactly what they need, completing actions without friction, and leaving with a positive impression of your brand. That kind of experience doesn't happen by accident. It's designed."}
-         imageAlt="Logo design showcase"
+         imageAlt="UI UX design service showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
          defaultService="UI/UX DESIGN"
+         breadcrumbs={breadcrumbItemsByPath["/services/ui-ux-service"]}
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -99,8 +101,5 @@ export default function UIUXService() {
     </main>
   );
 }
-
-
-
 
 

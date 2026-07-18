@@ -20,6 +20,10 @@
   margin-bottom: 46px;
 }
 
+.breadcrumbSlot {
+  margin-bottom: 30px;
+}
+
 .title {
   font-family: "FontspringBD", sans-serif;
   font-weight: 900;
@@ -28,6 +32,10 @@
   line-height: 1.05;
   margin: 0;
   font-size: 36px;
+}
+
+.titleWithBreadcrumbs {
+  margin-top: 0;
 }
 
 .subtitle {

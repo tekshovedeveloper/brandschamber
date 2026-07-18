@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./banner-section.module.css";
 import MeetingModal from "@/components/MeetingModal/MeetingModal";
+import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 
 export default function BrandSection({
   id,
@@ -11,12 +12,14 @@ export default function BrandSection({
   description = `Your customers are on their phones — all day, every day. A well-built mobile app puts your business in their pocket, keeps them engaged, and gives you a direct line to the people who matter most. At Brands Chamber, we build mobile apps that are fast, functional, and built for real business results.`,
   highlightText = "From idea to App Store — we handle everything.",
   image = "/assets/logo-service/logo-banner.gif",
-  imageAlt = "Service banner image",
+  imageAlt = "Brands Chamber service banner showcase",
   buttonText = "Book Your Free Consultation",
   defaultService = "",
+  breadcrumbs = [],
 }) {
   const sectionRef = useRef(null);
   const [inView, setInView] = useState(false);
+  const hasBreadcrumbs = Array.isArray(breadcrumbs) && breadcrumbs.length > 0;
 
   const [isMeetingOpen, setMeetingOpen] = useState(false);
 
@@ -41,7 +44,19 @@ export default function BrandSection({
       >
         <div className={styles.inner}>
           <div className={styles.content}>
-            <h1 className={styles.title}>{title}</h1>
+            {hasBreadcrumbs && (
+              <div className={styles.breadcrumbSlot}>
+                <Breadcrumbs items={breadcrumbs} variant="hero" />
+              </div>
+            )}
+
+            <h1
+              className={`${styles.title} ${
+                hasBreadcrumbs ? styles.titleWithBreadcrumbs : ""
+              }`}
+            >
+              {title}
+            </h1>
 
             <p className={styles.description}>{description}</p>
 

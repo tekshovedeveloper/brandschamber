@@ -16,6 +16,7 @@ import ServiceFeatureCards from "@/components/service-feature-cards/service-feat
 import { VIDEO_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import RelatedServices from "@/components/related-services/RelatedServices";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -71,10 +72,11 @@ export default function VideoCreationService() {
          highlightText="Tell us your story — we'll work out the best way to tell it on screen."
          description={`Video is the most powerful medium in digital marketing — and it's not close. It stops the scroll, holds attention, communicates emotion, and drives action in a way that static content simply cannot. The businesses winning online right now are the ones showing up with video. At Brands Chamber, we make sure yours is one of them.`}
          image="/assets/logo-service/logo-banner.gif"
-         imageAlt="Logo design showcase"
+         imageAlt="Video production service showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
          defaultService="VIDEO PRODUCTION"
+         breadcrumbs={breadcrumbItemsByPath["/services/video-creation-service"]}
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -101,8 +103,5 @@ export default function VideoCreationService() {
     </main>
   );
 }
-
-
-
 
 

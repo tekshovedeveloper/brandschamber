@@ -15,6 +15,7 @@ import ServiceFeatureCards from "@/components/service-feature-cards/service-feat
 import { APP_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import RelatedServices from "@/components/related-services/RelatedServices";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 
 import Testimonial from "@/components/testimonial/testimonial";
@@ -69,13 +70,14 @@ export default function AppService() {
            id="service-banner"
            title={`Your Business Deserves Its Own App`}
            highlightText="From idea to App Store — we handle everything. "
-           description={`Your customers are on their phones — all day, every day. A well-built mobile app puts your business in their pocket, keeps them engaged, and gives you a direct line to the people who matter most. At Brands Chamber, we build mobile apps that are fast, functional, and built for real business results.
+          description={`Your customers are on their phones — all day, every day. A well-built mobile app puts your business in their pocket, keeps them engaged, and gives you a direct line to the people who matter most. At Brands Chamber, we build mobile apps that are fast, functional, and built for real business results.
 From idea to App Store — we handle everything. `}
            image="/assets/logo-service/logo-banner.gif"
-           imageAlt="Logo design showcase"
+           imageAlt="Mobile app development service showcase"
            buttonText="Book Your Free Consultation"
            buttonHref="#contact"
            defaultService="MOBILE APPS"
+           breadcrumbs={breadcrumbItemsByPath["/services/app-service"]}
          />
          <RunningSlider
              text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -103,8 +105,5 @@ From idea to App Store — we handle everything. `}
     </main>
   );
 }
-
-
-
 
 

@@ -14,6 +14,7 @@ import ServiceProcess from "@/components/service-process/service-process";
 import { SERVICE_PROCESS_DATA } from "@/components/service-process/service-process-data";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import RelatedServices from "@/components/related-services/RelatedServices";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 const inter = Inter({ subsets: ["latin"] });
 
 // const logoPortfolio =[
@@ -85,10 +86,11 @@ export default function LogoService() {
   highlightText="No templates. No shortcuts. Just great design — made for you. "
   description={`Your logo is the face of your business. It's the first thing people see and the last thing they remember. At Brands Chamber, we design logos that are 100% custom, strategically crafted, and built to make your small business look like it belongs at the top. `}
   image="/assets/logo-service/logo-banner.gif"
-  imageAlt="Logo design showcase"
+  imageAlt="Custom logo design service showcase"
   buttonText="Book Your Free Consultation"
   buttonHref="#contact"
   defaultService="LOGO DESIGN"
+  breadcrumbs={breadcrumbItemsByPath["/services/logo-service"]}
 />
 <RunningSlider
     text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -108,8 +110,3 @@ export default function LogoService() {
     </main>
   );
 }
-
-
-
-
-

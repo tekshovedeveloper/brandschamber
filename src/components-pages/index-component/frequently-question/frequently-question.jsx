@@ -73,7 +73,7 @@ export default function FrequentlyQuestion() {
               <p>{item.q}</p>
               <img
                 src="/assets/home/faq.svg"
-                alt="plus icon"
+                alt="Frequently asked questions icon"
                 className={styles.icon}
               />
             </div>

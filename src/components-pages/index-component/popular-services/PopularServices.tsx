@@ -66,6 +66,19 @@ const data = {
 type Category = keyof typeof data;
 type OpenHandler = (category: Category, index: number) => void;
 
+const categoryAltLabels: Record<Category, string> = {
+  logos: "Logo design",
+  websites: "Website design",
+  branding: "Branding",
+  animations: "Logo animation",
+  videoEditing: "Video editing",
+  UI: "UI design",
+  GraphicsDesigning: "Graphic design",
+};
+
+const getPopularServiceAlt = (category: Category, index: number) =>
+  `${categoryAltLabels[category]} portfolio item ${index + 1}`;
+
 /* ---------- Scroll cards (logos/branding/etc.) ---------- */
 
 function ScrollCard({
@@ -109,7 +122,7 @@ function ScrollCard({
               <div className={styles.slideInner}>
                 <Image
                   src={src}
-                  alt={`${category} ${idx + 1}`}
+                  alt={getPopularServiceAlt(category, idx)}
                   fill
                   className={styles.slideImage}
                   sizes="(min-width:1200px) 356px, 92vw"
@@ -242,7 +255,7 @@ function WebsiteCard({ onOpen }: { onOpen: OpenHandler }) {
               <div className={styles.slideInner}>
                 <WebsiteSlide
                   src={src}
-                  alt={`${category} ${idx + 1}`}
+                  alt={getPopularServiceAlt(category, idx)}
                   isActive={idx === activeIndex}
                   isPanning={isPanning && idx === activeIndex}
                 />
@@ -324,7 +337,7 @@ function GalleryModal({
         <div className={styles.modalImageWrapper}>
           <Image
             src={items[index]}
-            alt={`${category} ${index + 1}`}
+            alt={getPopularServiceAlt(category, index)}
             fill
             className={styles.modalImage}
             sizes="80vw"

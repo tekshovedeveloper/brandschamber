@@ -47,6 +47,11 @@
   align-items: flex-start;
 }
 
+.breadcrumbSlot {
+  width: 100%;
+  margin-top: 50px;
+}
+
 .title {
  font-family: "FontspringBD";
   font-size: 60px;
@@ -56,6 +61,10 @@
   text-align: left;
   line-height: 70px;
   margin-top: 50px;
+}
+
+.titleWithBreadcrumbs {
+  margin-top: 30px;
 }
 
 .description {
@@ -173,6 +182,10 @@
   .title {
     font-size: 46px;
   }
+
+  .breadcrumbSlot {
+    margin-top: 30px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -183,6 +196,10 @@
   .title {
     font-size: 38px;
     line-height: 1;
+  }
+
+  .titleWithBreadcrumbs {
+    margin-top: 24px;
   }
 
   .description,

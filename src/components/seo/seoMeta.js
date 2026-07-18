@@ -1,3 +1,5 @@
+import { breadcrumbItemsByPath } from "../breadcrumbs/breadcrumbItems.js";
+
 const SITE_URL = "https://brandschamber.com";
 
 const organizationSchema = {
@@ -62,6 +64,28 @@ const serviceSchema = (name, description, path) => ({
   areaServed: ["United States", "Worldwide"],
 });
 
+const breadcrumbSchema = (items) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.label,
+    item: `${SITE_URL}${item.href}`,
+  })),
+});
+
+const normalizeSchemaItems = (schema) =>
+  Array.isArray(schema) ? schema : schema ? [schema] : [];
+
+const withBreadcrumbSchema = (path, schema) => {
+  const breadcrumbs = breadcrumbItemsByPath[path];
+
+  if (!breadcrumbs) return schema;
+
+  return [...normalizeSchemaItems(schema), breadcrumbSchema(breadcrumbs)];
+};
+
 export const seoMeta = {
   "/": {
     path: "/",
@@ -75,18 +99,21 @@ export const seoMeta = {
   title: "Digital Services for Business Growth in Sugar Land, TX | Brands Chamber",
   description:
     "Explore Brands Chamber’s website development, SEO, branding, logo design, app development, UI/UX design, graphic design, video creation, and digital marketing services for businesses in Sugar Land, TX and the Houston area.",
-  schema: serviceSchema(
+  schema: withBreadcrumbSchema("/services", serviceSchema(
     "Digital Services",
     "Website development, SEO, branding, logo design, app development, UI/UX design, graphic design, video creation, and digital marketing services.",
     "/services"
-  ),
+  )),
 },
   "/contact": {
     path: "/contact",
     title: "Contact Brands Chamber | Web Design & SEO Agency in Sugar Land, TX",
     description:
       "Talk to Brands Chamber's Sugar Land team about your web design, SEO or branding project. Free 30-minute consultation. Call, email or book online.",
-    schema: [organizationSchema, localBusinessSchema],
+    schema: withBreadcrumbSchema("/contact", [
+      organizationSchema,
+      localBusinessSchema,
+    ]),
   },
 
   "/faq": {
@@ -94,7 +121,7 @@ export const seoMeta = {
     title: "Frequently Asked Questions | Brands Chamber",
     description:
       "Find answers to common questions about Brands Chamber’s web development, SEO, branding, app development, and digital marketing services.",
-    schema: [organizationSchema],
+    schema: withBreadcrumbSchema("/faq", [organizationSchema]),
   },
 
   "/terms-and-conditions": {
@@ -102,7 +129,7 @@ export const seoMeta = {
     title: "Terms and Conditions | Brands Chamber",
     description:
       "Read the terms and conditions for using Brands Chamber’s website, services, packages, and digital solutions.",
-    schema: [organizationSchema],
+    schema: withBreadcrumbSchema("/terms-and-conditions", [organizationSchema]),
   },
 
   "/services/website-service": {
@@ -110,11 +137,11 @@ export const seoMeta = {
     title: "Website Development Services for Small Businesses in Sugar Land, TX | Custom Sites | Brands Chamber",
     description:
     "Custom websites, CMS websites, e-commerce stores, Shopify websites, and progressive web apps built for small businesses in Sugar Land, TX and the Houston area.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/website-service", serviceSchema(
       "Website Development Services",
       "Custom websites, CMS websites, e-commerce stores, Shopify websites, and progressive web apps built for speed, SEO, and business growth.",
       "/services/website-service"
-    ),
+    )),
   },
 
   "/services/seo-and-marketing": {
@@ -122,11 +149,11 @@ export const seoMeta = {
     title: "SEO & Digital Marketing Services | Brands Chamber",
     description:
       "SEO, PPC, content marketing, email marketing, social media marketing, and local SEO services to increase traffic, leads, and sales.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/seo-and-marketing", serviceSchema(
       "SEO and Digital Marketing Services",
       "SEO, PPC, content marketing, email marketing, social media marketing, and local SEO services to increase traffic, leads, and sales.",
       "/services/seo-and-marketing"
-    ),
+    )),
   },
 
   "/services/search-engine-optimization": {
@@ -134,10 +161,13 @@ export const seoMeta = {
     title: "Search Engine Optimization Services in Sugar Land, TX | Brands Chamber",
      description:
     "Technical SEO, keyword research, on-page SEO, local SEO, content strategy, and link-building services for businesses in Sugar Land, TX.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema(
+      "/services/search-engine-optimization",
+      serviceSchema(
       "Search Engine Optimization Services",
       "Technical SEO, keyword research, on-page SEO, local SEO, content strategy, and link-building services for long-term organic growth.",
       "/services/search-engine-optimization"
+      )
     ),
   },
 
@@ -146,11 +176,11 @@ export const seoMeta = {
     title: "Branding Services for Startups & Businesses | Brands Chamber",
     description:
       "Custom logo design & full brand identity for Sugar Land & US businesses. Strategy, visual identity, guidelines & stationery. 100% original, no templates.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/branding-service", serviceSchema(
       "Branding Services",
       "Logo design, brand guidelines, visual identity, messaging, and complete branding services for startups and growing businesses.",
       "/services/branding-service"
-    ),
+    )),
   },
 
   "/services/logo-service": {
@@ -158,10 +188,13 @@ export const seoMeta = {
     title: "Logo Design Services | Custom Business Logos | Brands Chamber",
     description:
       "Professional logo design services for startups, small businesses, and growing brands that need a memorable visual identity.",
-    schema: serviceSchema(
-      "Logo Design Services",
-      "Professional logo design services for startups, small businesses, and growing brands that need a memorable visual identity.",
-      "/services/logo-service"
+    schema: withBreadcrumbSchema(
+      "/services/logo-service",
+      serviceSchema(
+        "Logo Design Services",
+        "Professional logo design services for startups, small businesses, and growing brands that need a memorable visual identity.",
+        "/services/logo-service"
+      )
     ),
   },
 
@@ -170,11 +203,11 @@ export const seoMeta = {
     title: "Mobile App Development Services | Brands Chamber",
     description:
       "Custom iOS, Android & React Native app development in Sugar Land, TX. Idea-to-launch builds for US startups & SMBs. Free 30-min consultation.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/app-service", serviceSchema(
       "Mobile App Development Services",
       "Custom iOS, Android & React Native app development in Sugar Land, TX. Idea-to-launch builds for US startups & SMBs. Free 30-min consultation.",
       "/services/app-service"
-    ),
+    )),
   },
 
   "/services/ui-ux-service": {
@@ -182,11 +215,11 @@ export const seoMeta = {
     title: "UI/UX Design Services for Websites & Apps | Brands Chamber",
     description:
       "Research-driven UI/UX design for websites & mobile apps. Figma prototypes, user testing, dev-ready handoff. Sugar Land & Houston-area UX experts",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/ui-ux-service", serviceSchema(
       "UI/UX Design Services",
       "Research-driven UI/UX design for websites & mobile apps. Figma prototypes, user testing, dev-ready handoff. Sugar Land & Houston-area UX experts",
       "/services/ui-ux-service"
-    ),
+    )),
   },
 
   "/services/graphics-design-service": {
@@ -194,11 +227,11 @@ export const seoMeta = {
     title: "Graphic Design Services for Businesses | Brands Chamber",
     description:
       "Creative graphic design services for social media, ads, marketing collateral, presentations, print materials, and brand visuals.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/graphics-design-service", serviceSchema(
       "Graphic Design Services",
       "Creative graphic design services for social media, ads, marketing collateral, presentations, print materials, and brand visuals.",
       "/services/graphics-design-service"
-    ),
+    )),
   },
 
   "/services/video-creation-service": {
@@ -206,11 +239,11 @@ export const seoMeta = {
     title: "Video Creation Services for Brands | Brands Chamber",
     description:
       "Promotional videos, brand videos, social media videos, motion graphics, and video content creation services for business marketing.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/video-creation-service", serviceSchema(
       "Video Creation Services",
       "Promotional videos, brand videos, social media videos, motion graphics, and video content creation services for business marketing.",
       "/services/video-creation-service"
-    ),
+    )),
   },
 
   "/services/logo-animation-service": {
@@ -218,11 +251,11 @@ export const seoMeta = {
     title: "Logo Animation Services | Animated Logo Design | Brands Chamber",
     description:
       "Animated logo design and motion branding services for intros, outros, social media, videos, and brand presentations.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/logo-animation-service", serviceSchema(
       "Logo Animation Services",
       "Animated logo design and motion branding services for intros, outros, social media, videos, and brand presentations.",
       "/services/logo-animation-service"
-    ),
+    )),
   },
 
   "/services/book-cover": {
@@ -230,11 +263,11 @@ export const seoMeta = {
     title: "Book Cover Design Services | Brands Chamber",
     description:
       "Professional book cover design services for authors, publishers, ebooks, print books, and marketing campaigns.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/book-cover", serviceSchema(
       "Book Cover Design Services",
       "Professional book cover design services for authors, publishers, ebooks, print books, and marketing campaigns.",
       "/services/book-cover"
-    ),
+    )),
   },
 
   "/services/book-animation-service": {
@@ -242,11 +275,11 @@ export const seoMeta = {
     title: "Book Cover Animation Services | Brands Chamber",
     description:
       "Animated book cover videos and promotional motion graphics for authors, publishers, book launches, and social media marketing.",
-    schema: serviceSchema(
+    schema: withBreadcrumbSchema("/services/book-animation-service", serviceSchema(
       "Book Cover Animation Services",
       "Animated book cover videos and promotional motion graphics for authors, publishers, book launches, and social media marketing.",
       "/services/book-animation-service"
-    ),
+    )),
   },
 
   "/checkout": {
@@ -255,6 +288,7 @@ export const seoMeta = {
     description:
       "Complete your Brands Chamber order securely through the checkout page.",
     noindex: true,
+    schema: withBreadcrumbSchema("/checkout"),
   },
 
   "/payment/payment-success": {
@@ -263,6 +297,7 @@ export const seoMeta = {
     description:
       "Your payment was successful. Thank you for ordering from Brands Chamber.",
     noindex: true,
+    schema: withBreadcrumbSchema("/payment/payment-success"),
   },
 
   "/payment/payment-cancelled": {
@@ -271,6 +306,7 @@ export const seoMeta = {
     description:
       "Your payment was cancelled. You can return to Brands Chamber and try again.",
     noindex: true,
+    schema: withBreadcrumbSchema("/payment/payment-cancelled"),
   },
 };
 

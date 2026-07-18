@@ -147,7 +147,7 @@ export default function ChooseUs({id}) {
         <div className={`${styles.rightColumn} ${styles.rightAnimate}`}>
           <img
             src="/assets/home/choose-us-section.png"
-            alt="choose us"
+            alt="Brands Chamber SEO strategy and growth approach"
             className={styles.chooseUsImage}
           />
         </div>

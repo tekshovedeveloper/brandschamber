@@ -6,6 +6,7 @@ import Footer from "@/components/footer/footer";
 import ServicesGrid from "@/components/service-cards/services-grid";
 import BrandSection from "@/components/brand-section/banner-section";
 import { Inter } from "next/font/google";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -107,10 +108,11 @@ export default function ServicesIndex() {
         description={`Explore Brands Chamber’s complete range of creative, development,
             branding, SEO, marketing, and digital product services. `}
         image="/assets/logo-service/logo-banner.gif"
-        imageAlt="Logo design showcase"
+        imageAlt="Brands Chamber digital services showcase"
         buttonText="Book Your Free Consultation"
         buttonHref="#contact"
         defaultService="LOGO DESIGN"
+        breadcrumbs={breadcrumbItemsByPath["/services"]}
       />
      
 

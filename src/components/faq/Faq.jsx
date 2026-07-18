@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import faqData from "./faq-data";
 import styles from "./faq.module.css";
 
-export default function Faq() {
+export default function Faq({ breadcrumbs = [] }) {
   const { title, subtitle, groups } = faqData;
   const [openId, setOpenId] = useState(null);
+  const hasBreadcrumbs = Array.isArray(breadcrumbs) && breadcrumbs.length > 0;
 
   const handleToggle = (id) => {
     setOpenId((prev) => (prev === id ? null : id));
@@ -16,7 +18,19 @@ export default function Faq() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <header className={styles.header}>
-          <h1 className={styles.title}>{title}</h1>
+          {hasBreadcrumbs && (
+            <div className={styles.breadcrumbSlot}>
+              <Breadcrumbs items={breadcrumbs} variant="centered" />
+            </div>
+          )}
+
+          <h1
+            className={`${styles.title} ${
+              hasBreadcrumbs ? styles.titleWithBreadcrumbs : ""
+            }`}
+          >
+            {title}
+          </h1>
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </header>
 

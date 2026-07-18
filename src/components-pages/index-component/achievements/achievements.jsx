@@ -72,7 +72,7 @@ export default function Achievements({id}) {
           <img
             src="/assets/home/icon2.svg"
             className={styles.image}
-            alt="Websites Created"
+            alt="Websites created achievement icon"
           />
           <div className={styles.portfolioContent}>
             <h6 className={styles.portfolioHeading}>100+</h6>
@@ -84,7 +84,7 @@ export default function Achievements({id}) {
           <img
             src="/assets/home/icon1.svg"
             className={styles.image}
-            alt="Custom Web Portal/Applications"
+            alt="Custom web portal and application achievement icon"
           />
           <div className={styles.portfolioContent}>
             <h6 className={styles.portfolioHeading}>30+</h6>
@@ -98,7 +98,7 @@ export default function Achievements({id}) {
           <img
             src="/assets/home/icon4.svg"
             className={styles.image}
-            alt="Apps Created"
+            alt="Apps created achievement icon"
           />
           <div className={styles.portfolioContent}>
             <h6 className={styles.portfolioHeading}>20+</h6>
@@ -110,7 +110,7 @@ export default function Achievements({id}) {
           <img
             src="/assets/home/icon3.svg"
             className={styles.image}
-            alt="Revenue Generated"
+            alt="Revenue generated achievement icon"
           />
           <div className={styles.portfolioContent}>
             <h6 className={styles.portfolioHeading}>1M+</h6>
@@ -153,7 +153,7 @@ export default function Achievements({id}) {
               <img
                 src="https://www.alphadesigncrew.com/assets/images/counter-icon1.png"
                 className={styles.image}
-                alt="Website Created"
+                alt="Website created achievement icon"
               />
               <div className={styles.portfolioContent}>
                 <h6 className={styles.portfolioHeading}>100+</h6>
@@ -167,7 +167,7 @@ export default function Achievements({id}) {
               <img
                 src="https://www.alphadesigncrew.com/assets/images/counter-icon2.png"
                 className={styles.image}
-                alt="Custom Web Portal/Applications"
+                alt="Custom web portal and application achievement icon"
               />
               <div className={styles.portfolioContent}>
                 <h6 className={styles.portfolioHeading}>30+</h6>
@@ -183,7 +183,7 @@ export default function Achievements({id}) {
               <img
                 src="https://www.alphadesigncrew.com/assets/images/counter-icon3.png"
                 className={styles.image}
-                alt="Apps Created"
+                alt="Apps created achievement icon"
               />
               <div className={styles.portfolioContent}>
                 <h6 className={styles.portfolioHeading}>20+</h6>
@@ -197,7 +197,7 @@ export default function Achievements({id}) {
               <img
                 src="https://www.alphadesigncrew.com/assets/images/counter-icon4.png"
                 className={styles.image}
-                alt="Revenue Generated"
+                alt="Revenue generated achievement icon"
               />
               <div className={styles.portfolioContent}>
                 <h6 className={styles.portfolioHeading}>1M</h6>

@@ -203,21 +203,25 @@ const services = [
     id: 1,
     label: "01 Branding and UI design",
     image: "/assets/home/ui.png",
+    imageAlt: "Branding and UI design preview",
   },
   {
     id: 2,
     label: "02 Web and Mobile development",
     image: "/assets/home/web.png",
+    imageAlt: "Web and mobile development preview",
   },
   {
     id: 3,
     label: "03 Ebook Design",
     image: "/assets/home/ebook.png",
+    imageAlt: "Ebook design preview",
   },
   {
     id: 4,
     label: "04 2D Animation",
     image: "/assets/home/branding.png",
+    imageAlt: "2D animation preview",
   },
 ];
 
@@ -258,7 +262,7 @@ export default function BusinessProblem({ id }) {
       <div className={styles.facinImage}>
         <img
           src={services[activeIndex].image}
-          alt={services[activeIndex].label}
+          alt={services[activeIndex].imageAlt}
           className={styles.selectedImageDisplay}
         />
       </div>

@@ -1,3 +1,4 @@
+import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import styles from "./Terms-and-conditions.module.css";
 
 const definitions = [
@@ -27,11 +28,19 @@ const definitions = [
   },
 ];
 
-export default function TermsAndConditions() {
+export default function TermsAndConditions({ breadcrumbs = [] }) {
+  const hasBreadcrumbs = Array.isArray(breadcrumbs) && breadcrumbs.length > 0;
+
   return (
     <section className={styles.page}>
       <div className={styles.container}>
         <header className={styles.hero}>
+          {hasBreadcrumbs && (
+            <div className={styles.breadcrumbSlot}>
+              <Breadcrumbs items={breadcrumbs} variant="centered" />
+            </div>
+          )}
+
           <h1 className={styles.title}>
             TERMS & CONDITIONS
           </h1>

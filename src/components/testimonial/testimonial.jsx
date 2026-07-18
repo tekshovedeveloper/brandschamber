@@ -193,8 +193,8 @@ export default function Testimonial({id}) {
                     {/* <p className={styles.clientRole}>CEO of BrightTech</p> */}
                   </div>
 
-                  <div className={styles.quoteMark} aria-hidden="true">
-                    <img src="/assets/home/quote.svg" alt="" />
+                  <div className={styles.quoteMark}>
+                    <img src="/assets/home/quote.svg" alt="Client testimonial quote icon" />
                   </div>
                 </div>
 

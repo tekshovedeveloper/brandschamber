@@ -120,6 +120,10 @@
   color: #fff;
 }
 
+.breadcrumbSlot {
+  margin-top: 18px;
+}
+
 .summaryTitle {
   margin: 18px 0 10px;
   font-family: "FontspringBD", sans-serif;
@@ -127,6 +131,10 @@
   line-height: 1.05;
   text-transform: uppercase;
   color: #fff;
+}
+
+.summaryTitleWithBreadcrumbs {
+  margin-top: 30px;
 }
 
 .summaryLabel {

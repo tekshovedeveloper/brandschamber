@@ -208,7 +208,7 @@ const IndustriesWeServe = () => {
                         <img
                             className={styles.industriesWeServeUnderline}
                             src="https://www.alphadesigncrew.com/assets/images/wait-under-line.png"
-                            alt="wait-under-line"
+                            alt="Industries We Serve heading underline"
                         />
                     </span>
                     We Serve
@@ -230,7 +230,7 @@ const IndustriesWeServe = () => {
     {productData.map((item) => (
         <div className={styles.card} key={item.src}>
             <a href="#">
-                <img src={item.src} alt={item.alt} />
+                <img src={item.src} alt={`${item.name} industry icon`} />
                 <h3>{item.name}</h3>
             </a>
         </div>

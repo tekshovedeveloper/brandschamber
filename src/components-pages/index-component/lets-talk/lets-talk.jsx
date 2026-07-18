@@ -63,7 +63,7 @@ const LetsTalk = () => {
             <img
               className={styles.letsTalkHeadingUnderline}
               src="https://www.alphadesigncrew.com/assets/images/wait-under-line.png"
-              alt="wait-under-line"
+              alt="Let's Talk heading underline"
             />
           </span>
          

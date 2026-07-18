@@ -1,0 +1,79 @@
+.breadcrumbWrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 24px 24px 0;
+}
+
+.breadcrumbList {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.breadcrumbItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.breadcrumbItem:not(:last-child)::after {
+  content: ">";
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+.current {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.heroBreadcrumbWrap {
+  padding: 0;
+}
+
+.heroBreadcrumbList {
+  width: 100%;
+  margin: 0;
+}
+
+.centeredBreadcrumbList {
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .breadcrumbWrap {
+    padding: 18px 16px 0;
+  }
+
+  .heroBreadcrumbWrap {
+    padding: 0;
+  }
+
+  .breadcrumbList {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .breadcrumbItem {
+    gap: 6px;
+  }
+}

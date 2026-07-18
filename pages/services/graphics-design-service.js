@@ -16,6 +16,7 @@ import ServiceFeatureCards from "@/components/service-feature-cards/service-feat
 import { GRAPHICS_DESIGN_SERVICE_CARDS } from "@/components/service-feature-cards/serviceFeatureCardsData";
 import ServicePricingStripe from "@/components/service-pricing-stripe/ServicePricingStripe";
 import RelatedServices from "@/components/related-services/RelatedServices";
+import { breadcrumbItemsByPath } from "@/components/breadcrumbs/breadcrumbItems";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -71,10 +72,11 @@ export default function GraphicsDesignService() {
          highlightText="Tell us what you need designed — we'll get it done properly."
          description={`Every flyer you hand out, every ad you run, every post you publish — the design determines whether people stop or scroll past. Professional graphic design is not a luxury for big brands with big budgets. It's the difference between marketing materials that get results and ones that get ignored.`}
          image="/assets/logo-service/logo-banner.gif"
-         imageAlt="Logo design showcase"
+         imageAlt="Graphic design service showcase"
          buttonText="Book Your Free Consultation"
          buttonHref="#contact"
          defaultService="GRAPHIC DESIGN"
+         breadcrumbs={breadcrumbItemsByPath["/services/graphics-design-service"]}
        />
        <RunningSlider
            text="Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages Trusted by small business owners across industries  ·  100% Custom Every Time  ·  Fast Turnaround  ·  Unlimited Revisions  ·  Affordable Packages"
@@ -101,8 +103,5 @@ export default function GraphicsDesignService() {
     </main>
   );
 }
-
-
-
 
 
