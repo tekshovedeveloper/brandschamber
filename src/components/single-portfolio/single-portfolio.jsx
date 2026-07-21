@@ -20,11 +20,11 @@ export default function PortfolioGrid({
 
   const groupedItems = useMemo(() => {
     const groups = [];
-    for (let i = 0; i < visibleItems.length; i += 7) {
-      groups.push(visibleItems.slice(i, i + 7));
+    for (let i = 0; i < items.length; i += 7) {
+      groups.push(items.slice(i, i + 7));
     }
     return groups;
-  }, [visibleItems]);
+  }, [items]);
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => Math.min(prev + loadStep, items.length));
@@ -62,7 +62,7 @@ export default function PortfolioGrid({
 
   if (!items.length) return null;
 
-  const activeItem = activeIndex !== null ? visibleItems[activeIndex] : null;
+  const activeItem = activeIndex !== null ? items[activeIndex] : null;
   const getPortfolioAlt = (item, index) => {
     const providedAlt = typeof item?.alt === "string" ? item.alt.trim() : "";
     const isPlaceholderAlt = /^logo\s+\d+$/i.test(providedAlt);
@@ -90,55 +90,72 @@ export default function PortfolioGrid({
         </div>
 
         <div className={styles.groupsWrapper}>
-          {groupedItems.map((group, groupIndex) => (
-            <div key={groupIndex} className={styles.cardsGrid}>
-              {group.map((item, indexInGroup) => {
-                const globalIndex = groupIndex * 7 + indexInGroup;
+          {groupedItems.map((group, groupIndex) => {
+            const groupStartIndex = groupIndex * 7;
+            const isGroupVisible = groupStartIndex < visibleCount;
 
-                return (
-                  <div
-                    key={item.id ?? globalIndex}
-                    className={tileClasses[indexInGroup]}
-                  >
-                    <article
-                      className={styles.card}
-                      onClick={() => openModal(globalIndex)}
-                      role="button"
-                      tabIndex={0}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          openModal(globalIndex);
-                        }
-                      }}
+            return (
+              <div
+                key={groupIndex}
+                className={`${styles.cardsGrid} ${
+                  isGroupVisible ? "" : styles.hiddenSeoGroup
+                }`}
+              >
+                {group.map((item, indexInGroup) => {
+                  const globalIndex = groupIndex * 7 + indexInGroup;
+                  const isItemVisible = globalIndex < visibleCount;
+
+                  return (
+                    <div
+                      key={item.id ?? globalIndex}
+                      className={`${tileClasses[indexInGroup]} ${
+                        isItemVisible ? "" : styles.hiddenSeoGroup
+                      }`}
                     >
-                      <div className={styles.mediaViewport}>
-                        <div className={styles.mediaInner}>
-                          {item.video ? (
-                            <video
-                              src={item.video}
-                              className={styles.media}
-                              autoPlay
-                              muted
-                              loop
-                              playsInline
-                            />
-                          ) : (
-                            <Image
-                              src={item.image}
-                              alt={getPortfolioAlt(item, globalIndex)}
-                              fill
-                              sizes="(max-width: 1200px) 100vw, 356px"
-                              className={styles.media}
-                            />
-                          )}
+                      <article
+                        className={styles.card}
+                        onClick={() => isItemVisible && openModal(globalIndex)}
+                        role="button"
+                        tabIndex={isItemVisible ? 0 : -1}
+                        onKeyDown={(e) => {
+                          if (
+                            isItemVisible &&
+                            (e.key === "Enter" || e.key === " ")
+                          ) {
+                            openModal(globalIndex);
+                          }
+                        }}
+                      >
+                        <div className={styles.mediaViewport}>
+                          <div className={styles.mediaInner}>
+                            {item.video ? (
+                              <video
+                                src={item.video}
+                                className={styles.media}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                              />
+                            ) : (
+                              <Image
+                                src={item.image}
+                                alt={getPortfolioAlt(item, globalIndex)}
+                                fill
+                                loading="lazy"
+                                sizes="(max-width: 1200px) 100vw, 356px"
+                                className={styles.media}
+                              />
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  </div>
-                );
-              })}
-            </div>
-          ))}
+                      </article>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
 
         {canLoadMore && (

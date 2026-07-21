@@ -92,6 +92,8 @@ export default function AwardsSection({ id }) {
             src="/assets/award/award.png"
             alt="Awards trophy"
             className={styles.trophyImage}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className={styles.headingBlock}>
@@ -114,7 +116,12 @@ export default function AwardsSection({ id }) {
               <div className={styles.card}>
                 <div className={styles.cardTop}>
                   <div className={styles.logoWrapper}>
-                    <img src={award.logo} alt={award.title} />
+                    <img
+                      src={award.logo}
+                      alt={award.title}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
 
                   <div className={styles.rating}>

@@ -251,8 +251,8 @@ const PRICING_CARDS = [
   {
     title: "WEB DEVELOPMENT",
     desc: "Custom, CMS, e-commerce, and Shopify builds.",
-    price: "$199",
-    amount: 19900,
+    price: "$499",
+    amount: 49900,
     features: [
       "Mobile-responsive design",
       "SEO-ready structure",
@@ -263,8 +263,8 @@ const PRICING_CARDS = [
   {
     title: "MOBILE APPS",
     desc: "iOS, Android, and cross-platform — end-to-end.",
-    price: "$599",
-    amount: 59900,
+    price: "$999",
+    amount: 99900,
     features: [
       "UI/UX design included",
       "iOS & Android options",
@@ -274,9 +274,9 @@ const PRICING_CARDS = [
   },
   {
     title: "SEO & MARKETING",
-    desc: "100% custom — designed from scratch for your brand",
-    price: "$299",
-    amount: 29900,
+    desc: "Monthly SEO strategy, optimization, reporting, and growth support.",
+    price: "$199/mo",
+    amount: 19900,
     features: [
       "Full channel strategy",
       "Campaign management",
@@ -348,7 +348,7 @@ export default function PricingStripe({ id }) {
   return (
     <section id={id} className={styles.pricingBox}>
       <div className={styles.pricingHeading}>
-        <h3>NO SURPRISES. NO HIDDEN FEES.</h3>
+        <h2>NO SURPRISES. NO HIDDEN FEES.</h2>
         <p>
           A guide to our starting prices across every service. Every project is
           scoped individually — final pricing after your free consultation.
@@ -360,11 +360,11 @@ export default function PricingStripe({ id }) {
           <div key={card.title} className={styles.pricingCard}>
             <div className={styles.cardInner}>
               <div className={styles.mainTextDiv}>
-                <h2 className={styles.websiteName}>{card.title}</h2>
+                <h3 className={styles.websiteName}>{card.title}</h3>
                 <p className={styles.mainText}>{card.desc}</p>
               </div>
 
-              <h3 className={styles.websitePrice}>{card.price}</h3>
+              <p className={styles.websitePrice}>{card.price}</p>
 
               <div className={styles.servicesList}>
                 <ul>

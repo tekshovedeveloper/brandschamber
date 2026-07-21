@@ -38,7 +38,7 @@
   animation: slideInFromTop 1.5s ease-in-out forwards;
 }
 
-.pricingHeading h3 {
+.pricingHeading h2 {
   font-family: "TT Hoves Pro Trial", sans-serif;
   font-size: 2.435rem;
   font-weight: 900;
@@ -263,7 +263,7 @@
 /* ===== Responsive ===== */
 
 @media (max-width: 1400px) {
-  .pricingHeading h3 {
+  .pricingHeading h2 {
     margin-right: 10px;
     font-size: 34px;
     line-height: 44px;

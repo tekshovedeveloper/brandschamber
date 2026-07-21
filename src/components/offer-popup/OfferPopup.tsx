@@ -1,13 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./offer-popup.module.css";
 
+const MOBILE_QUERY = "(max-width: 768px)";
+const MOBILE_POPUP_DELAY_MS = 10000;
+
 export default function OfferPopup() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"ok" | "error" | null>(null);
   const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    const shouldDelayPopup = window.matchMedia(MOBILE_QUERY).matches;
+    const timerId = window.setTimeout(
+      () => setIsOpen(true),
+      shouldDelayPopup ? MOBILE_POPUP_DELAY_MS : 0
+    );
+
+    return () => window.clearTimeout(timerId);
+  }, []);
 
   if (!isOpen) return null;
 

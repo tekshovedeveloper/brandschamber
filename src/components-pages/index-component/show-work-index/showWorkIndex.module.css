@@ -505,6 +505,10 @@
   will-change: transform;
 }
 
+.hiddenSeoItem {
+  display: none;
+}
+
 /* slow vertical scroll on hover */
 .imageBox:hover .portfolioImage {
   transform: translateY(var(--scroll-distance));

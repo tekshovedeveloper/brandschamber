@@ -108,20 +108,20 @@ const PRODUCTS = {
     description: "Complete brand identity system — strategy to assets.",
   },
   "WEB DEVELOPMENT": {
-    amount: 19900,
+    amount: 49900,
     name: "WEB DEVELOPMENT",
     description: "Custom, CMS, e-commerce, and Shopify builds.",
   },
   "MOBILE APPS": {
-    amount: 59900,
+    amount: 99900,
     name: "MOBILE APPS",
     description: "iOS, Android, and cross-platform — end-to-end.",
   },
   "SEO & MARKETING": {
-    amount: 29900,
+    amount: 19900,
     name: "SEO & MARKETING",
     description:
-      "Full channel strategy, campaign management, monthly reporting, and ongoing optimisation.",
+      "Monthly SEO strategy, optimization, reporting, and growth support.",
   },
   "UI/UX DESIGN": {
     amount: 19900,
