@@ -93,18 +93,22 @@ import styles from "./testimonial.module.css";
 const TESTIMONIALS = [
   {
     name: "Sarah L.",
+    designation: "Brand Owner",
     text: "Working with this agency transformed our brand. Their creative solutions and dedication were beyond our expectations.",
   },
   {
     name: "Michael T.",
+    designation: "Startup Founder",
     text: "Exceptional service and stunning results. The team truly cared about our vision and delivered more than we imagined.",
   },
   {
     name: "Christine L.",
+    designation: "Small Business Owner",
     text: "They made a significant difference for our business. Smooth process, clear communication, and beautiful design.",
   },
   {
     name: "Dean L.",
+    designation: "Digital Marketing Manager",
     text: "Professional, fast, and highly creative. I’d recommend them to anyone looking to elevate their digital presence.",
   },
 ];
@@ -190,7 +194,7 @@ export default function Testimonial({id}) {
                   <div className={styles.avatar} />
                   <div>
                     <h4>{t.name}</h4>
-                    {/* <p className={styles.clientRole}>CEO of BrightTech</p> */}
+                    <p className={styles.clientRole}>{t.designation}</p>
                   </div>
 
                   <div className={styles.quoteMark}>

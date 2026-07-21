@@ -73,7 +73,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { firstName, email, message } = req.body || {};
+    const { firstName, email, phone, message } = req.body || {};
 
     if (!firstName || !email || !message) {
       return res.status(400).json({ ok: false, error: "Missing required fields." });
@@ -106,7 +106,9 @@ export default async function handler(req, res) {
       to: CONTACT_TO_EMAIL,       
       replyTo: email,             
       subject: `New contact form message from ${firstName}`,
-      text: `Name: ${firstName}\nEmail: ${email}\n\nMessage:\n${message}`,
+      text: `Name: ${firstName}\nEmail: ${email}\nPhone: ${
+        phone || "Not provided"
+      }\n\nMessage:\n${message}`,
     };
 
     const info = await transporter.sendMail(mailOptions);

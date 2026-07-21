@@ -164,7 +164,7 @@ export default function Pricing() {
           headingInView ? styles.pricingAnimate : ""
         }`}
       >
-        <h3>Affordable Pricing</h3>
+        <h2>Affordable Pricing</h2>
         <p>
           We at Brands Chamber thrive to ensure that our customers are Our
           packages have been meticulously created for all business. Obtain
@@ -205,11 +205,11 @@ export default function Pricing() {
           packages.map((pkg) => (
             <div key={pkg.title} className={styles.pricingCard}>
               <div className={styles.mainTextDiv}>
-                <h2 className={styles.websiteName}>{pkg.title}</h2>
+                <h3 className={styles.websiteName}>{pkg.title}</h3>
                 <p className={styles.mainText}>{pkg.desc}</p>
               </div>
 
-              <h3 className={styles.websitePrice}>{pkg.price}</h3>
+              <p className={styles.websitePrice}>{pkg.price}</p>
 
               <div className={styles.servicesList}>
                 <ul>

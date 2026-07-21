@@ -254,7 +254,7 @@ export default function Footer() {
               </li>
               <li className={styles.contactRow}>
                 <img src="/assets/home/phone.svg" alt="Brands Chamber phone icon" />
-                <a href="tel:+13462790995">+1 (385) 215-0936</a>
+                <a href="tel:+13852150936">+1 385-215-0936</a>
               </li>
 
               <li className={styles.contactRow}>

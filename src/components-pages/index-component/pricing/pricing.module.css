@@ -34,7 +34,7 @@
   animation: slideInFromTop 1.5s ease-in-out forwards;
 }
 
-.pricingHeading h3 {
+.pricingHeading h2 {
   font-family: "FontspringBD";
   font-size: 36px;
   letter-spacing: 3px;
@@ -261,7 +261,7 @@
 
 
 @media (max-width: 1400px) {
-  .pricingHeading h3 {
+  .pricingHeading h2 {
     margin-right: 10px;
     font-size: 34px;
     line-height: 44px;
@@ -402,7 +402,7 @@
   padding: 0 20px;
 }
 
-.pricingHeading h3 {
+.pricingHeading h2 {
   font-family: "FontspringBD";
   font-size: 36px;
   letter-spacing: 3px;
@@ -561,7 +561,7 @@
   .pricingBox {
     padding: 70px 16px;
   }
-  .pricingHeading h3{
+  .pricingHeading h2{
     font-size: 34px;
     line-height: normal;
   }
