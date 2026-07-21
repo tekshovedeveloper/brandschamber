@@ -126,7 +126,7 @@ function ScrollCard({
                   fill
                   className={styles.slideImage}
                   sizes="(min-width:1200px) 356px, 92vw"
-                  priority={idx === 0}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -153,6 +153,15 @@ function WebsiteSlide({
   const boxRef = useRef<HTMLDivElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [scrollDistance, setScrollDistance] = useState<string>("0px");
+  const imageDimensions: Record<string, { width: number; height: number }> = {
+    "/assets/popular/web-1.png": { width: 508, height: 1883 },
+    "/assets/popular/web-2.png": { width: 508, height: 1922 },
+    "/assets/popular/web-3.png": { width: 509, height: 2403 },
+    "/assets/popular/web-4.png": { width: 508, height: 1883 },
+    "/assets/popular/web-5.png": { width: 508, height: 1922 },
+    "/assets/popular/web-6.png": { width: 509, height: 2403 },
+  };
+  const dimensions = imageDimensions[src] ?? { width: 508, height: 2200 };
 
   useEffect(() => {
     const updateScrollDistance = () => {
@@ -187,15 +196,19 @@ function WebsiteSlide({
 
   return (
     <div ref={boxRef} className={styles.websiteScrollBox}>
-      <img
+      <Image
         ref={imgRef}
         src={src}
         alt={alt}
+        width={dimensions.width}
+        height={dimensions.height}
         className={`${styles.websiteScrollImage} ${
           isActive && isPanning ? styles.websiteScrollImagePanning : ""
         }`}
         style={style}
+        sizes="(min-width: 1200px) 356px, 92vw"
         loading="lazy"
+        decoding="async"
       />
     </div>
   );

@@ -244,11 +244,15 @@ export default function ServicesGrid() {
                   src={s.icon}
                   alt={`${s.title} service icon`}
                   className={`${styles.serviceIcon} ${styles.defaultIcon}`}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src={s.hoverIcon}
                   alt={`${s.title} service hover icon`}
                   className={`${styles.serviceIcon} ${styles.hoverIcon}`}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 

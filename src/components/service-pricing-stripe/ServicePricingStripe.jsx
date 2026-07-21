@@ -121,11 +121,11 @@ export default function ServicePricingStripe({ id, service, currentService }) {
           >
             <div className={styles.cardInner}>
               <div className={styles.mainTextDiv}>
-                <h2 className={styles.websiteName}>{pkg.title}</h2>
+                <h3 className={styles.websiteName}>{pkg.title}</h3>
                 {pkg.desc && <p className={styles.mainText}>{pkg.desc}</p>}
               </div>
 
-              <h3 className={styles.websitePrice}>{pkg.price}</h3>
+              <p className={styles.websitePrice}>{pkg.price}</p>
 
               <div className={styles.servicesList}>
                 <ul>

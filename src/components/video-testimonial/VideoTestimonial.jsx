@@ -136,6 +136,8 @@ const settings = {
                     src={t.thumbnail}
                     alt={`${t.name} testimonial`}
                     className={styles.thumbnailImage}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className={styles.playOverlay}>
                     <span className={styles.playCircle}>

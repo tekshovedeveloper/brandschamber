@@ -197,6 +197,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import styles from "./showWorkIndex.module.css";
 
 // ===== image data (same as you have) =====
@@ -320,7 +321,7 @@ const getPortfolioItemAlt = (tab, id) =>
  * Image that stays in the same box size, but scrolls its content on hover
  * using the existing CSS that reads var(--scroll-distance).
  */
-function ScrollingImage({ src, alt, className }) {
+function ScrollingImage({ src, alt, className, hidden = false }) {
   const boxRef = useRef(null);
   const imgRef = useRef(null);
   const [scrollDistance, setScrollDistance] = useState("0px");
@@ -364,13 +365,21 @@ function ScrollingImage({ src, alt, className }) {
   }, []);
 
   return (
-    <div ref={boxRef} className={styles.imageBox}>
-      <img
+    <div
+      ref={boxRef}
+      className={`${styles.imageBox} ${hidden ? styles.hiddenSeoItem : ""}`}
+    >
+      <Image
         ref={imgRef}
         src={src}
         alt={alt}
+        width={536}
+        height={2964}
         className={className}
         style={{ "--scroll-distance": scrollDistance }}
+        sizes="(max-width: 500px) 95vw, (max-width: 660px) 45vw, 31.5vw"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   );
@@ -393,7 +402,6 @@ export default function ShowWorkIndex() {
     setVisibleCount((prev) => Math.min(prev + LOAD_MORE_STEP, images.length));
   };
 
-  const visibleImages = images.slice(0, visibleCount);
   const showLoadMore = visibleCount < images.length;
 
   return (
@@ -418,12 +426,13 @@ export default function ShowWorkIndex() {
         id="portfolio"
         className={`${styles.portfolioGallery} ${styles.animatePortfolio}`}
       >
-        {visibleImages.map((img) => (
+        {images.map((img, index) => (
           <ScrollingImage
             key={activeTab + "-" + img.id}
             src={img.url}
             alt={getPortfolioItemAlt(activeTab, img.id)}
             className={styles.portfolioImage}
+            hidden={index >= visibleCount}
           />
         ))}
 

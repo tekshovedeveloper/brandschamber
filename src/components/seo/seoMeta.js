@@ -17,7 +17,7 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   name: "Brands Chamber",
   url: SITE_URL,
-   telephone: "+1-385-215-0936",
+   telephone: "+1 385-215-0936",
   address: {
     "@type": "PostalAddress",
     streetAddress: "12510 W. Airport Blvd, UNIT C01-B",
