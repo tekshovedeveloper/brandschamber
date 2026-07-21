@@ -264,9 +264,9 @@ export default function Contact({ id }) {
         className={`${styles.infoIcon} ${styles.hoverInfoIcon}`}
       />
     </div>
-    <h3 className={styles.infoTitle}>PHONE</h3>
-    <a href="tel:+13462790995" className={styles.infoLink}>
-      +1 (385) 215-0936
+    <h2 className={styles.infoTitle}>PHONE</h2>
+    <a href="tel:+13852150936" className={styles.infoLink}>
+      +1 385-215-0936
     </a>
   </div>
 
@@ -283,7 +283,7 @@ export default function Contact({ id }) {
         className={`${styles.infoIcon} ${styles.hoverInfoIcon}`}
       />
     </div>
-    <h3 className={styles.infoTitle}>EMAIL</h3>
+    <h2 className={styles.infoTitle}>EMAIL</h2>
     <a href="mailto:contact@brandschamber.com" className={styles.infoLink}>
       contact@brandschamber.com
     </a>
@@ -302,9 +302,14 @@ export default function Contact({ id }) {
         className={`${styles.infoIcon} ${styles.hoverInfoIcon}`}
       />
     </div>
-    <h3 className={styles.infoTitle}>LOCATION</h3>
-    <a href="#" className={styles.infoLink}>    
-         12510 W. Airport Blvd. UNIT C01-B Sugar Land, TX 77478
+    <h2 className={styles.infoTitle}>LOCATION</h2>
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=12510%20W.%20Airport%20Blvd.%20UNIT%20C01-B%20Sugar%20Land%2C%20TX%2077478"
+      className={styles.infoLink}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      12510 W. Airport Blvd. UNIT C01-B Sugar Land, TX 77478
     </a>
   </div>
 </div>
@@ -330,6 +335,7 @@ export default function Contact({ id }) {
               const payload = {
                 firstName: String(formData.get("firstName") || ""),
                 email: String(formData.get("email") || ""),
+                phone: String(formData.get("phone") || ""),
                 message: String(formData.get("message") || ""),
               };
 
@@ -380,6 +386,18 @@ export default function Contact({ id }) {
                 id="email"
                 name="email"
                 required
+                className={styles.inputField}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="phone" className={styles.label}>
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
                 className={styles.inputField}
               />
             </div>
